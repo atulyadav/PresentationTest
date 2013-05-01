@@ -1,0 +1,63 @@
+﻿@{
+    Layout = "~/Views/Shared/_LinkLayout.cshtml";
+    ViewBag.Title = "Manage Presentations";
+}
+@model IEnumerable<PresentationApp.Domain.Presentation.Presentation>
+           
+<style type="text/css">
+    .cursorStyle
+    {
+        cursor:hand;
+        cursor:pointer;
+    }
+</style>
+<h4>
+    Manage Presentations</h4>
+<p>
+    <a href="/Presentation/CreatePresentation?flag=1">New Presentation</a></p>
+<br />
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Start Time
+        </th>
+        <th>
+            End Time
+        </th>
+        <th>
+            Presenter
+        </th>
+        <th style="width: 70px; text-align: center">
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr  class="cursorStyle">
+            <td onclick="document.location = '/Presentation/CreatePresentation?id=@item.Id&flag=2';">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td onclick="document.location = '/Presentation/CreatePresentation?id=@item.Id&flag=2';">
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td >
+            <td onclick="document.location = '/Presentation/CreatePresentation?id=@item.Id&flag=2';">
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td >
+            <td onclick="document.location = '/Presentation/CreatePresentation?id=@item.Id&flag=2';">
+                @Html.DisplayFor(modelItem => item.Presenter.Name)
+            </td>
+            <td style="text-align:center" onclick="document.location = '/Presentation/DeletePresentation/@item.Id';">
+                <a href="/Presentation/DeletePresentation/@item.Id">Delete </a>
+            </td>
+        </tr>
+    }
+</table>
+<p class="control-group" style="color: Red">
+    @if (@TempData["Message"] != null)
+    {
+        <script type="text/javascript">alert('@TempData["Message"]');</script>
+
+    }
+</p>

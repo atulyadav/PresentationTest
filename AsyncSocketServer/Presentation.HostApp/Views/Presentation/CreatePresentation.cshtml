@@ -1,0 +1,174 @@
+﻿@{
+    Layout = @ViewBag.Layout;
+}
+@model PresentationApp.DataAccess.Models.Presentation.CreatePresentationRequest
+<link href="@Url.Content("~/Content/bootstrap/css/bootstrap-combined.min.css")" rel="stylesheet" type="text/css"/>
+<link href="@Url.Content("~/Content/bootstrap/css/bootstrap-datetimepicker.min.css")" rel="stylesheet" type="text/css"/>
+<link href="@Url.Content("~/Content/bootstrap/css/bootstrap.min.css")" type="text/css"  rel="Stylesheet"/>
+<script src="@Url.Content("~/Scripts/jquery.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Content/bootstrap/js/bootstrap.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Content/bootstrap/js/bootstrap-datetimepicker.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Content/ckeditor/ckeditor.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Content/ckeditor/samples/sample.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $.validator.addMethod('checkEndDate', function (value, element, param) {
+        var st = new Date($(param).val());
+        var x = st.getFullYear() + '/' + (st.getMonth() + 1) + '/' + st.getDate() + ' ' + value;
+        var et = new Date(x);
+        if (et <= st) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    });
+
+    $(function () {
+        $("#createPresentationForm").validate({
+            rules: {
+                'Name': { required: true, remote: '@Url.Action("CheckPresentationExists", "Presentation", new { @data = @Model.Name + @ViewBag.Flag })' },
+                'StartTime': { required: true },
+                'EndTime': { required: true, checkEndDate: '#StartTime' },
+                'Description': { required: true }
+            },
+            messages: {
+                'Name': { required: "Please enter Presentation Name", remote: "A presentation with this name already exists." },
+                'StartTime': { required: "Please select presentation start date and time" },
+                'EndTime': { required: "Please select presentation end time", checkEndDate: "The presentation End Time should be more than the Start Time." },
+                'Description': { required: "Please enter Description" }
+            },
+            errorPlacement: function (error, element) {
+                error.appendTo("#" + element.attr("id") + "Validation");
+            }
+        });
+
+        CKEDITOR.replace('Description', {
+            fullPage: true,
+            allowedContent: true,
+            extraPlugins: 'wysiwygarea'
+        });
+
+        $('#datetimepicker1').datetimepicker({
+            format: 'MM/dd/yyyy hh:mm:ss',
+            startDate: new Date(),
+            language: 'en'
+        });
+
+        $('#datetimepicker2').datetimepicker({
+            format: 'hh:mm:ss',
+            pickDate: false,
+            language: 'en'
+        }).on('changeDate', function (ev) {
+            
+        });
+
+    });
+
+    function addZero(x) {
+        if (x < 10) {
+            return '0' + x;
+        }
+        else {
+            return x;
+        }
+    }
+</script>
+<p class="control-group" style="color: Red">
+    @if (@TempData["Message"] != null)
+    {
+        <script type="text/javascript">            alert('@TempData["Message"]');</script>
+
+    }
+</p>
+<h4>
+    Enter presentation details below:
+</h4>
+<br />
+<form action="/Presentation/CreatePresentation" method="post" id="createPresentationForm">
+<div>
+    <table>
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                <div class="controls">
+                    @Html.HiddenFor(model => model.flag)
+                    @Html.HiddenFor(model => model.Id)
+                    @Html.TextBoxFor(model => model.Name)
+                    <span id="NameValidation" style="color: red"></span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Start Time
+            </td>
+            <td>
+                <div id="datetimepicker1" class="input-append date">
+                    @Html.TextBoxFor(model => model.StartTime, new { @readonly = "readonly" })
+                    <span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"
+                        class="icon-calendar"></i></span><span id="StartTimeValidation" style="color: red">
+                    </span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                End Time
+            </td>
+            <td>
+                <div id="datetimepicker2" class="input-append date">
+                    @Html.TextBoxFor(model => model.EndTime, new { @readonly = "readonly" })
+                    <span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"
+                        class="icon-calendar"></i></span><span id="EndTimeValidation" style="color: red">
+                    </span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <br />
+                Description
+                <br />
+                <div class="controls">
+                    @Html.TextAreaFor(model => model.Description, new { @id = "Description", @name = "Description" })
+                    <span id="DescriptionValidation" style="color: red"></span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            </td>
+        </tr>
+    </table>
+    <br />
+    <p>
+        <input type="submit" value="Save" class="btn" id="submitCreate" />
+        @if (@Model.flag == 1)
+        {
+            <span>
+                <input type="button" value="Cancel" class="btn" onclick="javascript:window.location.replace('/Presentation/Index');" /></span>}
+    </p>
+</div>
+<script type="text/javascript">
+
+@if (@Model.flag == 1)
+{
+    <text>
+    document.getElementById("StartTime").value = "";
+    document.getElementById("EndTime").value = "";
+    </text>
+}
+else if (@Model.StartTime != null && @Model.EndTime != null)
+{
+    <text>
+        var st = new Date('@Model.StartTime');
+        var et = new Date('@Model.EndTime');
+        document.getElementById("StartTime").value = addZero((st.getMonth()+1)) + "/" + addZero(st.getDate ()) + "/" + addZero(st.getFullYear()) + " " + addZero(st.getHours()) + ":" + addZero(st.getMinutes()) + ":" + addZero(st.getSeconds());
+        document.getElementById("EndTime").value = addZero(et.getHours()) + ":" + addZero(et.getMinutes()) + ":" + addZero(et.getSeconds());
+    </text>
+}
+</script>
+</form>

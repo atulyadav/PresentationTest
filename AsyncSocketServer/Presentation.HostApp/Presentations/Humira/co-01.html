@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="css/co.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="js/Common.js"></script>
+    <script type="text/javascript" charset="utf-8">
+		
+
+		ANIMATION = [
+				
+		   ];
+		
+	</script>
+    
+    <script type="text/javascript">
+			
+			
+		function touching() {
+			var touchBtn = document.getElementById("touch");
+			var panel1 = document.getElementById("panel1");
+			var panel2 = document.getElementById("panel2");
+				panel1.setAttribute('class','active');
+				panel2.setAttribute('class','active');
+            
+            makecall('OmnitureTracking', Array('AnimationClick','PrescriptionBottles'));
+			
+			};
+	</script>
+    
+	<style type="text/css">
+		 .slide-1 #content section div.footnote {
+			position:absolute; 
+			font-size: 12px;
+			width: 640px;
+			color: #000;
+			top: 500px;
+			left: 20px;
+			opacity: 1;
+		}
+	</style>
+</head>
+
+<body class="slide-1">
+
+<div id="content">
+<div class="collage"></div>
+
+<header>
+The convenience of co-formulation
+
+</header>
+
+<div class="logo"></div>
+
+<section>
+
+	<div class="chartbk" onclick="touching()">
+    
+
+			
+			<div id="panel1">
+            	<div class="lgnum1">1</div>
+                <div class="lgnum2">2</div>
+                <div class="copy1">Prescription<br>Bottle<br>Co-pay     </div>
+
+                <div class="copy3">Prescriptions<br>Pill bottles <br>Co-pays</div>
+                
+            
+            
+            </div>
+			<div id="panel2">
+                <div class="copy2">
+                    <p>PI components will always<br>be taken together.</p>
+                    <p>KALETRA can be taken with or without food. </p>
+                    <p>KALETRA can be coadministered with acid-reducing agents with no dose adjustment. </p>
+                
+                
+                </div>
+            
+            	<div class="copy4">Food restrictions</div>
+				
+            </div>
+			<div class="footnote">
+				Co-administration of KALETRA is contraindicated with drugs that are highly dependent on CYP3A<br>for clearance
+				(possibly resulting in serious and/or life-threatening events) and potent CYP3A<br>inducers (which may be associated
+				with loss of virologic response, resistance and cross-resistance).
+			</div>
+    <img src="images/ps-02-ctaicon.png" style="position:absolute; left:935px; top:450px;" />
+    </div>
+
+
+</section>
+
+
+
+<footer>Please click buttons above for Indication and Important Safety Information about KALETRA.</footer>
+
+
+</div>
+</body>
+</html>

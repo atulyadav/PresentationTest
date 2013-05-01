@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "SlideShow";
+}
+
+<h2>SlideShow</h2>
+
+
+    
+    <div id="loadImage"></div>
+    <input type="button" id="prev" value="<<" onclick="SendSlidesNum(this)"/>
+    <input type="button" id="next" value=">>" onclick="SendSlidesNum(this)"/>
+    <a href="@Url.Content("~/Home/Link")">Link Main Page</a>

@@ -1,0 +1,56 @@
+﻿@model PresentationApp.DataAccess.Models.Account.LoginRequest
+@{
+
+    ViewBag.Title = "Presenter Login";
+}
+<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="@Url.Content("~/Content/Presentation_v1/css/font.css")" type="text/css">
+<link rel="stylesheet" href="@Url.Content("~/Content/Presentation_v1/css/style.css")" type="text/css">
+<script type="text/javascript">
+
+    $('#loginForm').form({
+        url: '/Account/Index',
+        onSubmit: function () {
+            return $(this).form('validate');
+        },
+        success: function (data) {
+            $.messager.alert('Info', data, 'info');
+        }
+    });
+</script>
+<div id="container" class="login">
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @id = "loginForm" }))
+    {
+        @Html.ValidationSummary(true)
+        <p>
+            <section>
+        <img width="200" height="83" src="@Url.Content("~/Content/Presentation_v1/images/login-img1.png")">
+            @Html.HiddenFor(model => model.PresentationKey)
+            <label class="control-label" for="UserName">
+                User Name</label>
+            <div>
+                @Html.TextBoxFor(model => model.UserName, new { @required = "true" })
+            </div>
+            @Html.ValidationMessageFor(model => model.UserName)
+
+            <label class="control-label" for="Password">
+                Password
+            </label>
+            <div>
+                @Html.PasswordFor(model => model.Password, new { @required = "true" })
+            </div>
+            @Html.ValidationMessageFor(model => model.Password)
+           <span>
+                <button id="loginBtn"  >Login</button>
+           </span>
+
+        <p class="control-group" style="color: Red">
+            @if (@ViewBag.Message != null)
+            {
+                @ViewBag.Message
+            }
+        </p>
+        </section>
+        </p>
+    }
+</div>

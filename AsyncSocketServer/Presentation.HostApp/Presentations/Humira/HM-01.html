@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" href="css/hm.css" type="text/css">
+		<link rel="stylesheet" href="css/animate.css" type="text/css">
+		
+		<script type="text/javascript" src="js/base.js"></script>
+		<script type="text/javascript" src="js/Common.js"></script>
+		<script type="text/javascript" charset="utf-8">
+		
+		var ANIMATION = [
+			
+		/*	
+			hide('#splash,#isi_back,#isi_right,.lg_logo,h1,#footer'),
+			custom('.blueoverlay', 'opacity:0.75;', 'opacity:0'),
+			fade('#footer-2,#question,#buttonwrap'),
+			func('#samface', function(sam) {
+				blink(sam)
+			}),
+			
+			pause(1000),
+			custom('#samface', 'top:100px; left:825px; -webkit-transition-duration:1.5s;', 'opacity:0.01;'),
+			'.samcallout',
+			func('#mariaface', function(sam) {
+				blink(sam)
+			}),
+			custom('#mariaface', 'top:300px; left:825px; -webkit-transition-duration:1.5s;', 'opacity:0.01;'),
+			'.mariacallout',
+			func('#jamesface', function(sam) {
+				blink(sam)
+			}),
+			custom('#jamesface', 'top:450px; left:825px; -webkit-transition-duration:1.5s;', 'opacity:0.01;'),
+			'.jamescallout',
+			
+		
+		
+		
+		
+					
+		function blink(el) {
+			el.style.opacity = '1';
+			
+			setTimeout(function() { el.style.opacity = '1' }, 50);
+			setTimeout(function() { el.style.opacity = '1' }, 100);//Tushar changed to 1 to remove Blinking
+			setTimeout(function() { el.style.opacity = '1' }, 150);
+			setTimeout(function() { el.style.opacity = '1' }, 200);//Tushar changed to 1 to remove Blinking
+			
+		}
+		
+		
+		
+		window.addEventListener('load', function() {
+			if (touchEvent == "click") initialize()
+			document.body.removeEventListener(touchEvent, progressTouch);
+			document.body.addEventListener(touchEvent, function() {
+				$('patientcallwrap').style.display = 'block';
+				startAnimation();
+				setTimeout(function() {
+					$('splash').style.display = 'none';
+				}, 2000);
+			});
+		}, false)
+		
+	*/
+	];
+	
+			function fadefunction() {		
+				blueoverlay.style.opacity = .75;
+				footer2.style.opacity = 1;
+				question.style.opacity = 1;
+				buttonwrap.style.opacity = 1;
+				buttonwrap.style.visibility = 'visible';
+				isi_back.style.opacity = 0;
+				isi_right.style.opacity = 0;
+				/*lg_logo.style.opacity = 0;*/
+				fadeh1.style.opacity = 0;
+				footer.style.opacity = 0;
+			}
+			function resetHomeScreen(){
+				/*
+				blueoverlay.style.opacity = 0;
+				footer2.style.opacity = 0;
+				question.style.opacity = 0;
+				buttonwrap.style.opacity = 0;
+				buttonwrap.style.visibility = 'hidden';
+				isi_back.style.opacity = .5;
+				isi_right.style.opacity = 1;
+				lg_logo.style.opacity = 1;
+				fadeh1.style.opacity = 1;
+				footer.style.opacity = 1;
+				*/
+			}
+			
+		
+		</script>
+	</head>
+	<body class="slide-1">
+		<div id="main" onClick="fadefunction()">
+<!--		<div id="splash" style='position:absolute; top:0; left:0; z-index:99999'><img src="images/splash.jpg"></div>-->
+		<div class="blueoverlay" id="blueoverlay"></div>
+			<div id="content">
+				<div id="question"><span>Which factors do you consider when individualizing therapy<br>for your treatment-na&iuml;ve patients?</span></div>
+				<h1 id="fadeh1">Consider KALETRA for your<br>
+					treatment-na&iuml;ve patients
+				</h1>
+                </div>
+			<div id="isi_back"></div>
+			<div id="isi_right" style="font-size:17px">
+				<div class="padup">
+                        <p>
+                            <strong>Indication<sup>1</sup></strong><br>
+                            KALETRA<sup>&reg;</sup> (lopinavir/ritonavir) is indicated in combination with other antiretroviral agents for the treatment of HIV-1 infection in adults and pediatric patients (14 days and older). The following points should be considered when initiating therapy with KALETRA:
+                        </p>
+                        <div class="isiitem">
+                            The use of other active agents with KALETRA is associated with a greater likelihood of treatment response.
+                        </div>
+                        <div class="isiitem">
+                            Genotypic or phenotypic testing and/or treatment history should guide the use of KALETRA. The number of baseline lopinavir resistance-associated substitutions affects the virologic response to KALETRA.
+                        </div>
+                        <p>
+                            <strong>Safety Considerations<sup>1</sup></strong><br>
+                            KALETRA<sup>&reg;</sup> (lopinavir/ritonavir) is contraindicated in patients who have hypersensitivity to the drug or its ingredients. Co-administration of KALETRA is contraindicated with drugs that are highly dependent on CYP3A for clearance (possibly resulting in serious and/or life-threatening events) and potent CYP3A inducers (which may be associated with loss of virologic response, resistance, and cross-resistance). KALETRA oral solution should not be used in preterm neonates in the immediate postnatal period because of possible toxicities, which could be fatal. Pancreatitis and hepatotoxicity, including fatalities, and QT or PR interval prolongation have been reported with KALETRA. Patients may develop new onset or exacerbations of diabetes mellitus, hyperglycemia, and/or immune reconstitution syndrome. Large elevations in total cholesterol and triglycerides have also been reported with KALETRA. Patients may also develop redistribution/accumulation of body fat, and/or increased bleeding in patients with hemophilia types A and B. Please see the Important Safety Information for more details.
+                        </p>
+				</div>
+                <p class="directions">
+					Please click buttons above for<br>Indication and Important Safety<br>Information about KALETRA.
+				</p>
+				<div class="kaletra_logo">
+					<img src="images/kaletra_logo.png" width="180" height="55" alt="Kaletra">
+				</div>
+				<div class="abbott_logo">
+					<img src="images/abbott_logo.png" width="120" height="46" alt="Abbott">
+				</div> 
+			</div>
+            <div id="buttonwrap" class="buttonwrap">
+                <button onClick="makecall('JumpToModule',Array('0','Experience'));">Experience</button>
+                <button onClick="makecall('JumpToModule',Array('1','Efficacy'));">Efficacy</button>
+                <button onClick="makecall('JumpToModule',Array('2','Resistance'));">Resistance</button>
+                <br>
+                <button onClick="makecall('JumpToModule',Array('3','Gender'));">Gender</button>
+                <button onClick="makecall('JumpToModule',Array('4','DHHS Guidelines'));">DHHS Guidelines</button>
+                <button onClick="makecall('JumpToModule',Array('5','Dosing'));">Dosing</button>
+                <br>
+                <button onClick="makecall('JumpToModule',Array('6','Patient Disposition in Trial'));">Patient Disposition<br>in Trials</button>
+                <button onClick="makecall('JumpToModule',Array('7','Lipids'));"><span><br>Lipids</span></button>
+                <button onClick="makecall('JumpToModule',Array('8','Patient Support Programs'));">Patient Support<br>Programs</button>
+                <br>
+                <button onClick="makecall('JumpToModule',Array('9','CASTLE Study'));">CASTLE Study</button>
+                <button onClick="makecall('JumpToModule',Array('10','ARTEMIS Study'));">ARTEMIS Study</button>
+			</div>
+			<div id="patientcallwrap" class="patientcallwrap patient" style="display:none">
+	
+			</div>
+			<div id="footer2">
+				<p>
+					Models for illustrative purposes only.
+				</p>
+				<p>
+					Please click buttons above for Indication and Important Safety Information about KALETRA.
+				</p> 
+                
+             	<div class="abbott_logo">
+					<img src="images/abbott_logo.png" width="120" height="46" alt="Abbott">
+				</div>                  
+			</div>
+			<div id="footer">
+				<p>
+					<span>Models throughout are for illustrative purposes only.</span>
+				</p>
+				<p>
+					&copy;2013 AbbVie Inc. North Chicago, IL 60064 <br>
+					045-1076618 January 2013 Printed in U.S.A.
+				</p>
+			</div>
+		</div>
+		<div id="pre-font">&nbsp;&nbsp;</div>
+	</body>
+</html>

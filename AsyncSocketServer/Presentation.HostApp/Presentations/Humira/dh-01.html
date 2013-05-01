@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="css/dh.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="js/Common.js"></script>
+    <script type="text/javascript" charset="utf-8">
+		
+
+		ANIMATION = [
+			
+		   ];
+		
+	</script>
+    
+    <script type="text/javascript">
+			
+			
+		function touching() {
+			var touchBtn = document.getElementById("touch");
+			var panel1 = document.getElementById("panel1");
+			var content = document.getElementById("content");
+			var temp1 = document.getElementById("panel1");
+			
+			if (panel1.className!='active') {
+				panel1.setAttribute('class','active');
+				temp1.style.zIndex = '100'
+				makecall('TrackPopup',Array('DHHS HIV Guidelines'));
+			}
+			else if (panel1.className='active') {
+				panel1.setAttribute('class','deactive');
+				}
+			};
+	</script>
+    
+
+</head>
+
+<body class="slide-1">
+
+<div id="content" onclick="touching()">
+<div class="collage"></div>
+
+<header>
+Factors to consider when selecting an initial regimen
+
+</header>
+
+<div class="logo"></div>
+
+
+<section >
+
+	<div class="guidelines" ><img src="images/ps-02-ctaicon.png" alt="tap here" style="position:relative; top:307px; left:234px;" /></div>
+
+	<div class="chartbk" >
+    		
+            <div id="panel1">
+            	<h2>DHHS HIV Guidelines for ARV-naïve adults<sup>2</sup></h2>
+				<div class="rippedpage">
+                
+                    Regimen selection should be individualized and should be based on a number of factors, including: 
+                    <ul>
+                    <li>comorbid conditions (e.g., cardiovascular disease, chemical dependency, liver disease, psychiatric<br>
+                    disease, renal diseases, or tuberculosis);</li>
+                    <li>potential adverse drug effects;</li>
+                    <li>potential drug interactions with other medications;</li>
+                    <li>pregnancy or pregnancy potential; </li> 
+                    <li>results of genotypic drug-resistance testing;</li>
+                    <li>gender and pretreatment CD4 count if considering nevirapine (NVP);</li>
+                    <li>HLA-B*5701 testing if considering abacavir (ABC); </li>
+                    <li>coreceptor tropism assay if considering maraviroc (MVC);</li>
+                    <li>patient adherence potential; </li>
+					<li>convenience (e.g., pill burden, dosing frequency, and food and
+                    fluid considerations). </li> 
+                    </ul>   
+                </div>
+
+
+            </div>
+       
+    </div>
+
+</section>
+
+
+
+<footer>Please click buttons above for Indication and Important Safety Information about KALETRA.</footer>
+
+
+</div>
+</body>
+</html>

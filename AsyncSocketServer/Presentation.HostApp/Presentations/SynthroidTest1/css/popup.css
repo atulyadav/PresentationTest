@@ -1,0 +1,100 @@
+ @import url('fonts.css');
+ @import url('animate.css');
+ @import url('global.css');
+ 
+/******Global********/
+sup {font-size:60%;} 
+
+/* LC Popups */
+
+/* LC Slide-02 Popup-01 */
+.lc.slide-02.popup-1 #container{background:#fff none;width:555px;height:150px;}
+.lc.slide-02.popup-1 #container h1{font:20px/22px "HelveticaBold";color:#003767;margin:10px 0 -11px 18px;}
+.lc.slide-02.popup-1 #container p{font:20px/20px "HelveticaRoman";color:#000;padding:15px 20px;padding-top:0px;}
+.lc.slide-02.popup-1 #container p strong{font:20px/20px "HelveticaBold";}
+
+
+.lc .slide-03 .popup-1{}
+
+/* LC Slide-04 Popup-01 */
+.lc.slide-04.popup-1 #container{background:#fff none;width:430px;height:280px;}
+.lc.slide-04.popup-1 #container p{font:16px/20px "HelveticaRoman";color:#000;padding:15px 20px;padding-top:0px;}
+
+
+.lc .slide-05 .popup-1{}
+.lc .slide-05 .popup-2{}
+.lc .slide-06 .popup-1{}
+.lc .slide-09 .popup-1{}
+
+/*// s1 popups*/
+
+.s1 .slide-02 .popup-1{}
+
+/*// s2 popups*/
+
+.s2 .slide-03 .popup-1{}
+.s2 .slide-06 .popup-1{}
+
+/*// s3 popups*/
+
+.s3 .slide-02 .popup-1{}
+.s3 .slide-03 .popup-1{}
+.s3 .slide-04 .popup-1{}
+.s3 .slide-05 .popup-1{}
+.s3 .slide-05 .popup-2{}
+.s3 .slide-06 .popup-1{}
+
+.s3.slide-04.popup-1 #container{background:#fff none;width:520px;height:320px;}
+.s3.slide-04.popup-1 #container p{font:20px/24px "HelveticaRoman";color:#000;padding:15px 20px;padding-top:0px;}
+
+/******* bi popup-01 ***************/
+.bi.slide-02.popup-1 #container{ background:#fff; width:560px; height:161px;}
+.bi.slide-02.popup-1 #container section {padding:22px 28px;} 
+.bi.slide-02.popup-1 #container section p {font:16px/22px 'HelveticaRoman'; }
+
+/******* bi popup-01 ***************/
+.bi.slide-02.popup-2 #container{ background:#fff; width:524px; height:424px;}
+.bi.slide-02.popup-2 #container section {padding:22px 28px;}
+.bi.slide-02.popup-2 #container section ul {list-style:none; margin:0; padding:0;} 
+.bi.slide-02.popup-2 #container section ul li { list-style-image:url(../images/bullet_orange.jpg); list-style-position:2px; font:16px/18px 'HelveticaRoman'; white-space:nowrap; }
+.bi.slide-02.popup-2 #container section ul li ul { margin:15px 0 0 10px; padding:0;}
+.bi.slide-02.popup-2 #container section ul li ul li {list-style-image:none; margin-bottom:10px;}
+.bi.slide-02.popup-2 #container section ul li ul li:before{content:"-"; margin-left:-10px; color:#f7820e;}
+
+
+/*// da popups*/
+
+.lc.slide-06.popup-1 #container{background:#fff none;width:600px;height:220px;}
+.lc.slide-06.popup-1 #container h1{font:20px/22px "HelveticaBold";color:#003767;margin:10px 0 -11px 18px; width: 360px;}
+
+.lc.slide-06.popup-1 #container section{font:26px/26px "HelveticaBold"; color:#003767; float:left; margin-top:52px; margin-left:20px;}
+.lc.slide-06.popup-1 #container aside{font: 20px/28px "HelveticaBold";color: black;margin-top: 24px;margin-left: 240px;}
+
+
+/* LC Slide-08 Popup-01 */
+.lc.slide-08.popup-1 #container{background:#fff none;width:530px;height:130px;}
+.lc.slide-08.popup-1 #container p{font:20px/24px "HelveticaRoman";color:#000;padding:15px 20px;padding-top:0px;}
+
+
+/* Pro 06 Popup */
+.pro.popup-01{width:686px;height:268px;background:#fff;padding-top:20px;padding-left:34px;position:relative;padding-right:34px;}
+.pro.popup-01 h1{font:20px/26px 'HelveticaBold';color:#003767;padding-top:10px;width: 220px;}
+.pro.popup-01 .footerText{width:228px;color:#000;font: 12.5px/14px 'HelveticaRoman'; padding-top:38px;}
+.pro.popup-01 .footerText b{font: 12.5px/14px 'HelveticaBold';}
+.pro.popup-01 .chartDiv{position:absolute;left:288px;top: 30px;}
+.pro.popup-01 .chartDiv .chart-bg{ width:438px; height:228px;}
+.pro.popup-01 .chartDiv p{color:#000;font: 16px/18px 'HelveticaMedium';position:absolute;}
+.pro.popup-01 .chartDiv p:nth-of-type(1){left:86px;}
+.pro.popup-01 .chartDiv p:nth-of-type(2){left:225px;}
+.pro.popup-01 .chartDiv p:nth-of-type(3){left:365px;}
+
+/* Pro 07 Popup */
+.pro07.popup-01{height:240px; width:534px;background:#e3f2ff;}
+.pro07.popup-01 .popupText{font:33px/36px 'HelveticaBold';color:#003767; left:58px;position:absolute;top:68px;}
+.pro07.popup-01 .popupText span{font:56px/58px 'HelveticaBold';}
+.pro07.popup-01 .percentDiv{font:150px/150px 'HelveticaBold'; color:#57abff;position: absolute;top: 35px;left: 190px;}
+
+/* sr 03 Popup */
+.sr03.popup-01 #container{background:#f8edde none;width:800px;height:260px; padding:20px;font:20px/20px "HelveticaRoman"; color:#003767;}
+.sr03.popup-01 #container strong{font:20px/20px 'HelveticaBold'; }
+.sr03.popup-01 #container  p{padding:0px; margin:0px 0px 6px 0px;}

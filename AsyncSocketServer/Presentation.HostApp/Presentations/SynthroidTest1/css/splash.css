@@ -1,0 +1,41 @@
+@import "fonts.css";
+
+body { color: #000;font-family: "HelveticaRoman"; margin: 0; padding: 0; background: #000;width:  1024px;}
+#main { width: 1024px; height: 658px; background: #fff url(../images/splash_bg.jpg) no-repeat; overflow: hidden; position: relative; }
+#content { width: 1024px; height: 658px;position: relative;font-family: HelveticaRoman;font-size: 13px;color: #fff; }
+
+strong { font-family:'HelveticaBold'; }
+.title { font-size: 16px; }
+p { padding: 0; margin: 6px 0; }
+
+#indications p.bottom { font-size: 9px; font-family: "HelveticaBoldCondensed"; margin-top: 30px; }
+sup { line-height: 0; }
+
+#copy-1 { position: absolute; right: 30px; top: 40px; font-family:'HelveticaBold'; text-shadow: #336278 2px 2px 3px; font-size: 21px;}
+#copy-1 div { padding-bottom: 5px; }
+#copy-1 div:nth-child(2) { font-family:'HelveticaHeavyExtended'; text-transform: uppercase; font-size: 36px; }
+#copy-1 div:nth-child(3) { padding-left: 130px; }
+#copy-1 div:nth-child(4) { padding-left: 95px; }
+#copy-1 div:nth-child(5) { padding-left: 170px; }
+#oneText { color:#aa0056; font-family:'HelveticaHeavyExtended'; font-size:33px; text-shadow:#fff 0 0 10px; position:absolute; left:703px; top:223px; }
+#oneText2 { color:#aa0056; font-family:'HelveticaHeavyExtended'; font-size:33px; text-shadow:#fff 0 0 20px; position:absolute; left:703px; top:223px; }
+#copy-3 { position: absolute; top:250px; left: 850px; font-size: 13px; line-height: 16px;}
+
+#safety, #indications { font-size: 14px; position:absolute; top:365px; left:25px; width: 486px; }
+#indications { left:535px; width:460px;}
+
+#safety { font-family: "HelveticaCondensed"; }
+#safety strong { font-family: "HelveticaHeavyCondensed"; }
+
+#indications { font-family: "HelveticaCondensed"; }
+#indications strong { font-family: "HelveticaHeavyCondensed"; }
+
+#indications p:first-child { margin: 6px 0px; }
+#indications p { margin: 1px 0px; }
+#indications p strong .title { color: #fdb813; }
+#footer { position: absolute;font-family:'HelveticaBoldCondensed'; bottom: 85px; left: 25px; width: 950px; font-size: 16px; color: #fff; }
+#footer p { padding: 0; margin: 0px; position: relative; top: 7px; }
+
+#abbottA { content: url(../images/abbott_a.png); position: absolute; top: 18px; left: 30px; }
+#abbottLogo { content: url(../images/abbott.png); position: absolute; right: 30px; bottom: 90px; }
+#humira { background: url(../images/humira_logo.png) no-repeat; width: 200px; height: 100px; position: absolute; left: 660px; top: 250px; }

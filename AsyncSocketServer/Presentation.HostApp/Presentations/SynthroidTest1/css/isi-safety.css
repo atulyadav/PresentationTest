@@ -1,0 +1,146 @@
+@import "fonts.css";
+
+body { 
+	color: #000;
+	font-family: "HelveticaRoman"; 
+	margin: 0; 
+	padding: 0; 
+	background: #000;
+	width:  1024px;
+}
+
+body.ref { background-color: #fff; padding: 15px; width: auto; font-family: HelveticaCondensed; font-size: 13px; color: #666;}
+body.ref header { font-family: HelveticaBoldCondensed; }
+body.ref p { margin-top: 5px; }
+body.ref i { font-family: HelveticaCondensedOblique; }
+body.ref strong { font-family: HelveticaBoldCondensed; }
+
+#main { 
+	width: 1024px; 
+	height: 658px; 
+	background: #fff url(../images/logo-bg.png) no-repeat right bottom; 
+	overflow: hidden; 
+	position: relative; 
+}
+
+#content { 
+	width: 1024px; 
+	height: 658px;
+	position: relative;
+}
+
+.purple { 
+	color: #b1005d; 
+}
+
+sup { 
+	line-height: 0; 
+}
+
+#footer { 
+	position: absolute;
+	font-family:"HelveticaBoldCondensed";
+	font-weight:bold;
+	bottom: -9px;
+	left: 50px;
+	width: 650px;
+	font-size: 18px; 
+	color: #000; 
+}
+
+.bullets { padding: 0 0 0 10px;  margin-top: 5px; font-size: 14px; }
+.bullets li { padding-bottom: 8px; }
+.bullets li span { color: #000 !important; }
+
+#footer p { 
+	padding: 0; 
+	margin: 4px 0; 
+}
+
+h1 { 
+	margin: 0; 
+	padding: 0; 
+}
+
+h1 span { 
+	font-family:HelveticaNeue-Bold;
+	font-size: 28px; 
+	background: #b1005d url(../images/tab.png) no-repeat bottom right; 
+	color: #fff; 
+	padding: 20px 0 0 60px;
+	height: 35px;
+	line-height: 20px; 
+	display: block; 
+}
+.symbol { font-family: sans-serif !important;}
+#popup { background: #FFF; color: #000; overflow: hidden; position: relative;}
+
+.dots .dot { background: url(../images/LR-dots.png) no-repeat left top; float: left; height: 22px; margin: 0 15px 0 0; width: 22px;}
+	.dots>.active { background-position: -37px 0;}
+.btn-yellow-1 { background: url(../images/LR-btn-yellow.png) no-repeat left top; color: #a90056; font: 16px/19px "HelveticaBoldCondensed"; height: 41px; padding: 19px 5px 0 0;text-align: center; text-transform: uppercase; width: 163px;}
+.btn-yellow-2 { background: url(../images/LR-btn-yellow.png) no-repeat left top; color: #a90056; font: 16px/19px "HelveticaBoldCondensed"; height: 49px; padding: 10px 5px 0 0;text-align: center; text-transform: uppercase; width: 163px;}
+.btn-grey-1 {background: url(../images/LR-04-btn-grey.png) no-repeat left top; color: #636466; font: 16px/19px "HelveticaBoldCondensed"; height: 41px; padding: 19px 5px 0 0; text-align: center; text-transform: uppercase; width: 163px;}
+.btn-grey-2 {background: url(../images/LR-04-btn-grey.png) no-repeat left top; color: #636466; font: 16px/19px "HelveticaBoldCondensed"; height: 49px; padding: 10px 5px 0 0; text-align: center; text-transform: uppercase; width: 163px;}
+
+	.btn-grey-1 span, .btn-grey-2 span, .btn-yellow-1 span, .btn-yellow-2 span { text-transform: none;}
+
+/*-- slide 1 --*/
+.slide-1 #btn-1 { left: 60px; position: absolute; top: 130px;}
+.slide-1 #copy-1 { color: #000; font: 15px/18px "HelveticaLight"; left: 60px; position: absolute; top: 89px; line-height:22px; font-size:20px;}
+	.slide-1 #copy-1 p { margin: 0 0 10px; padding: 0 0 0 5px;}
+	.slide-1 #copy-1 sup { font-size: 70%;}
+	.slide-1 #copy-1 .first-char { margin: 0 0 0 -5px;}
+.slide-1 #graph-1 { background: url(../images/LR-01-graph-01.png) no-repeat left top; height: 469px; left: 305px; position: absolute; top: 82px; width: 702px; }
+	.slide-1 #copy-1 h2 {color:#b1005d; font-size:25px; font-family:"HelveticaBold"; text-shadow: rgba(0,0,0,0.29) 3px 3px 3px;}
+	.slide-1 #copy-1 .leftcol {width:440px; float:left; font-family:"HelveticaLight"; font-size:20px;}
+	.slide-1 #copy-1 .rightcol {width:481px; float:left; padding-left:42px; font-family:"HelveticaLight";}
+	.slide-1 strong {font-family:"HelveticaBold"}
+	
+	.slide-1 #copy-1 .textblock {background: url(../images/swoop.png) no-repeat left top;  padding:0 0 0 27px; font-size:15px; line-height:15px;}
+	.slide-1 #copy-1 .textblock2 {background: url(../images/swoop.png) no-repeat left top;  padding:0 0 0 27px; font-size:18px; line-height:20px;}
+	.slide-1 #copy-1 .textblock span {color:#b1005d;}
+
+	/*-- slide 1 popup 1 --*/
+	.popup-1-1 #popup { height: 600px; width: 906px;}
+	.popup-1-1 #popup-content { padding: 22px 0 0 48px;}
+	.popup-1-1 ul { color: #a90056; font: 17px/18px "HelveticaBold"; margin: 0 0 14px;}
+		.popup-1-1 li { margin-bottom: 8px;}
+		.popup-1-1 li span { color: #000;}
+	.popup-1-1 #graph-1 { background: url(../images/lr-01-popup-01-graph-01.png) no-repeat left top; color: #000; font: 15px/1.333 "HelveticaLight"; margin: 0 0 0 62px; padding: 402px 0 0; width: 705px;}	
+
+
+.btn-yellow-1 { 
+	position: absolute;
+	bottom: 70px;
+	left: 60px;
+}
+
+#box { 
+	border: 1px solid #000;
+	-webkit-border-radius:8px;
+	padding: 0px 20px;
+	margin: 10px 20px 30px;
+	font-size: 15px;
+	line-height: 15px;
+	font-family: HelveticaBold;
+}
+
+#box ul { 
+	padding: 0 0 0 14px;
+	margin: 0; 
+}
+
+#box strong, #safety strong { 
+	display: block;
+	padding-bottom: 5px;
+	font-family: HelveticaBold; 
+}
+
+#safety {
+	font-size: 15px;
+	line-height: 15px;
+	padding: 20px 60px; 
+}
+
+.saisi01 h2 { margin-bottom: 15px; margin-top: 0; }
+.saisi01 #footer p { position: relative; top: -7px; }

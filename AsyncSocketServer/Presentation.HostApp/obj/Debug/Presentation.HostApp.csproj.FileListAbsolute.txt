@@ -1,0 +1,89 @@
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\Presentation.HostApp.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\Presentation.HostApp.pdb
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\EntityFramework.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\Intouch.Data.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\Intouch.Domain.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.DataAccess.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.Domain.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\NHibernate.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\Intouch.Utilities.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\log4net.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\Intouch.Data.pdb
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\Intouch.Domain.pdb
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.DataAccess.pdb
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.Domain.pdb
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\EntityFramework.xml
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\Intouch.Utilities.pdb
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\obj\Debug\ResolveAssemblyReference.cache
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\obj\Debug\Presentation.HostApp.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\obj\Debug\Presentation.HostApp.pdb
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\Iesi.Collections.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\Antlr3.Runtime.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\Presentation.HostApp\bin\Remotion.Data.Linq.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\Presentation.HostApp.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\Presentation.HostApp.pdb
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\EntityFramework.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\Intouch.Data.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\Intouch.Domain.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.DataAccess.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.Domain.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\NHibernate.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\Intouch.Utilities.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\Iesi.Collections.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\Antlr3.Runtime.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\Remotion.Data.Linq.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\log4net.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\Intouch.Data.pdb
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\Intouch.Domain.pdb
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.DataAccess.pdb
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.Domain.pdb
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\EntityFramework.xml
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\bin\Intouch.Utilities.pdb
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\obj\Debug\ResolveAssemblyReference.cache
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\obj\Debug\Presentation.HostApp.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\Presentation.HostApp\obj\Debug\Presentation.HostApp.pdb
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\Presentation.HostApp\obj\Debug\ResolveAssemblyReference.cache
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\Presentation.HostApp\obj\Debug\Presentation.HostApp.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\Presentation.HostApp\obj\Debug\Presentation.HostApp.pdb
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\Presentation.HostApp.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\Presentation.HostApp.pdb
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\EntityFramework.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.DataAccess.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.Domain.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\NHibernate.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\FluentNHibernate.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\Iesi.Collections.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.DataAccess.pdb
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.Domain.pdb
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\EntityFramework.xml
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\Presentation.HostApp.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\Presentation.HostApp.pdb
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\EntityFramework.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.DataAccess.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.Domain.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\NHibernate.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\FluentNHibernate.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\Iesi.Collections.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.DataAccess.pdb
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.Domain.pdb
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\EntityFramework.xml
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\obj\Debug\Presentation.HostApp.csprojResolveAssemblyReference.cache
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\obj\Debug\Presentation.HostApp.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\obj\Debug\Presentation.HostApp.pdb
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\Presentation.HostApp.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\Presentation.HostApp.pdb
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\EntityFramework.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\Ionic.Zip.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\log4net.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\Newtonsoft.Json.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.DataAccess.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.Domain.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\NHibernate.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\FluentNHibernate.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\Iesi.Collections.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.DataAccess.pdb
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\PresentationApp.Domain.pdb
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\bin\EntityFramework.xml
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\obj\Debug\ResolveAssemblyReference.cache
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\obj\Debug\Presentation.HostApp.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\Presentation.HostApp\obj\Debug\Presentation.HostApp.pdb

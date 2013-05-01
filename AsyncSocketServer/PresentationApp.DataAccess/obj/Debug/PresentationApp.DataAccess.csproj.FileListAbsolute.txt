@@ -1,0 +1,89 @@
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.DataAccess.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.DataAccess.pdb
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Castle.Core.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Castle.DynamicProxy2.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Iesi.Collections.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Intouch.Data.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Intouch.Domain.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Intouch.Utilities.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\NHibernate.ByteCode.Castle.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\NHibernate.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.Domain.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\System.Linq.Dynamic.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\log4net.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Antlr3.Runtime.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Remotion.Data.Linq.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Intouch.Data.pdb
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Intouch.Domain.pdb
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Intouch.Utilities.pdb
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.Domain.pdb
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\obj\Debug\ResolveAssemblyReference.cache
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\obj\Debug\PresentationApp.DataAccess.dll
+D:\CC SVN\cc-presentpro\branches\V2.0\AsyncSocketServer\PresentationApp.DataAccess\obj\Debug\PresentationApp.DataAccess.pdb
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.DataAccess.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.DataAccess.pdb
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Castle.Core.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Castle.DynamicProxy2.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Iesi.Collections.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Intouch.Data.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Intouch.Domain.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Intouch.Utilities.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\NHibernate.ByteCode.Castle.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\NHibernate.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.Domain.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\System.Linq.Dynamic.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\log4net.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Antlr3.Runtime.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Remotion.Data.Linq.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Intouch.Data.pdb
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Intouch.Domain.pdb
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Intouch.Utilities.pdb
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.Domain.pdb
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\obj\Debug\ResolveAssemblyReference.cache
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\obj\Debug\PresentationApp.DataAccess.dll
+D:\CC SVN\cc-presentpro\branches\V3.0\AsyncSocketServer\PresentationApp.DataAccess\obj\Debug\PresentationApp.DataAccess.pdb
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\obj\Debug\ResolveAssemblyReference.cache
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\obj\Debug\PresentationApp.DataAccess.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.DataAccess.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.DataAccess.pdb
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Castle.Core.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Castle.DynamicProxy2.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\FluentNHibernate.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Iesi.Collections.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\NHibernate.ByteCode.Castle.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\NHibernate.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.Domain.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\System.Linq.Dynamic.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\log4net.dll
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.Domain.pdb
+D:\cc projects\presentation app\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\obj\Debug\PresentationApp.DataAccess.pdb
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.DataAccess.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.DataAccess.pdb
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Castle.Core.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Castle.DynamicProxy2.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\FluentNHibernate.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Iesi.Collections.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\NHibernate.ByteCode.Castle.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\NHibernate.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.Domain.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\System.Linq.Dynamic.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\log4net.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.Domain.pdb
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\obj\Debug\PresentationApp.DataAccess.csprojResolveAssemblyReference.cache
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\obj\Debug\PresentationApp.DataAccess.dll
+D:\CC Projects\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\obj\Debug\PresentationApp.DataAccess.pdb
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.DataAccess.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.DataAccess.pdb
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Castle.Core.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Castle.DynamicProxy2.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\FluentNHibernate.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\Iesi.Collections.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\log4net.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\NHibernate.ByteCode.Castle.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\NHibernate.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.Domain.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\System.Linq.Dynamic.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\bin\Debug\PresentationApp.Domain.pdb
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\obj\Debug\ResolveAssemblyReference.cache
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\obj\Debug\PresentationApp.DataAccess.dll
+D:\CC SVN\cc-presentpro\branches\V4.0\AsyncSocketServer\PresentationApp.DataAccess\obj\Debug\PresentationApp.DataAccess.pdb

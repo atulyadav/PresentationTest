@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Connected";
+}
+
+<script type="text/javascript">
+    $(window).load(function () {
+        //alert("window load occurred!");
+        ConnectToServer();
+    });
+</script>
+
+<link href="@Url.Content("~/Content/CSS/PresentationApp.css")" rel="stylesheet" type="text/css" />
+
+<div id="title">PresentationApp</div>
+
+<div id="container"> 
+    <div id="left" > 
+        <select name="ColorCode" id="ColorCode">
+            <option value="Green">Green</option>	
+            <option value="Red">Red</option>
+            <option value="Orange">Orange</option> 
+        </select>
+        <input type="button" value="Change Color of Client" onclick="SendChangeColor()" />    
+    </div> 
+    <div id="center" >         
+        <div id="target2">target2</div>        
+        <textarea id="textArea" rows="4" cols="50" onkeyup="sendTextAreaValue()" onselect="sendSelectedText(this)"></textarea>
+        <input type="button" id="sendDiv" value="clickToSendDiv" onclick="sendInnerHtml()"/>
+        <div id="target3" >target3</div>
+    </div> 
+    <div id="right"> 
+        <div class="status">
+            <div id="userStatus">User Status</div>
+            <div id="statusDiv" ></div>
+        </div>    
+    </div> 
+</div> 

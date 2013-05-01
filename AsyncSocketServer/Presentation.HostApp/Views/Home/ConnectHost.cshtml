@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = "ConnectHost";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ConnectHost</title>
+</head>
+<body>
+    @{
+        foreach (var url in ViewBag.HostUrls)
+        {
+        <p>
+            connect as Host :<a href="@Url.Content("~/Home/Connected?guid=" + url.PresenterKey)" target="_blank">Host
+                : @url.Presenter.Name </a>
+        </p>
+        }
+    }
+    @{
+        foreach (var url in ViewBag.ClientUrls)
+        {
+        <p>
+            connect as client :<a href="@Url.Content("~/Home/Connected?guid=" + url.PresentationKey)" target="_blank">client
+                : @url.Users.Name</a></p>
+        }
+    }
+</body>
+</html>

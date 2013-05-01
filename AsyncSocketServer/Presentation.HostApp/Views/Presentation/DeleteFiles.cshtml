@@ -1,0 +1,70 @@
+﻿@{
+    Layout = "~/Views/Shared/_EditPresentationNav.cshtml";
+    ViewBag.Title = "DeleteFiles";
+}
+
+
+
+@model IEnumerable<PresentationApp.DataAccess.Models.Presentation.DeleteFilesListItem>
+<script type="text/javascript">
+    function deleteFileFunction(id, pn, fl) {
+        if (confirm('Are you sure you want to delete this file?')) {
+            $.ajax({
+                type: "POST",
+                url: "/Presentation/DeleteFile",
+                data: "presentationId=" + id + '&presentationName=' + pn + '&fileLocation=' + fl,
+                success: function (data) {
+                    window.location = data.redirectTo;
+                },
+                error: function () {
+                }
+            });
+        }
+
+
+    }
+
+</script>
+<form action="/Presentation/DeleteFiles" method="post">
+@if (@Model != null)
+{
+    <h4>
+        Delete Files for presentation : @ViewBag.PresentationName</h4>
+
+    <div>
+        <input type="hidden" value="@ViewBag.PresentationName" name="presentationName" id="presentationName" />
+        <input type="hidden" value="@ViewBag.PresentationId" name="presentationId" id="presentationId" />
+        <input type="hidden" value="2" name="flag" id="flag" />
+        <br />
+        Please select the files which you want to delete.
+        <br />
+        <br />
+        <div style="width: auto">
+            @*@Html.ListBox("list", new SelectList(@ViewBag.List, "FileLocation", "FileName"), new { id = "list", size = "5" })*@
+            <table class="table table-hover table-bordered" style="width: auto">
+                @foreach (var item in @Model)
+                {
+                    <tr>
+                        <td>@item.FileName
+
+                        </td>
+                        <td>
+                            @*<a href="/Presentation/DeleteFile?presentationId=@ViewBag.PresentationId&presentationName=@ViewBag.PresentationName&fileLocation=@item.FileLocation" >Delete</a>*@
+                            <a href="#"  onclick="deleteFileFunction(@ViewBag.PresentationId,'@ViewBag.PresentationName','@item.FileLocation')">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+
+@* <input type="submit" value="Submit" class="btn" id="submitList" onclick="return confirm('Are you sure you want to delete the selected files?');" /> *@
+}
+</form>
+
+<p class="control-group" style="color: Red">
+    @if(@TempData["Message"] != null) {
+    <script type="text/javascript">        alert('@TempData["Message"]');</script>
+        
+    }
+</p>

@@ -1,0 +1,118 @@
+@import url('fonts.css');
+@import url('animate.css');
+@import url('global.css');
+
+/* Module lc css   */
+.lc.slide-10 {}
+.lc.slide-10 #container{ background:url(../images/map-bkg.jpg) no-repeat; height:677px;}
+.lc.slide-10 #container header{ padding:13px 40px;}
+
+.lc.slide-10 #container #wrapper{ width:950px; margin:10px auto;}
+.lc.slide-10 #container .tabs{z-index:1;width:318px; height:35px; float:right; margin:-39px -6px 0 0;}
+
+.lc.slide-10 #container .tabs div{width:141px; height:33px; margin-right:2px; background:#4e81af;  text-align:center; float: left; font: 15px/40px "HelveticaBold"; border-radius:6px 6px 0px 0px; padding:0 7px 0 7px; color:#ffffff; opacity:0.5;}
+
+.lc.slide-10 #container .tabs div:hover{ background:-#4e81af; color:#fff; height: 33px;}
+.lc.slide-10 #container .tabs div.active{background:#67b3ff; color:#fff; height: 33px;opacity:1;}
+
+.lc.slide-10 #container #wrapper .tab-content{ z-index:2;width:945px;float:left; margin-top:10px; min-height:452px;background:#ffffff;-webkit-box-shadow:inset 0 0 6px #bcbbba;}
+
+
+.lc.slide-10 #container #wrapper .tab-content #copy_1{ position:absolute; top:119px; left:38px;background:#fff;}
+.lc.slide-10 #container #wrapper .tab-content #copy_1 section #slide1a img{ margin:-10px 0 0 30px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_1 section #slide1a h2 {font:24px/24px 'HelveticaBold'; color:#003767; margin:20px 0 2px 20px; padding:0;}
+
+.lc.slide-10 #container #wrapper .tab-content #copy_1 section #slide1a .box {font:18px/22px 'HelveticaBold';color:#000000;background:#bcddfe;padding:10px;margin-top:10px; width:923px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_1 section #slide2b { display:none;}
+.lc.slide-10 #container #wrapper .tab-content #copy_1 section #slide2b img{ margin:-10px 0 0 30px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_1 section #slide2b h2 {font:24px/24px 'HelveticaBold'; color:#003767; margin:20px 0 2px 20px; padding:0; }
+.lc.slide-10 #container #wrapper .tab-content #copy_1 section #slide2b h2 sup{ line-height: 0; font-size: 60% !important;}
+.lc.slide-10 #container #wrapper .tab-content #copy_1 section .box {font:18px/22px 'HelveticaBold';color:#000000;background:#bcddfe;padding:10px;margin-top:10px; width:923px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_1 section .sourceBox{font: 12px/14px HelveticaNeue; position:absolute; top:290px; left:310px;width:320px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_1 section .sourceBox span{font: 12px/14px "HelveticaBold";}
+
+.lc.slide-10 #container #wrapper .tab-content #copy_1 #toggleBtn-frame {
+	height: 80px;
+	position: absolute;
+	right:23px;
+	top:146px;
+	width:80px;
+	z-index: 2000;
+}
+.lc.slide-10 #container #wrapper .tab-content #copy_1 #toggleBtn { position:absolute; top:76px; left: 200px;   }
+.lc.slide-10 #container #wrapper .tab-content #copy_1 #toggleBtn {  -webkit-transform: rotate(0deg);  -webkit-transition: all 3s; }
+.lc.slide-10 #container #wrapper .tab-content #copy_1 #toggleBtn.active { -webkit-transform: rotate(-1080deg); }
+
+
+.lc.slide-10 #container #wrapper .tab-content #copy_1 button{
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#004077), color-stop(100%,#003059));
+	font: 16px/18px "HelveticaBold";
+	color: white;
+	-webkit-border-radius: 5px;
+	height: 34px;
+	padding:9px;
+	border: 0px;
+	top:318px;
+	right:735px;
+	position:absolute;
+	width: 183px;
+}
+
+
+.lc.slide-10 #container #wrapper .tab-content #copy_2{ position:absolute; top:119px; left:38px;}
+.
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .stateTitle{ position:absolute; top:20px; left:850px;font:18px/19px 'HelveticaBold';}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .box {font:18px/22px 'HelveticaBold';color:#000000;background:#bcddfe;padding:10px;margin-top:10px; width:923px;position:absolute; top:359px; left:0px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .sourceBox{font: 12px/14px HelveticaNeue; position:absolute; top:290px; left:310px;width:320px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .sourceBox span{font: 12px/14px "HelveticaBold";}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide1 .pad{ margin:30px 0 0px 30px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide1 .chart{position:absolute; top:30px; left:520px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide1 h2 {font:24px/24px 'HelveticaBold'; color:#003767; margin:20px 0 2px 20px; padding:0;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide1 .centerCon{position:absolute; top:80px; left:300px;font:18px/25px 'HelveticaBold';width:320px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide1 .centerCon .ytext{color:#ffa126;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide1 .centerCon .smText{font: 12px/14px HelveticaNeue;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide1 .nth{ position:absolute; top:320px; left:770px;font:15px/16px 'HelveticaBold';}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide2 { display:none;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide2 .centerCon{position:absolute; top:80px; left:300px;font:18px/25px 'HelveticaBold';width:320px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide2 .centerCon .ytext{color:#ffa126;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide2 .centerCon .smText{font: 12px/14px HelveticaNeue;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide2 .nth{ position:absolute; top:320px; left:770px;font:15px/16px 'HelveticaBold';}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide2 .pad{ margin:30px 0 60px 30px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide2 .chart{position:absolute; top:30px; left:520px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide2 h2 {font:24px/24px 'HelveticaBold'; color:#003767; margin:20px 0 2px 20px; padding:0; }
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .slide2 h2 sup{ line-height: 0; font-size: 60% !important;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section .stateTitle{ position:absolute; top:20px; left:850px;font:18px/19px 'HelveticaBold';}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section #stCT{left:800px;width:200px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section #stDC{left:750px;width:200px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section #stMN{left:830px;width:200px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section #stMS{left:830px;width:200px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section #stNH{left:790px;width:200px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section #stNJ{left:810px;width:200px;}
+.lc.slide-10 #container #wrapper .tab-content #copy_2 section #stOK{left:820px;width:200px;}
+
+
+.lc.slide-10 #container #wrapper .tab-content #copy_2 #toggleBtn-frame {height: 80px; position:absolute; top:146px; left: 840px; width:80px; z-index: 2000; }
+.lc.slide-10 #container #wrapper .tab-content #copy_2 #toggleBtn {  -webkit-transform: rotate(0deg);  -webkit-transition: all 3s; }
+.lc.slide-10 #container #wrapper .tab-content #copy_2 #toggleBtn.active { -webkit-transform: rotate(-1080deg); }
+
+
+.lc.slide-10 #container #wrapper .tab-content #copy_2 button{
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#004077), color-stop(100%,#003059));
+	font: 16px/18px "HelveticaBold";
+	color: white;
+	-webkit-border-radius: 10px;
+	height: 34px;
+	padding:9px;
+	border: 0px;
+	top:318px;
+	left:26px;
+	position:absolute;
+	width: 183px;
+}
+.lc.slide-10 #container footer span {left:20px}
+
+
+
+.lc.slide-10 #container footer span {left:20px}
+
+.lc.slide-10 #container footer .logo {position:absolute; right:35px; top:5px;}

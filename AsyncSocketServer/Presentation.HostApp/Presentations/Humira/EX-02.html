@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="css/ex.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="js/Common.js"></script>
+    <script type="text/javascript" charset="utf-8">
+		
+		//delay = 500;
+			//function active() {		
+			//timeline.style.opacity = 0;
+			//arrow.style.opacity = 0;
+			//timelineactive.style.opacity = 1;
+			//arrowactive.style.opacity = 1;
+			//safety.style.opacity = 1;
+			}
+		
+	</script>
+	<style type="text/css">
+		#safety { z-index:100; }
+		#safety p { z-index:100; }
+		.slide-2 footer { width: 900px;}
+		.slide-2 header { width:900px;}
+		
+	</style> 
+
+
+
+	<script type="text/javascript" charset="utf-8">
+			function tostopthecrashing() {
+
+                        if ( document.body.className == 'slide-2 loadedonce') {
+
+                                location.reload(true);
+
+                        } else { document.body.className += ' loadedonce' }
+			
+		};
+	</script>
+
+
+
+    
+</head>
+
+
+<body class="slide-2" onload="tostopthecrashing()">
+
+<div id="content" onclick="document.getElementById('panel1').className +=' active';makecall('OmnitureTracking', Array('ButtonClick','Arrow'));">
+<div class="collage"></div>
+
+<header>
+KALETRA has more than 12 years of experience in clinical practice<br>
+<strong>FDA approved in September 2000</strong>
+
+</header>
+
+<div class="logo"></div>
+
+<section>
+
+<article>
+	<div class="timelinewrap">
+
+        <div class="timelineactive" id="panel1">
+        	 <div id="timeline" class="timeline"></div>
+       		 <div id="arrow" class="arrow"></div>
+            <div id="column1"><img src="images/ex-02-col1.png" width="116" height="300"></div>
+            <div id="column2"><img src="images/ex-02-col2.png" width="93" height="300"></div>
+            <div id="column3"><img src="images/ex-02-col3.png" width="232" height="300"></div>
+            <div id="column4"><img src="images/ex-02-col4.png" width="92" height="300"></div>
+            <div id="column5"><img src="images/ex-02-col5.png" width="135" height="300"></div>
+            <div id="column6"><img src="images/ex-02-col6.png" width="88" height="310"></div>
+            <div id="column7"><img src="images/ex-02-col7.png" width="154" height="310"></div>
+        
+        </div>
+       <!-- <div id="arrowactive" class="arrowactive">
+        
+onClick="active()" style="z-index:1;"
+        
+        </div>-->
+    
+    
+    </div>
+
+<div id="safety" >
+<p><strong>Safety Considerations</strong></p>
+<p class="bullet">Do not administer once-daily KALETRA in adult patients with three or more lopinavir resistance–associated substitutions;<br>in combination with efavirenz, nelfinavir, carbamazepine, phenobarbital or phenytoin; or in pediatric patients.</p>
+<div class="smtextwrap">
+<p class="smtext">*IMS Health. IMS expressly reserves all rights, including rights of copying, distribution, and republication.
+<br><span>Tablets shown are not actual size or color.</span></p>
+</div>
+</div>
+</article>
+
+</section>
+
+
+<footer>Please click buttons above for Indication and Important Safety Information about KALETRA.</footer>
+
+
+</div>
+</body>
+</html>

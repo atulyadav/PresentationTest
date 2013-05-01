@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" href="css/ka.css" type="text/css">
+		<link rel="stylesheet" href="css/animate.css" type="text/css">
+		<script type="text/javascript" src="js/base.js">
+</script>
+		<script type="text/javascript" src="js/Common.js">
+</script>
+		<script type="text/javascript" charset="utf-8">
+
+		mask('#patienttable')
+
+		var ANIMATION = [
+			mask('.patientinfo'),
+			stagger('tr')
+		];
+
+		</script>
+	</head>
+	<body class="slide-6">
+		<div id="main">
+			<div id="content">
+				<div class="dkblueoverlay"></div>
+				<div id="logo">
+					<img src="images/whtAbbott_logo.png" width="150" height="42" alt="Abbott">
+				</div>
+				<div id="headername">
+					Maria
+				</div>
+				<div class="patientinfo">
+					<table cellpadding="0" cellspacing="0" id="patienttable">
+						<tr>
+							<td class="head" colspan="2" valign="middle">
+								Maria's Lab Values
+							</td>
+						</tr>
+						<tr>
+							<td class="whborder" width="410">
+								HIV-1 RNA (log<sub>10</sub> copies/mL)
+							</td>
+							<td class="whborder" align="left" width="80">
+								4.85
+							</td>
+						</tr>
+						<tr>
+							<td class="whborder">
+								CD4+ T-cell (cells/mm<sup>3</sup>)
+							</td>
+							<td class="whborder" align="left">
+								209.0
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Lipids (mg/dL)
+							</td>
+							<td>
+								&nbsp;
+							</td>
+						</tr>
+						<tr>
+							<td class="lipids">
+								Total cholesterol
+							</td>
+							<td align="left">
+								168
+							</td>
+						</tr>
+						<tr>
+							<td class="lipids">
+								Triglycerides
+							</td>
+							<td align="left">
+								121
+							</td>
+						</tr>
+						<tr>
+							<td class="lipids">
+								LDL-C
+							</td>
+							<td align="left">
+								98
+							</td>
+						</tr>
+						<tr>
+							<td class="lipids">
+								HDL-C
+							</td>
+							<td align="left">
+								46
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="maria">
+					<img src="images/Maria_1000px.png" width="322" height="510" alt="Maria">
+				</div>
+				<div class="btns">
+					<div class="adultguide">
+						<a href="#"><img src="images/Button_NaiveAdultGuideline.png" width="128" height="39" alt="Naive Adult Guidelines" onclick="makecall('PopupMessageHTMLWithTopnav',Array('ka-05-popup-01','&lt;DIV align=\'left\'&gt;&lt;font color=\'white\' face=\'Helvetica\'&gt;&lt;p &gt;&lt;strong&gt;}}}}}}}}KALETRA{s status on the DHHS* Guidelines for ARV-Naive Adults.&lt;sup&gt;1,2&lt;/sup&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/font&gt;&lt;/DIV&gt;','790','670','10','0','605','340'));"></a>
+					</div>
+					<div class="periguide">
+						<a href="#"><img src="images/Button_PregnancyGuideline.png" width="129" height="39" alt="Perinatal Guidelines" onclick="makecall('PopupMessageHTMLWithTopnav',Array('ka-05-popup-02','&lt;DIV align=\'left\'&gt;&lt;font color=\'white\' face=\'Helvetica\'&gt;&lt;p &gt;&lt;strong&gt;}}}}}}}}}}}}}}}}}}}KALETRA{s status on the DHHS* Perinatal Guidelines&lt;sup&gt;1,3&lt;/sup&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/font&gt;&lt;/DIV&gt;','920','670','10','0','615','530'));"></a>
+					</div>
+				</div>
+				<div id="footer">
+					<p>
+						Fictional patient case.
+					</p>
+					<p>
+						Please click buttons above for indication<br>
+						and Important Safety Information about KALETRA.
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

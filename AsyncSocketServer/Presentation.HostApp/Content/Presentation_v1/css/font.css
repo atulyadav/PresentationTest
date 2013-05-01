@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@font-face {
+	font-family: 'HelveticaMediumCondensed';
+	src: local('☺'), url('../fonts/helveticaneueltpro-mdcn-webfont.svg#webfontj6y6keRY') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'HelveticaRoman';
+	src: local('☺'), url('../fonts/helveticaneueltpro-roman-webfont.svg#webfont6JuGpmcG') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'HelveticaMedium';
+	src: local('☺'), url('../fonts/helveticaneueltpro-md-webfont.svg#webfont947olrv7') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'HelveticaBold';
+	src: local('☺'), url('../fonts/helveticaneueltpro-bd-webfont.svg#webfontsC5OPmDU') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

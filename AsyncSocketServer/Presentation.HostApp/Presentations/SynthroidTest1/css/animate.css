@@ -1,0 +1,21 @@
+.animate {
+	-webkit-transition: all 1s;
+	-webkit-transform: scale(1);
+	opacity: 1;
+}
+
+.initialize {
+	-webkit-transition: none;
+	-webkit-transform: scale(0.5);
+	opacity: 0;
+}
+
+.animate-with-mask {
+	-webkit-transition: all 0.5s;
+	width: 500px;
+}
+
+.initialize-with-mask {
+	-webkit-transition: none;
+	width: 0px;
+}

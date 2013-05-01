@@ -1,0 +1,385 @@
+﻿/* reset css*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+{
+    display: block;
+}
+body
+{
+    line-height: 1;
+}
+ol, ul
+{
+    list-style: none;
+}
+blockquote, q
+{
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after
+{
+    content: '';
+    content: none;
+}
+table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*index css*/
+#container
+{
+    float: left;
+    width: 1024px;
+    height: 768px;
+    overflow: hidden;
+}
+.loadImg
+{
+    vertical-align: middle;
+    text-align: center; /*display:table-cell;*/
+    line-height: 650px;
+}
+#header
+{
+    float: left;
+    width: 1024px;
+    background: url(../images/header-bg.jpg) repeat;
+    height: 38px;
+    color: #fff;
+}
+
+#header .name
+{
+    font: 17px/17px 'HelveticaMediumCondensed' , Arial;
+    float: left;
+    margin: 11px 0 0 474px;
+}
+
+.logout
+{
+    font: 17px/17px 'HelveticaMediumCondensed' , Arial;
+    float: left;
+    margin: 10px 0 0 137px;
+}
+#slideSelectDiv
+{
+    float: left;
+    margin-left: -545px;
+}
+#content
+{
+    float: left;
+}
+#content img
+{
+    float: left;
+}
+.users
+{
+    float: left;
+    font: 14px/12px 'HelveticaMediumCondensed' ,arial; /*margin: 6px 0 0 290px;*/ /*margin: 5px 0px 0px 390px;*/
+    margin: -22px 0 0 844px;
+}
+.users span
+{
+    float: left; /*margin: 5px 0px 0px 390px;*/
+    background: #000;
+    border-radius: 10px;
+    padding: 9px 12px 7px 14px;
+}
+.users img
+{
+    float: left;
+    margin: 0px 9px 0px 0px;
+}
+.users:hover .user_list
+{
+    float: right;
+    z-index: 1;
+    position: absolute;
+    background: rgba(0,0,0,1);
+    margin: 29px 30px 0px 0px;
+    border-radius: 10px;
+    width: 128px;
+    padding: 0px 0px 9px 1px;
+}
+.user_list ul
+{
+    float: left;
+    margin: 15px 0px 0px 14px;
+}
+.user_list li
+{
+    list-style: none;
+    font: 12px/12px 'HelveticaRoman' , Arial;
+    margin: 0px 0px 6px 0px;
+}
+#chat_area span
+{
+    float: left;
+    background: url(../images/chat-header.png) no-repeat;
+    width: 198px;
+    height: 29px;
+}
+#chat_area
+{
+    float: left;
+}
+#chat_area div
+{
+    background: #ccc;
+    border: 1px solid #000;
+    float: left;
+    width: 196px;
+    height: 206px;
+    border-radius: 10px 0px 0px 10px;
+}
+.text div
+{
+    height: 20px !important;
+    border: 0px !important;
+}
+#chat_area span img
+{
+    float: right;
+    margin: 11px 7px 0px 0px;
+}
+#chat_area span img:nth-of-type(2)
+{
+    margin: 19px 7px 0px 0px;
+}
+#chat_area p
+{
+    font: 12px/12px 'HelveticaRoman' , Arial;
+    color: #000000;
+    margin: 0px 0px 9px 0px;
+    max-width: 165px;
+    word-wrap: break-word;
+}
+#chat_area strong
+{
+    font: 12px/12px 'HelveticaBold' , Arial;
+}
+#chat_area .user1
+{
+    color: #000;
+}
+#chat_area .user2
+{
+    color: #028dee;
+}
+#chat_area .user3
+{
+    color: #34a303;
+}
+#chat_area .text
+{
+    border: 0px solid #9C9B9B;
+    background: none;
+    width: 174px;
+    height: 26px;
+    margin: 0px 0px 0px 10px;
+    border-radius: 0px;
+}
+#chat_area .chatters
+{
+    float: left;
+    padding: 21px 0px 0px 12px;
+    height: 146px;
+    width: 184px;
+    overflow: auto;
+    border: 0px;
+}
+#chat_input
+{
+    width: 162px;
+}
+
+footer#slidein
+{
+    z-index: 100;
+    position: absolute;
+    -webkit-transition: left 0.5s linear;
+    -moz-transition: left 0.5s linear;
+    -ms-transition: left 0.5s linear;
+    -o-transition: left 0.5s linear;
+}
+footer#slidein #chat
+{
+    float: left;
+    background: #ccc;
+    border-radius: 10px 0px 0px 10px;
+    padding: 5px 1px 3px 7px;
+}
+
+#slidein.active
+{
+    -webkit-transition: left 0.5s linear;
+    -moz-transition: left 0.5s linear;
+    -ms-transition: left 0.5s linear;
+    -o-transition: left 0.5s linear;
+    left: 795px;
+}
+
+/* saf3+, chrome1+ */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+    .users
+    {
+        margin: -15px 0px 0px 314px;
+    }
+    #header .name
+    {
+        margin: 14px 0 0 474px;
+    }
+    #chat_area
+    {
+    }
+    .users
+    {
+        font: 16px/16px 'HelveticaMediumCondensed' , arial;
+    }
+    .users span
+    {
+        padding: 7px 12px 3px 14px;
+    }
+    footer#slidein
+    {
+    }
+    #chat_area
+    {
+    }
+    footer#slidein #chat
+    {
+        position: relative;
+        top: 160px;
+    }
+    footer#slidein
+    {
+        top: 451px;
+        left: 992px;
+        width: 230px;
+        height: 206px;
+    }
+    #header .logout
+    {
+        font: 17px/17px 'HelveticaMediumCondensed' , Arial;
+        float: left;
+        margin: 11px 0 0 184px;
+    }
+}
+
+/*chrome only*/
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+    #chat_area
+    {
+    }
+    footer#slidein #chat
+    {
+        position: relative;
+        top: 160px;
+    }
+    footer#slidein
+    {
+        top: 467px;
+        left: 993px;
+        width: 230px;
+        height: 206px;
+    }
+    #container
+    {
+        position: absolute;
+    }
+}
+
+/*login */
+.login
+{
+    background: url(../images/login-bg.jpg) no-repeat;
+}
+.login section
+{
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,240,240,1) 25%, rgba(227,227,227,1) 77%, rgba(225,225,225,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(25%,rgba(240,240,240,1)), color-stop(77%,rgba(227,227,227,1)), color-stop(100%,rgba(225,225,225,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 25%,rgba(227,227,227,1) 77%,rgba(225,225,225,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 25%,rgba(227,227,227,1) 77%,rgba(225,225,225,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 25%,rgba(227,227,227,1) 77%,rgba(225,225,225,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 25%,rgba(227,227,227,1) 77%,rgba(225,225,225,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e1e1',GradientType=0 ); /* IE6-9 */
+    float: left;
+    margin: 227px 0px 0px 264px;
+    width: 435px;
+    height: 343px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -o-border-radius: 7px;
+    -ms-border-radius: 7px;
+    border-radius: 7px;
+    border: 1px solid #097eb8;
+}
+.login section img
+{
+    float: left;
+    margin: -9px 0px 0px 114px;
+}
+.login div
+{
+    background: url(../images/login-img2.png) no-repeat;
+    border: 0px;
+    float: left;
+    margin: 14px 0px 0px 40px;
+    width: 361px;
+    height: 69px;
+}
+.login input
+{
+    border: 0px;
+    margin: 3px 0px 0px 5px;
+    width: 349px;
+    height: 31px;
+}
+.login label
+{
+    font: 20px/20px 'Arial';
+    color: #282828;
+    width: 370px;
+    float: left;
+    margin: 11px 0px 0px 43px;
+}
+.login label:nth-of-type(2)
+{
+    margin: -10px 0px 0px 43px;
+}
+.login span
+{
+    background: url(../images/login-img3.png) no-repeat;
+    width: 167px;
+    height: 55px;
+    border: 0px;
+    float: left;
+    margin: 7px 0px 0px 135px;
+    padding: 0px 0px 0px 0px;
+}
+.login button
+{
+    background: none;
+    border: 0px;
+    font: bold 20px/20px 'Arial';
+    color: #282828;
+    width: 153px;
+    height: 35px;
+    padding: 0px 0px 0px 0px;
+}

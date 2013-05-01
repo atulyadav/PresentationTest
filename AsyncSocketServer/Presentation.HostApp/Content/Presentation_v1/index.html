@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>App Slider</title>
+<link type="text/css" href="css/font.css" rel="stylesheet" />
+<link type="text/css" href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+<div id="container">
+	<img src="images/1.jpg" width="1024" height="767" style="position:absolute; z-index:2; opacity:0.3; display:none;"/>
+    <div id="header">
+        <div class="name">
+        	APP SLIDER
+        </div>
+            <div  class="users">
+                <span><img src="images/user.png" width="15" height="12" /> Users Online</span>
+                <div class="user_list">
+            	<ul>
+                <li>Ashwin Kumar</li>
+                <li>Delia Ferns</li>
+                <li>Hilario Goes</li>
+                <li>Gurudatta Patekar</li>
+                <li>Atelia Gomes</li>
+                <li>Akbar Kadri</li>
+                <li>Loyce Dias</li>
+                <li>Rohit Rahul</li>
+                <li>Anuja Joydeep</li>
+                <li>Akshay Naik</li>
+                <li>Swarupa Venglekar</li>
+                <li>Tushar Venglekar</li>
+            </ul>
+           	</div>
+            </div>
+            
+        </div>
+    <div class="content">
+    	<img src="images/content.jpg" width="1024" height="729" /> 
+    </div>
+    <footer id="slidein" onclick="slideout();">
+        	<div id="chat">
+       	    	<img src="images/chat.png" width="23" height="25" />
+            </div>
+            <div id="chat_area">
+                    	
+                    <div>
+                    <div class="chatters">
+                        <p class="user1"><strong>Me:</strong> hello</p>
+                        <p class="user2"><strong>Guru:</strong> hi</p>
+                        <p class="user3"><strong>Hilario:</strong> aunty</p>
+                        <p class="user1"><strong>Me:</strong> uncle</p>
+                    </div>
+                    <div class="text"></div>
+                    </div>
+                </div>
+    </footer>
+</div>
+<script type="text/javascript">
+	function slideout(){
+		document.getElementById('slidein').classList.toggle('active');	
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>_ShowImage</title>
+</head>
+<body>
+    <div>
+        <!--<p>url = ViewBag.slideNum</p>-->
+        <!--<img src="(ViewBag.slideNum + "honda1.jpg")" height="200px" width="200px"/>-->
+        <img src="@Url.Content("~/Content/Images/honda/honda" +@ViewBag.slideNum + ".jpg")" height="200px" width="200px"/>
+    </div>
+</body>
+</html>

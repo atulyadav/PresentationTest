@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_EditPresentationNav.cshtml";
+    ViewBag.Title = "Add Files to Presentation";
+}
+<script type="text/javascript">
+    //list reorder
+    function moveUpItem() {
+        $('#list option:selected').each(function () {
+            $(this).insertBefore($(this).prev());
+        });
+    }
+
+    function moveDownItem() {
+        $('#list option:selected').each(function () {
+            $(this).insertAfter($(this).next());
+        });
+    }
+
+</script>
+<form action="/Presentation/AddFiles" method="post" enctype="multipart/form-data">
+<h4>
+    Upload File for presentation: @ViewBag.PresentationName
+</h4>
+
+<p>Please avoid using "_deleted" in the filename.</p><br />
+<input type="hidden" value="@ViewBag.PresentationId" name="presentationId" id="presentationId" />
+<input type="hidden" value="@ViewBag.PresentationName" name="presentationName" id="presentationName" />
+<div class="fileupload fileupload-new" data-provides="fileupload">
+    <span class="btn btn-file"><span class="fileupload-new">Select file
+        <input type="file" id="zipFile" name="zipFile" />
+    </span></span>
+    <br />
+    <br />
+    <input type="submit" value="Upload" class="btn" id="uploadBtn" />
+</div>
+</form>
+<form action="/Presentation/SubmitList" method="post">
+@if (@ViewBag.List != null)
+{
+    @Html.Partial("_ReorderFiles")
+}
+</form>
+<p class="control-group" style="color: Red">
+    @if (@TempData["Message"] != null)
+    {
+        <script type="text/javascript">            alert('@TempData["Message"]');</script>
+
+    }
+</p>

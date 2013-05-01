@@ -1,0 +1,81 @@
+﻿<link href="../../../Content/css/font.css" rel="stylesheet" type="text/css" />
+<link href="../../../Content/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+    function slideout() {
+        document.getElementById('online_users').className = "active";
+        document.getElementById('users1').className = "users inactive";
+    }
+    function slidein() {
+        document.getElementById('online_users').className = "inactive";
+        document.getElementById('users1').className = "users";
+    }
+</script>
+<div id="container">
+    <img src="../../../Content/images/1.jpg" width="1024" height="767" style="position: absolute;
+        z-index: 2; opacity: 0.3; display: none;" />
+    <div id="header">
+        <div class="name">
+            APP SLIDER
+        </div>
+        <div id="slidein">
+            <div class="users" onclick="slideout();" id="users1">
+                <div class="left">
+                    <img src="../../../Content/images/user-left.png" width="5" height="29" />
+                </div>
+                <div class="mid">
+                    <img src="../../../Content/images/user.png" width="15" height="12" />
+                    Users
+                </div>
+            </div>
+            <div id="online_users">
+                <div class="users" onclick="slidein();">
+                    <div class="left">
+                        <img src="../../../Content/images/user-left.png" width="5" height="29" />
+                    </div>
+                    <div class="mid">
+                        <img src="../../../Content/images/user.png" width="15" height="12" />
+                    </div>
+                </div>
+                <div class="panel">
+                    <b>Users Online</b>
+                    <ul>
+                        <li>Ashwin Kumar</li>
+                        <li>Delia Ferns</li>
+                        <li>Hilario Goes</li>
+                        <li>Gurudatta Patekar</li>
+                        <li>Atelia Gomes</li>
+                        <li>Akbar Kadri</li>
+                        <li>Loyce Dias</li>
+                        <li>Rohit Rahul</li>
+                        <li>Anuja Joydeep</li>
+                        <li class="busy">Akshay Naik</li>
+                        <li class="idle">Swarupa Venglekar</li>
+                        <li class="idle">Tushar Venglekar</li>
+                    </ul>
+                    <div id="chat_area">
+                        <span>
+                            <img src="../../../Content/images/close.png" width="9" height="9" />
+                            <img src="../../../Content/images/minimize.png" width="7" height="1" /></span>
+                        <div>
+                            <div class="chatters">
+                                <p class="user1">
+                                    <strong>Me:</strong> hello</p>
+                                <p class="user2">
+                                    <strong>Guru:</strong> hi</p>
+                                <p class="user3">
+                                    <strong>Hilario:</strong> aunty</p>
+                                <p class="user1">
+                                    <strong>Me:</strong> uncle</p>
+                            </div>
+                            <div class="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <img src="../../../Content/images/content.jpg" width="1024" height="729" />
+    </div>
+</div>

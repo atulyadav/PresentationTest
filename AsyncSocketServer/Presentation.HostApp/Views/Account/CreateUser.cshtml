@@ -1,0 +1,122 @@
+﻿@model PresentationApp.DataAccess.Models.Account.CreateOrEditUserRequest
+<link href="@Url.Content("~/Content/bootstrap/css/bootstrap.css")" type="text/css"  rel="Stylesheet"/>
+<link href="@Url.Content("~/Content/bootstrap/css/bootstrap.min.css")" type="text/css"  rel="Stylesheet"/>
+<script src="@Url.Content("~/Scripts/jquery-1.9.1.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#createUserForm").validate({
+            rules: {
+                'Name': { required: true },
+                'UserName': { required: true, remote: '@Url.Action("CheckUsernameExists", "Account", new { @flag = @Model.flag  })' },
+                'Password': { required: true },
+                'PhoneNumber': { required: true, number: true, minlength: 10 },
+                'EmailId': { required: true, email: true },
+                'RetypePassword': { required: true, equalTo: '#Password' }
+            },
+            messages: {
+                'Name': { required: "Please enter the Name" },
+                'UserName': { required: "Please enter the User Name", remote: "The username already exists" },
+                'Password': { required: "Please enter Password" },
+                'PhoneNumber': { required: "Please enter Phone Number", number: "Please enter a valid number.", minlength: "A minimum of 10 digits required." },
+                'EmailId': { required: "Please enter Email ID", email: "Please enter a valid email address" },
+                'RetypePassword': { required: "Please retype the password", equalTo: 'The retyped password doesnt match' }
+            },
+            errorPlacement: function (error, element) {
+                error.appendTo("#" + element.attr("id") + "Validation");
+            }
+        });
+    });
+
+</script>
+<form action="/Account/CreateUser" method="post" id="createUserForm" class="form-horizontal">
+@Html.HiddenFor(model => model.Id)
+@Html.HiddenFor(model => model.flag)
+<h3>
+    Enter details for the new user</h3>
+<table>
+    <tr>
+        <td>
+            Name :
+        </td>
+        <td>
+            <div class="controls">
+                @Html.TextBoxFor(model => model.Name)
+                <span id="NameValidation" style="color: red"></span>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Username :
+        </td>
+        <td>
+            <div class="controls">
+                @Html.TextBoxFor(model => model.UserName)
+                <span id="UserNameValidation" style="color: red"></span>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Password :
+        </td>
+        <td>
+            <div class="controls">
+                @Html.PasswordFor(model => model.Password)
+                <span id="PasswordValidation" style="color: red"></span>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Re-type Password :
+        </td>
+        <td>
+            <div class="controls">
+                <input type="password" id="RetypePassword" name="RetypePassword" />
+                <span id="RetypePasswordValidation" style="color: red"></span>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Phone Number :
+        </td>
+        <td>
+            <div class="controls">
+                @Html.TextBoxFor(model => model.PhoneNumber)
+                <span id="PhoneNumberValidation" style="color: red"></span>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Email Id :
+        </td>
+        <td>
+            <div class="controls">
+                @Html.TextBoxFor(model => model.EmailId)
+                <span id="EmailIdValidation" style="color: red"></span>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <br />
+            Is Admin? : &nbsp;&nbsp; @Html.CheckBoxFor(model => model.IsAdmin)
+        </td>
+    </tr>
+</table>
+<br />
+<p>
+    <input type="submit" value="Save" class="btn" />
+    <input type="button" value="Back" class="btn" onclick="javascript:window.location.replace('/Account/ManageUser');" />
+</p>
+</form>
+<p class="control-group" style="color: Red">
+    @if (@ViewBag.Message != null)
+    {
+        @ViewBag.Message
+    }
+</p>

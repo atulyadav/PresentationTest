@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Views/Shared/_LinkLayout.cshtml";
+    ViewBag.Title = "Edit Presentation";
+}
+@model PresentationApp.Domain.Presentation.Presentation
+<link href="@Url.Content("~/Content/bootstrap/css/bootstrap.css")" type="text/css"  rel="Stylesheet"/>
+<link href="@Url.Content("~/Content/bootstrap/css/bootstrap.min.css")" type="text/css"  rel="Stylesheet"/>
+<div>
+    <h3>
+        Are you sure you want to delete this?</h3>
+    <table class="table table-bordered">
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>@Html.DisplayFor(model => model.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Start Time
+            </td>
+            <td>@Html.DisplayFor(model => model.StartTime)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                End Time
+            </td>
+            <td>@Html.DisplayFor(model => model.EndTime)
+            </td>
+        </tr>
+    </table>
+    @using (Html.BeginForm())
+    {
+        <p>
+            <input type="submit" value="Delete" class="btn" />
+            <input type="button" value="Back" class="btn" onclick="javascript:window.location.replace('/Presentation/Index');" />
+        </p>
+    }
+</div>

@@ -1,0 +1,75 @@
+/**********ISI slide-01**************/
+.isi.slide-01 {}
+.isi.slide-01 #container{ background:url(../images/gl-isi-bkg.jpg) no-repeat; height:677px;}
+.isi.slide-01 #container header{ font:35px/35px 'HelveticaRoman'; color:#fff;  padding:30px 40px;}
+.isi.slide-01 #container section {padding:23px 32px 32px 44px;overflow-y: scroll;-webkit-overflow-scrolling: touch;height:432px;}
+.isi.slide-01 #container section p {font:14px/18px 'HelveticaRoman'; margin:0; margin-bottom:5px; padding:0;}
+.isi.slide-01 #container section ul { list-style:none; font:14px/18px 'HelveticaRoman'; margin:15px 0 0 0; padding:0; margin-left:-18px;}
+.isi.slide-01 #container section ul li { background:url(../images/global-orange-bull.png) no-repeat 0 3px; padding-left:18px; margin-bottom:5px;}
+.isi.slide-01 #container section strong { font-family:'HelveticaBold';
+}
+.isi.slide-01 #container section .box { font:14px/18px 'HelveticaBold'; border: 2px solid black; display: block;
+    padding: 5px; margin-left: -15px;
+}
+.isi.slide-01 #container section p span { font-family:'HelveticaBold'; display: block;padding: 0px; margin-left: -10px;}
+.isi.slide-01 .arrow{position:absolute;top:520px;left:960px;background:url(../images/arrow-up.png);width:30px;height:30px;z-index:100;}
+/**********ISI slide-02**************/
+.isi.slide-02 {}
+.isi.slide-02 #container{ background:url(../images/gl-isi-bkg.jpg) no-repeat; height:677px;}
+.isi.slide-02 #container header{ font:35px/35px 'HelveticaRoman'; color:#fff;  padding:30px 40px;}
+.isi.slide-02 #container section {padding:23px 32px 32px 44px;}
+.isi.slide-02 #container section p {font:14px/18px 'HelveticaRoman'; margin:0; margin-bottom:5px; padding:0;}
+.isi.slide-02 #container section ul { list-style:none; font:14px/18px 'HelveticaRoman'; margin:0 0 0 0; padding:0; margin-left:-18px;}
+.isi.slide-02 #container section ul li { background:url(../images/global-orange-bull.png) no-repeat 0 3px; padding-left:18px; margin-bottom:5px;}
+.isi.slide-02 #container section strong { font-family:'HelveticaBold'}
+
+/**********Indication slide-01**************/
+.isi.slide-01 {}
+.indication.slide-01 #container{ background:url(../images/gl-isi-bkg.jpg) no-repeat; height:677px;}
+.indication.slide-01 #container header{ font:35px/35px 'HelveticaRoman'; color:#fff;  padding:30px 40px;}
+.indication.slide-01 #container section {padding:23px 32px 32px 44px;}
+.indication.slide-01 #container section p {font:14px/18px 'HelveticaRoman'; margin:0; margin-bottom:5px; padding:0;}
+.indication.slide-01 #container section h2 {font:20px/23px 'HelveticaBold'; color:#003767; margin:0 0 2px 0; padding:0; }
+.indication.slide-01 #container section strong { font-family:'HelveticaBold'}
+
+/**********References slide 01**************/
+.references {}
+.references #container{background: -webkit-gradient(linear, left top, right top, color-stop(19%,rgba(225,225,225,1)), color-stop(51%,rgba(255,255,255,1)), color-stop(79%,rgba(225,225,225,1))); height:1127px;}
+.references.slide-02 #container{height:427px;}
+.references.slide-03 #container{height:327px;}
+.references.slide-04 #container{height:327px;}
+.references.slide-05 #container{height:327px;}
+.references.slide-06 #container{height:157px;}
+.references.slide-07 #container{height:167px;}
+.references.slide-09 #container{height:137px;}
+.references.slide-10 #container{height:127px;}
+
+.references #container section {padding:23px 32px 32px 44px;}
+.references #container section ol {font:16px/19px 'HelveticaRoman'; margin:15px 0 0 0; padding:0; margin-left:20px; color:#333333;}
+.references #container section ol li { padding-left:18px; margin-bottom:5px;}
+.references #container section ol li span { color:#006699;}
+.references #container section strong { font-family:'HelveticaBold'}
+.references #container section ol li i { font-family:'HelveticaCondensedOblique'}
+.references #container i { font-family:'HelveticaItalic';}
+/**********GlobalIndications Popup home page **************/
+.isi.global_indications.popup01{}
+.isi.global_indications.popup01 #container{width:990px;height:326px;padding:0px;}
+.isi.global_indications.popup01 #container section p{font: 14px/15px 'HelveticaNeue'; color: #333333; padding:0px 20px 0px;margin-top:0px;}
+.isi.global_indications.popup01 #container section header { font: 20px 'HelveticaNeue-Bold';color: #003767;display: inline-block;padding:10px 20px 0px; white-space: nowrap; }
+.isi.global_indications.popup01 #container section header sup{font-size:10px; line-height: 80%;}
+.isi.global_indications.popup01 #container section strong { font-family:'HelveticaNeue-Bold';}
+
+/**********Global ISI Popup home page **************/
+
+.isi.global_isi #container{width:990px;height:573px;padding:0px;}
+.isi.global_isi #container section p{font: 14px/17px 'HelveticaNeue'; color: #333333; padding:0px 10px 0px;margin-top:0px;}
+.isi.global_isi #container section header { font: 20px 'HelveticaNeue-Bold';color: #003767;display: inline-block;padding:10px 15px 0px; white-space: nowrap; }
+.isi.global_isi #container section header sup{font-size:10px; line-height: 80%;}
+.isi.global_isi #container section .ref strong { font-family:'HelveticaBold'; margin-left:25px;}
+.isi.global_isi #container section strong { font-family:'HelveticaBold'}
+.isi.global_isi #container section .borderContent {position:absolute;width:925px;height:87px;left: 23px;top: 63px;border:1px solid #000000;}
+.isi.global_isi #container section .borderContent .insideBC {padding:10px 10px 0px;margin-top:0px;}
+.isi.global_isi #container section .lowerContent {position:absolute;width:928px;height:100%;left: 3px;top: 144px;}
+.isi.global_isi #container section .borderContent .insideText {font: 14px 'HelveticaNeue-Bold';color: #333333;display: inline-block;}
+.isi.global_isi #container .lowerContent ul {font: 14px 'HelveticaNeue';color: #333333;list-style-image: url(../images/bullet_orange.jpg);}
+.isi.global_isi #container .lowerContent li {padding-bottom:3px; padding-left:3px; color:#333333;}

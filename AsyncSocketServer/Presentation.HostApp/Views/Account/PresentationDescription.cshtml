@@ -1,0 +1,91 @@
+﻿@model PresentationApp.DataAccess.Models.Account.LoginReply
+@{
+    ViewBag.Title = "Presentation Description";
+}
+<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+<div class="block2">
+    @if (@Model != null)
+    {
+        <div>
+            <h4>
+                Welcome to Presentation</h4>
+            @using (@Html.BeginForm("PresentationDescription", "Account", FormMethod.Post))
+            {
+
+                @Html.HiddenFor(model => model.PresentationKey)
+                @Html.HiddenFor(model => model.Status)
+                @Html.HiddenFor(model => model.PresentationId)
+                @Html.HiddenFor(model => model.UserId)
+
+                <table>
+                    <tr>
+                        <td>
+                            <input type="submit" name="submit" value="Connect" />
+                            <br />
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Presentation name:
+                        </td>
+                        <td>
+                            @Html.DisplayFor(x => x.PresentationName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            User Name:
+                        </td>
+                        <td>
+                            @Html.DisplayFor(x => x.UserName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Connecting as :
+                        </td>
+                        <td>
+                            @if (@Model.Status == 1 || @Model.Status == 3)
+                            {
+                                <span>Guest</span>
+                            }
+                            else
+                            {
+                                <span>Host</span>
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Mode of connection :
+                        </td>
+                        <td>
+                            @if (@Model.Status == 3 || @Model.Status == 4)
+                            {
+                                <span>Offline</span>
+                            }
+                            else
+                            {
+                                <span>Online</span>
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <br />
+                            <br />
+                            <fieldset>
+                                @Html.Raw(@System.Web.HttpUtility.HtmlDecode(@Model.Description))
+                            </fieldset>
+                        </td>
+                    </tr>
+                </table>
+
+            }
+        </div>
+    }
+    <p>
+        @ViewBag.Message
+    </p>
+</div>

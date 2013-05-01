@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>lc [slide-05]</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="YES">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/lc.css" type="text/css" />
+    <script type="text/javascript" src="js/Common.js"></script>
+    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        var ANIMATION = [
+				fade('#chart1b'),
+				[custom('#chart1c', '-webkit-transform: translate3d(0px,0px,0) !important; opacity: 1 !important;'),
+				custom('#chart1d', '-webkit-transform: translate3d(0px,0px,0) !important; opacity: 1 !important;')]
+			];
+        function restartAnimation() {
+            document.getElementById('chart1b').setAttribute('class', 'reset');
+            setTimeout("document.getElementById('chart1b').setAttribute('class','animate')", 500);
+            document.getElementById('chart1c').setAttribute('class', 'reset');
+            setTimeout("document.getElementById('chart1c').setAttribute('class','animate')", 1000);
+            document.getElementById('chart1d').setAttribute('class', 'reset');
+            setTimeout("document.getElementById('chart1d').setAttribute('class','animate')", 1000);
+        }
+    </script>
+</head>
+<body class="lc slide-05">
+    <div id="container">
+        <header>
+                TSH changes with adjustments of thyroxine dosage</header>
+        <section>
+            <div id="replayBtn">
+				<!--<img src="images/replay_button.png" onclick="restartAnimation();makecall('OmnitureTracking', Array('ButtonClick','Replay'));" />-->
+                <img src="images/replay_button.png" id="repbtn1" onclick="restartAnimation();SendReAnimate(this);" /><!--//SendReAnimate(this) added by atul -->
+			</div>
+
+                <div id="box">
+                    <div id="blue-title">CARR Study<br>
+                        <P>Following a 25-mcg dose change of levothyroxine, most patients had changes in TSH levels<sup>2</sup></P></div>
+                    <article>
+                        <div id="chart1a">&nbsp;</div>
+                        <div id="chart1b">&nbsp;</div>
+                        <div id="chart1c">&nbsp;</div>
+                        <div id="chart1d">&nbsp;</div>
+                        <div id="popupCnt1" class="study-design-btn" data-placement="top" onclick="makecall('PlainPopup',Array('cc-02-popup-2','StudyDesign','108','625','0','0','730','300','2','0','ButtonClick'),this);"><img src="images/plus_img.png">Study Design</div>
+                    </article>
+                    <aside>
+                        <table>
+                            <tr>
+                                <td class="td_img"><div id="box1"></div></td>
+                                <td>&nbsp;</td>
+                                <td class="td_text">-25 mcg</td>
+                            </tr>
+                            <tr>
+                                <td  class="td_img"><div id="box2"></div></td>
+                                <td>&nbsp;</td>
+                                <td class="td_text">+25 mcg</td>
+                            </tr>
+                            <tr>
+                                <td  class="td_img"><div id="box3"></div></td>
+                                <td >&nbsp;</td>
+                                <td class="td_text">Optimal<br>Dose</td>
+                            </tr>
+                            <tr>
+                                <td  class="td_img"><div id="box4"></div></td>
+                                <td>&nbsp;</td>
+                                <td class="td_text">NACB<br>Range</td>
+                            </tr>
+                            <tr>
+                                <td  class="td_img"><div id="box5"></div></td>
+                                <td>&nbsp;</td>
+                                <td class="td_text">Study<br>Range</td>
+                            </tr>
+                        </table>
+                        <button id="button_carr_study" data-placement="top" onclick="makecall('PlainPopup',Array('cc-02-popup-1','CarrStudySummary','892','625','0','0','495','380','2','0','ButtonClick'),this);">CARR Study Summary</button>
+                    </aside>
+                </div>
+			</section>
+        <footer>
+               <span>Please tap above for Important Safety Information,<br> including
+                BOXED WARNING regarding inappropriate<br>treatment for obesity.</span>
+                <div id="breadcrumb">
+					Clinical Consequences&nbsp;
+			    	<div class="bullets"><img src="images/global-dot.png" height="9" width="10"></div>
+			    	<div class="bullets"><img src="images/global-dot-active.png" height="9" width="10"></div>
+					<div class="bullets"><img src="images/global-dot.png" height="9" width="10"></div>
+					<div class="bullets"><img src="images/global-dot.png" height="9" width="10"></div>
+				</div>
+            </footer>
+    </div>
+</body>
+</html>

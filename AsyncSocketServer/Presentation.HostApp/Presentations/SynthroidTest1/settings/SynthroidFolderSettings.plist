@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PresentationListSettings</key>
+	<dict>
+		<key>RowHeight</key>
+		<integer>45</integer>
+		<key>CustomCellIdentifier</key>
+		<string>CustomCell</string>
+		<key>CustomCellTextFont</key>
+		<string>Helvetica</string>
+		<key>CustomCellTextFontSize</key>
+		<integer>14</integer>
+		<key>PresentationListWidth</key>
+		<integer>350</integer>
+	</dict>
+	<key>HomePageSettings</key>
+	<dict>
+		<key>HomePageName</key>
+		<string>Home</string>
+		<key>HomePageExtension</key>
+		<string>html</string>
+	</dict>
+</dict>
+</plist>

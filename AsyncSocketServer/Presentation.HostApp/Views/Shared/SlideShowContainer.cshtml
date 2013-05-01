@@ -1,0 +1,79 @@
+﻿<div id="container">
+    <img src="../../Content/images/1.jpg" width="1024" height="767" style="position: absolute;
+        z-index: 2; opacity: 0.3; display: none;" />
+    <div id="header">
+        <div class="name">
+            APP SLIDER
+        </div>
+        <div id="slideSelectDiv">
+            <select onchange="ChangeSlide(this)" id="slideSelect">
+            </select></div>
+        <div class="logout">
+            <a href="javascript:void(0)" onclick="RefreshConnection();" id="refreshButton" style="visibility: hidden">
+                Refresh</a><span> </span><a href="@Url.Action("Logout", "Presentations")" onclick="SendRedirectToHome();">
+                    Logout</a>
+        </div>
+        <div class="users">
+            <span>
+                <img src="../../Content/images/user.png" width="15" height="12" id="onlineSymbol" />Users
+                Online</span>
+            <div class="user_list">
+                <ul>
+                    <li>waiting...</li>
+                    @* <li>Delia Ferns</li>
+                    <li>Hilario Goes</li>
+                    <li>Gurudatta Patekar</li>
+                    <li>Atelia Gomes</li>
+                    <li>Akbar Kadri</li>
+                    <li>Loyce Dias</li>
+                    <li>Rohit Rahul</li>
+                    <li>Anuja Joydeep</li>
+                    <li>Akshay Naik</li>
+                    <li>Swarupa Venglekar</li>
+                    <li>Tushar Venglekar</li>*@
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        @*<img src="../../Content/images/content.jpg" width="1024" height="729" />*@ @*<div id="viewport" onselectstart="return false;">
+            <div id="mouseSwipe2">
+                <div class="panel prev">
+                    <div id="first">
+                    </div>
+                </div>
+                <div class="panel curr">
+                    <div id="second">
+                    </div>
+                </div>
+                <div class="panel next">
+                    <div id="third">
+                    </div>
+                </div>
+            </div>
+        </div>*@
+        <div id="target2">
+        </div>
+        <div id="myCarousel" class="carousel slide">
+            <a class="carousel-control left" href="#myCarousel" id="prevBtn" onclick="return navPageButton(this); return false;">
+                ‹</a> <a class="carousel-control right" href="#myCarousel" id="nextBtn" onclick="return navPageButton(this); return false;">
+                    ›</a>
+        </div>
+    </div>
+    <footer id="slidein">
+        	<div id="chat"  onclick="slideout();">
+       	    	<img src="../../Content/images/chat.png" width="23" height="25" />
+            </div>
+            <div id="chat_area">
+
+                    <div id="chatters_container">
+                    <div class="chatters">
+                        @*<p class="user1"><strong>Me:</strong> hello</p>*@
+                    </div>
+                        <div class="text">
+                            <input type="text" id="chat_input" />
+                        </div>
+                    </div>
+                </div>
+    </footer>
+</div>

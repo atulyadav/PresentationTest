@@ -1,0 +1,165 @@
+﻿@{
+    Layout = "~/Views/Shared/_LinkLayout.cshtml";
+    ViewBag.Title = "Manage Users";
+}
+<!-- This is required here. Otherwise a different font re-adjusts when u open the dialog boxes -->
+@model IEnumerable<PresentationApp.Domain.Account.Users>
+<script type="text/javascript">
+    function deleteUserFunction(id) {
+        $.ajax({
+            type: "POST",
+            url: "/Account/CheckUserIsOccupied",
+            data: "id=" + id,
+            success: function (data) {
+                if (data.Message != null) {
+                    alert(data.Message);
+                }
+                else {
+                    $.ajax({
+                        url: data.redirectTo,
+                        type: 'GET',
+                        dataType: 'html',
+                        success: doDeleteSuccess
+                    });
+                }
+
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+
+    }
+
+    function doDeleteSuccess(result) {
+        $('div#editUserDiv').css("visibility", "hidden");
+        $('div#createUserDiv').css("visibility", "hidden");
+        $('div#deleteUserDiv').css("visibility", "visible");
+        $('div#deleteUserDiv').html(result);
+
+    }
+
+    //-----
+
+    function editUserFunction(ur) {
+        $.ajax({
+            url: ur,
+            type: 'GET',
+            dataType: 'html', // <-- to expect an html response
+            success: doEditSuccess
+        });
+    }
+
+    function doEditSuccess(result) {
+        $('div#editUserDiv').css("visibility", "visible");
+        $('div#deleteUserDiv').css("visibility", "hidden");
+        $('div#createUserDiv').css("visibility", "hidden");
+        $('div#editUserDiv').html(result);
+
+    }
+
+    //-----
+
+    function createUserFunction(ur) {
+        $.ajax({
+            url: ur,
+            type: 'GET',
+            dataType: 'html', // <-- to expect an html response
+            success: doCreateSuccess
+        });
+    }
+
+    function doCreateSuccess(result) {
+        $('div#deleteUserDiv').css("visibility", "hidden");
+        $('div#editUserDiv').css("visibility", "hidden");
+        $('div#createUserDiv').css("visibility", "visible");
+        $('div#createUserDiv').html(result);
+    }
+
+</script>
+<style type="text/css">
+    .stylepopup
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: -9em; /*set to a negative number 1/2 of your height*/
+        margin-left: -15em; /*set to a negative number 1/2 of your width*/
+        border: 1px solid #ccc;
+        background-color: #f3f3f3;
+        visibility: hidden;
+    }
+
+    .cursorStyle
+    {
+        cursor: hand;
+        cursor: pointer;
+    }
+</style>
+<h4>
+    Manage User</h4>
+<p>
+    <a href="#" onclick="editUserFunction('/Account/CreateUser?&flag=1')">Create New User</a>
+</p>
+<br />
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Username
+        </th>
+        <th>
+            Email Id
+        </th>
+        <th>
+            Phone Number
+        </th>
+        <th>
+            Is Admin?
+        </th>
+        <th style="width: 70px; text-align: center;">
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr class="cursorStyle">
+            <td onclick="editUserFunction('/Account/CreateUser?id=@item.Id&flag=2')">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td onclick="editUserFunction('/Account/CreateUser?id=@item.Id&flag=2')">
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td onclick="editUserFunction('/Account/CreateUser?id=@item.Id&flag=2')">
+                @Html.DisplayFor(modelItem => item.EmailId)
+            </td>
+            <td onclick="editUserFunction('/Account/CreateUser?id=@item.Id&flag=2')">
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td onclick="editUserFunction('/Account/CreateUser?id=@item.Id&flag=2')">
+                @Html.DisplayFor(modelItem => item.IsAdmin)
+            </td>
+            <td id="links" onclick="deleteUserFunction(@item.Id)" style="text-align:center">
+                <a href="#">Delete</a>
+            </td>
+        </tr>
+
+    }
+</table>
+<div id="deleteUserDiv" class="stylepopup">
+</div>
+<div id="editUserDiv" class="stylepopup">
+</div>
+<div id="createUserDiv" class="stylepopup">
+</div>
+<p class="control-group" style="color: Red">
+    @if (@TempData["Message"] != null)
+    {
+        <script type="text/javascript">            alert('@TempData["Message"]');</script>
+
+    }
+</p>

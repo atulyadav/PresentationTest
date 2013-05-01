@@ -1,0 +1,60 @@
+﻿@{
+    Layout = "~/Views/Shared/_LinkLayout.cshtml";
+}
+<script type="text/javascript">
+    //list reorder
+    function moveUpItem() {
+        $('#list option:selected').each(function () {
+            $(this).insertBefore($(this).prev());
+        });
+    }
+
+    function moveDownItem() {
+        $('#list option:selected').each(function () {
+            $(this).insertAfter($(this).next());
+        });
+    }
+
+</script>
+<style type="text/css">
+    select
+    {
+        width: auto;
+    }
+</style>
+<div>
+    <form action="/Presentation/UploadPresentationFolder" method="post" enctype="multipart/form-data">
+    <h4>
+        Upload Folder for presentation: @ViewBag.PresentationName
+    </h4>
+    <p>
+        Please avoid using "_deleted" in the filename.</p>
+    <br />
+    <input type="hidden" value="@ViewBag.PresentationId" name="presentationId" id="presentationId" />
+    <input type="hidden" value="@ViewBag.PresentationName" name="presentationName" id="presentationName" />
+    <div class="fileupload fileupload-new" data-provides="fileupload">
+        <span class="btn btn-file"><span class="fileupload-new">Select file
+            <input type="file" id="zipfile" name="zipfile" />
+        </span>
+            <input type="submit" value="Upload" class="btn" id="uploadBtn" />
+        </span>
+    </div>
+    </form>
+    <form action="/Presentation/SubmitList" method="post">
+    @if (@ViewBag.List != null)
+    {
+        @Html.Partial("_ReorderFiles");
+    }
+    @if (@ViewBag.Flag == 1)
+    {
+        <span>
+            <input type="button" value="Cancel" class="btn" onclick="javascript:window.location.replace('/Presentation/Index');" /></span>}
+    </form>
+</div>
+<p class="control-group" style="color: Red">
+    @if (@TempData["Message"] != null)
+    {
+        <script type="text/javascript">            alert('@TempData["Message"]');</script>
+
+    }
+</p>

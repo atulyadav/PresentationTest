@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <link rel="stylesheet" href="css/ge.css" type="text/css">
+        <link rel="stylesheet" href="css/animate.css" type="text/css">
+        <script type="text/javascript" src="js/base.js"></script>
+        <script type="text/javascript" src="js/Common.js"></script>
+        <script type="text/javascript" charset="utf-8">
+
+        var ANIMATION = [
+                         
+                         '#copy3',
+                         
+                         [fade('#numbersWrap'), '.numText',
+                          stagger(
+                                  custom('.slide-1 #numbers span.num1', 'background-position: 0 -99px'),
+                                  custom('.slide-1 #numbers span.num2', 'background-position: 0 -4444px'),
+                                  custom('.slide-1 #numbers span.num3', 'background-position: 0 -4444px')
+                                  )],
+                         
+                         
+                         
+                         [custom('#numbers span.num1','-webkit-animation-name: number1'),
+                          custom('#numbers span.num1','-webkit-animation-duration: 4s'),
+                          custom('#numbers span.num1','-webkit-animation-iteration-count: 1'),
+                          custom('#numbers span.num1','-webkit-animation-direction: normal'),
+                          custom('#numbers span.num1','-webkit-animation-delay: 0s'),
+                          custom('#numbers span.num1','-webkit-animation-fill-mode: forwards'),
+                          custom('#numbers span.num1','-webkit-animation-timing-function: ease-out'),
+                          
+                          
+                          custom('#numbers span.num2','-webkit-animation-name: number2'),
+                          custom('#numbers span.num2','-webkit-animation-duration: 4s'),
+                          custom('#numbers span.num2','-webkit-animation-iteration-count: 1'),
+                          custom('#numbers span.num2','-webkit-animation-direction: normal'),
+                          custom('#numbers span.num2','-webkit-animation-delay: 0s'),
+                          custom('#numbers span.num2','-webkit-animation-fill-mode: forwards'),
+                          
+                          
+                          custom('#numbers span.num3','-webkit-animation-name: number3'),
+                          custom('#numbers span.num3','-webkit-animation-duration: 5s'),
+                          custom('#numbers span.num3','-webkit-animation-iteration-count: 1'),
+                          custom('#numbers span.num3','-webkit-animation-direction: normal'),
+                          custom('#numbers span.num3','-webkit-animation-delay: 0s'),
+                          custom('#numbers span.num3','-webkit-animation-fill-mode: forwards')]
+                         
+                         
+                         ];
+
+
+
+
+        </script>
+        <script type="text/javascript" charset="utf-8">
+function tostopthecrashing() {
+
+                        if ( document.body.className == 'slide-1 loadedonce') {
+
+                                location.reload(true);
+
+                        } else { document.body.className += ' loadedonce' }
+
+        };
+        </script>
+    </head>
+    <body class="slide-1" onload="tostopthecrashing()">
+        <div id="content">
+            <div class="blueoverlay"></div>
+            <header>
+                Considerations for women with HIV
+            </header>
+            <div class="logo"></div>
+            <div class="women"></div>
+            <section>
+                <div id="copy1">
+                    HIV counseling will vary depending on the unique needs and personal circumstances of each woman such as age, family issues, sexual issues, violence or sexual abuse, acceptance of diagnosis, culture or religion, socioeconomic class, support, immigration,<br>
+                    or language and understanding<sup>2,3</sup>
+                </div>
+                <div id="copy2">
+                    KALETRA has been prescribed for more than one-third of ARV-Naïve women who started on a PI-based regimen<sup>4</sup>
+                    <p class="smtext">
+                        IMS Health data Dec 09 - Nov 10. Information includes third-party method of payment, including Commercial, Medicare Part D and Managed Medicaid data. IMS expressly reserves all rights, including rights of copying, distribution, and republication.
+                    </p>
+                </div>
+            </section>
+            <div id="copy3">
+                <div class="bluepanel">
+                    Over the past 10 years, AbbVie-sponsored KALETRA<br>
+                    studies have included more than
+                </div>
+                <div class="ticker">
+                    <div id="numbersWrap">
+                        <div id="numbers">
+                           <span class="num1"></span>
+                        <span class="num2"></span>
+                        <span class="num3"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                Please click buttons above for Indication and Important Safety Information about KALETRA.
+            </footer>
+        </div>
+    </body>
+</html>

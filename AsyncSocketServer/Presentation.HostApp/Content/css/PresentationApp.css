@@ -1,0 +1,11 @@
+﻿.arrow
+{
+    visibility: hidden;
+}
+#myCarousel
+{
+    width: 1024px;
+    position: absolute;
+    top: 43%;
+    z-index: 1000;
+}

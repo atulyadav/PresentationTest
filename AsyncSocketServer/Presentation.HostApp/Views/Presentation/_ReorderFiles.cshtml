@@ -1,0 +1,90 @@
+﻿<script type="text/javascript">
+
+    var currentTR = null;
+    //list reorder
+    function moveUpItem() {
+        $(currentTR).each(function () {
+            $(this).insertBefore($(this).prev());
+        });
+    }
+
+    function moveDownItem() {
+        $(currentTR).each(function () {
+            $(this).insertAfter($(this).next());
+        });
+    }
+
+    function highlight(x) {
+        $("tr").css('background-color', 'White');
+        $(x).css('background-color', '#C0C0C0');
+        currentTR = x;
+    }
+
+    $(document).ready(function () {
+
+        var h = $('#table1').height();
+        $('#gap').height((h - 32) + 'px');
+
+        $('#gap').width('16px');
+
+        $("#submitList").click(function () {
+            var optionTexts = [];
+            $("#table1 tr td").each(function () { optionTexts.push($.trim($(this).text())) });
+            var data = "presentationId=" + $('#presentationId').val() + "&PresentationFileSequence=" + optionTexts.join(',') + "&flag=" + $('#flag').val() + "&PostBackTo=" + $('#PostBackTo').val();
+
+            $.ajax({
+                type: "POST",
+                url: "/Presentation/SubmitList",
+                data: data,
+                success: function (data) {
+                    if (data.Message != null) {
+                        alert(data.Message);
+                    }
+                    window.location = data.redirectTo;
+                },
+                error: function () {
+                    alert('error');
+                }
+            });
+        });
+    });
+
+</script>
+<h4>
+    Re-order Files for presentation: @ViewBag.PresentationName
+</h4>
+<p>@ViewBag.Message</p>
+<form method="post">
+@if (@ViewBag.List != null)
+{
+    <div class="td1">
+        <input type="hidden" value="@ViewBag.PresentationId" name="presentationId" id="presentationId" />
+        <input type="hidden" value="@ViewBag.Flag" name="flag" id="flag" />
+        <input type="hidden" value="@ViewBag.PostBackTo" name="PostBackTo" id="PostBackTo" />
+        @*@Html.ListBox("list", new SelectList(@ViewBag.List), new { id = "list", size = "5" })*@
+        <table>
+            <tr>
+                <td>
+                    <table id="table1" class="table table-hover table-bordered" style="width: auto; margin: 2px">
+                        @for (var i = 0; i < @ViewBag.List.Count; i++)
+                        {
+                            <tr onclick="highlight(this)" id="@i">
+                                <td>@ViewBag.List[i]
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+                <td id="imgTd">
+                    <img id="mup" src= "@Url.Content("~/Content/Images/up.jpg")" onclick="moveUpItem()"/><br />
+                    <img id="gap" src= "@Url.Content("~/Content/Images/gap.jpg")" /><br />
+                    <img id="mdown" src="@Url.Content("~/Content/Images/down.jpg")" onclick="moveDownItem()"/>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <br />
+    <input type="button" value="Modify Sequence" class="btn" id="submitList" /> 
+}
+</form>

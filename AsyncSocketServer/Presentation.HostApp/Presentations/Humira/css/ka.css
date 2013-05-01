@@ -1,0 +1,688 @@
+@import "fonts.css";
+* {-webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0,0,0,0);}
+
+body { 
+color: #fff; font-family: "HelveticaRoman"; margin: 0; padding: 0; background: #000; width:  1024px; line-height:135%;}
+
+#main { 
+width: 1024px; height: 658px; background:url(../images/ka_mainback.jpg) no-repeat; position: relative;} 
+em {font-family: 'HelveticaItalic';}
+strong {font-family: "HelveticaBold";}
+img {border:none;}
+h1 {margin: 0; padding: 0; font-family: "HelveticaCondensed"; font-size:33px;}
+h1 sup {font-size:12px;}
+h2 {font-family:"HelveticaHeavy"; font-size:16px; line-height:125%; color:#005288;}
+h3 {margin: 4px 0; padding: 0; font-family: "HelveticaBold"; font-size:16px; color:#005288;}
+p.blueNextScreen { color:#005288; } 
+.symbol { font-family: sans-serif !important; }
+
+.abbott_logo {text-align:right;}
+.lg_logo {position:absolute; top:32px;}
+#logo {position:absolute; top:20px; right:32px;} 
+.kaletra_logo {text-align:right;}
+
+.blk_bullet {background:url(../images/blk_bullet.png) no-repeat left 4px; padding-left:12px;}
+
+#footer {position: absolute; font-family:"HelveticaCondensed"; bottom: 12px; left: 425px; width: 180px; font-size: 14px;}
+#footer span {font-size:10px;}
+#footer p {padding: 0; margin: 4px 0; }
+
+.dkblueoverlay {background:#005288; opacity: .95; width: 1024px; height: 658px; position:absolute;}
+.highlightbox {padding:0 10px; background:#fff; border:1px solid #F2AF32;}
+.hyphenbullet {background:url(../images/hyphen.png) no-repeat left 6px; padding-left:22px; margin-left:12px;}
+.hyphenwrap {padding:16px 0;}
+#isi_back {
+	position:absolute;
+	background:#005288;
+	width: 415px /*390px*/;
+	height:658px;
+	top:0;
+	right:0/*25px*/;
+	opacity: .5;
+}
+#isi_right {
+	position:absolute;
+	width:385px/*365px*/;
+	height:658px;
+	top:0;
+	right:15px/*40px*/;
+	font-size:14.5px;
+	font-family:"HelveticaCondensed";
+}
+#isi_right strong {font-family:"HelveticaBoldCondensed"; }
+#isi_right .isiitem {background:url(../images/wht_bullet.png) no-repeat left 2px; padding-left:10px;}
+
+#popup { background: #FFF; color: #000; overflow: hidden; position: relative; height:500px; padding:11px 11px 11px 11px}
+#popup p {margin:10px 0;}
+#popup strong {font-weight:bold;}
+
+.symbol { 
+	font-family: sans-serif !important;
+	line-height: 0px;
+}
+.smallcap {font-size:10px; line-height:120%;}
+.underline {text-decoration:underline;}
+
+/*-- buttons -- */
+.dispositionbtn {position:absolute; bottom:6px; right:316px;}
+.studybtn {position:absolute; bottom:6px; right:174px;}
+.baselinebtn {position:absolute; bottom:6px; right:32px;}
+.ncepbtn {position:absolute; bottom:6px; right:316px;}
+
+/*-- charts --*/
+body.chart #chart { position:relative; margin:-20px 0 0 -20px; }
+body.chart { background:none; -webkit-transform:scale(.98); -webkit-transform-origin: top left; }
+body.chart .chartTitle { color:#000; font-family:"HelveticaBlack"; font-size:18px; line-height: 16px; position:absolute;  }
+body.chart .yLabel, body.chart .xLabel, .secondaryLabel { color:#000; font-family:"HelveticaBoldCondensed"; font-size:16px; position:absolute;  }
+body.chart .barLabel p { color:#fff; font-family:"HelveticaHeavyCondensed"; font-size:17px; letter-spacing:-0.25em; margin:0;position:absolute; }
+body.chart .yLabel { -webkit-transform: rotate(-90deg); }
+body.chart .chartLegend { position:absolute;  }
+body.chart .chartLegend p { color:#000; font-family:"HelveticaBoldCondensed"; font-size:11px; }
+body.chart .chartLegend p.chartLegendFootnote { font-family:"HelveticaCondensed"; }
+
+/*-- tabs --*/
+
+.charttabwrap {position:absolute; top:128px; left:61px; -webkit-box-shadow: 0 0 75px 0px #535454;}
+
+.tabwrap {/*position:absolute; top:497px; left:61px;*/ background:#fff; position:relative;}
+.switch_tabwrap {/*position:absolute; top:536px; left:60px;*/ background:#fff; position:relative;}
+.tabwrap #tab2, .tabwrap #tab3 {margin-left:1px;}
+
+.lg_switchmrk_tab.active {background:url(../images/tab_on.png) repeat-x; float:left; text-align:center; }
+.lg_switchmrk_tab {background:url(../images/tab_off.png) repeat-x; float:left; text-align:center; }
+.lg_switchmrk_tab.active a {color:#fbb040; width:317px; height:41px; padding-top:24px; display:block; text-decoration:none; font-family: "HelveticaBold";}
+.lg_switchmrk_tab a {color:#f9d798; width:317px; height:41px; padding-top:24px; display:block; text-decoration:none; font-family: "HelveticaBold";}
+
+.sm_tab.active {background:url(../images/tab_on.png) repeat-x; float:left; text-align:center; }
+.sm_tab {background:url(../images/tab_off.png) repeat-x; float:left; text-align:center; }
+.sm_tab.active a {color:#fbb040; width:181px; padding-top:24px; height:41px; display:block; text-decoration:none; font-family: "HelveticaBold"; }
+.sm_tab a {color:#f9d798; width:182px; padding-top:24px; height:41px; display:block; text-decoration:none; font-family: "HelveticaBold"; }
+
+.tab.active {background:url(../images/tab_on.png) repeat-x; float:left; text-align:center; }
+.tab {background:url(../images/tab_off.png) repeat-x; float:left; text-align:center; }
+.tab.active a {color:#fbb040; width:274px; padding-top:24px; height:41px; display:block; text-decoration:none; font-family: "HelveticaBold";}
+.tab a {color:#f9d798; width:274px; padding-top:24px; height:41px; display:block; text-decoration:none; font-family: "HelveticaBold";}
+
+/*-- slide 01 --*/
+.slide-1 .blueoverlay {background:#005288; opacity: .75; width: 1024px; height: 658px; position:absolute;}
+.slide-1 h1 {position:absolute; top:32px; left:180px; width:300px; font-size:25.5px; line-height:31px;}
+.slide-1 #question {position:absolute; top:30; left:30px; top:15px; width:755px;}
+.slide-1 #question span {font-family:"HelveticaCondensed";  color: #f2af32; font-size:31px; line-height:36px;}
+
+.slide-1 #isi_back {position:absolute; background:#005288; width: 480px /*390px*/; height:658px; top:0; right:0/*25px*/;opacity: .5;}
+.slide-1 #isi_right {position:absolute; width:445px/*365px*/; height:658px; top:10px; right:15px/*40px*/; font-size:17.4px; line-height: 18px; font-family:"HelveticaCondensed";}
+.slide-1 #isi_right p {margin: 4px 0 4px; }
+.slide-1 #isi_right .directions {position:relative; right: 0px; bottom: -40px;}
+
+.slide-1 .abbott_logo {position:absolute; bottom:21px; right:32px;}
+.slide-1 .kaletra_logo {position:absolute; bottom:59px; right:32px;}
+
+.slide-1 #footer {position: absolute; font-family:"HelveticaCondensed"; bottom: 12px; left: 202px; width: 350px; font-size: 17.4px; line-height:17.4px;}
+.slide-1 #footer span {font-size: 17.4px; line-height:26px;}
+.slide-1 #footer p {padding: 0; margin: 4px 0; }
+.slide-1 #bareface > div { position:absolute; }
+.slide-1 #samface { content: url(../images/ka-01-sam.png); left: 35px; top: 355px; }
+.slide-1 #mariaface { content: url(../images/ka-01-maria.png);  left: 82px; top: 363px; }
+.slide-1 #jamesface { content: url(../images/ka-01-james.png); left: 176px; top: 354px; }
+
+.slide-1 .buttonwrap {position:absolute; top:128px; left:131px;}
+.slide-1 button {margin:20px 30px; background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2c564), color-stop(49%,#eeb44c), color-stop(50%,#eeb44c), color-stop(100%,#e89c2b));  font: 20px/20px 'HelveticaBoldCondensed'; color: #fff; padding:9px 0 5px; text-shadow: 1px 1px 1px #de7b1a; border-collapse: collapse; width: 200px; height: 58px; -webkit-border-radius: 7px; border:3px solid #f2b642;  line-height: 1em; position:relative; -webkit-box-shadow: 2px 2px 1px rgba(0,0,0,0.2); }
+.slide-1 button > span { position: relative; bottom: 10px; white-space: nowrap;}
+
+
+.slide-1 #footer-2 {position: absolute; font-family:"HelveticaCondensed"; bottom: 12px; left: 30px; width: 930px; font-size: 16.5px; line-height:21px;}
+.slide-1 #footer-2 p {padding: 0; margin: 4px 0; }
+.slide-1 #footer-2 .abbott_logo {position:absolute; bottom:0px; right:0px;}
+
+/*-- slide 02 --*/
+.bottomnav {background:#005287; position:absolute; bottom:0; padding:8px 0; width:1024px;}
+.botnavitem {margin-left:8px; padding-top:70px; background:url(../images/BottomNav.png) no-repeat; width:216px; height:80px; float:left; vertical-align:middle; text-align:center; color:#005288; font-size:20px; }
+.isiscroll {overflow:scroll; height:360px; overflow-x:hidden; padding-right:10px;}
+
+
+//*-- slide 03 --*/
+
+.slide-3 .buttonwrap {position:absolute; bottom:46px; left:36px;}
+.slide-3 button {margin-right:12px; background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b4ddff), color-stop(49%,#5893c2), color-stop(50%,#336e9d), color-stop(100%,#508bba));  font: 12px/13px 'HelveticaBold'; color: #fff; padding:9px 0 5px; text-shadow: 0px -1px 1px #0176b0; border-collapse: collapse; width: 120px; height: 32px; -webkit-border-radius: 7px; border:3px solid #147dc6;  line-height: 1em; position:relative; -webkit-box-shadow: 2px 2px 1px rgba(0,0,0,0.2); }
+.slide-3 button > span { position: relative; top: 0px; white-space: nowrap;}
+.slide-3 button:active { background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#508bba), color-stop(49%,#336e9d), color-stop(50%,#5893c2), color-stop(100%,#b4ddff)); -webkit-box-shadow: none; }
+
+.slide-3 sup {line-height:0; font-size:60%;}
+.slide-3 #content {background:#fff; width:1024px; height:658px; position:relative;}
+.slide-3 header {color:#005287; position:absolute;  z-index:55; top:26px; left:36px; font:31px/33px "HelveticaCondensed"; width:700px;}
+.slide-3 .headerborder {border-top:2px solid #f2af32; -webkit-box-shadow: 0 0 5px rgba(0,0,0,1); width:340px; position:absolute; top:95px; left:36px;}
+.slide-3 header strong {color:#005287; font:17px/19px "HelveticaBold";}
+.slide-3 section {color:#f2af32; position:absolute;  z-index:55; top:100px; left:36px; color:#fff; width:988px;}
+.slide-3 section .bullet {background:url(../images/sm_ywbullet.jpg) no-repeat left 4px; padding-left:14px;}
+.slide-3 footer {position:absolute; left:36px; bottom:12px; font:17px/22px "HelveticaCondensed"; width:600px; color:#000;}
+.slide-3 .logo {position:absolute; top:26px; right:28px; background:url(../images/sm_blklogo.png) no-repeat; width:116px; height:38px;}
+
+.slide-3 section article {position:absolute; width:950px; top:30px; color:#000; font:16px/20px "HelveticaRoman";}
+.slide-3 section article .timelinewrap {width:990px; height: 346px; position:relative; left:-22px;}
+.slide-3 section article .timeline {background:url(../images/ka-03-timeline.png) no-repeat; width:990px; height:388px; position:absolute; z-index:2;}
+.slide-3 section article .timelineactive {background:url(../images/ka-03-timelineactive.png) no-repeat; width:990px; height:388px; position:absolute; opacity:0; z-index:4;}
+.slide-3 section article .arrow {background:url(../images/ka-03-arrow.png) no-repeat; width:952px; height:169px; top:26px; left: 24px; position:absolute; z-index:1;}
+.slide-3 section article .arrowactive {background:url(../images/ka-03-arrowactive.png) no-repeat; width:952px; height:169px; top:26px; left: 24px; position:absolute; opacity:0; z-index:3;}
+.slide-3 section article .title {position:absolute; top:16px; color:#005287; font:17px/19px "HelveticaBlack"; text-align:center; width:637px;}
+.slide-3 section article .chartdisc {color:#000; font:17px/19px "HelveticaCondensed"; position:absolute; left:300px; top:460px;}
+
+.slide-3 section article p {margin:8px 0;}
+.slide-3 section article strong {color:#005287; font:17px/19px "HelveticaBlack"; margin-left:14px;}
+.slide-3 section article .smtextwrap {position:relative; margin-top: 20px; left:-4px;}
+.slide-3 section article .smtext {font:12px/14px "HelveticaCondensed"; text-indent:-4px; margin-left:16px; margin-top:4px;}
+
+.slide-3 .collage {background:url(../images/ka-03-collage.jpg) no-repeat; width:252px; height:75px; position:absolute; bottom:12px; right:28px;}
+
+
+/*-- slide 04 --*/
+.slide-4 #content .whiteoverlay {background:#ffffff; opacity: 1; width: 1024px; height: 658px; position:absolute;}
+.slide-4 h1 {position:absolute; top:28px; left:60px; font-style:normal; color:#005288;}
+.slide-4 #isishadow {position:absolute; top:90px; left:60px; width:800px; padding:32px 40px 60px 40px; background:#fff;  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.34); color:#000;}
+.slide-4 h3 {margin:10px 0 4px 0;}
+.slide-4 p {margin:6px 0;}
+
+/*-- slide 05 --*/
+.adultguide {position:absolute; bottom:6px; right:174px;}
+.periguide {position:absolute; bottom:6px; right:32px;}
+.slide-5 #content .headername {font-size:90px; padding:0 0 30px 60px; color:#F2AF32; border-bottom:1px solid #F2AF32; width:360px; position:absolute; top:160px;}
+.infoitem {background:url(../images/ylw_bullet.png) no-repeat left 10px; padding-left:16px; font-family:"HelveticaHeavy"; font-size:21px; line-height:165%}
+.leftquote {position:absolute; left:-32px; top:4px; color:#F2AF32; text-shadow: 3px 3px 9px #3f3f3f;}
+.rightquote {position:absolute; left:0px; top:14px; color:#F2AF32; text-shadow: 3px 3px 9px #3f3f3f;}
+.patientinfo {position:absolute; top:260px; left:68px; font-family:"HelveticaHeavy"; }
+.slide-5 #footer {position:absolute; bottom:10px; left:32px; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.maria {position:absolute; right:0px; bottom:60px; padding:0 20px 0 0; border-bottom:1px solid #F2AF32; height:510px;}
+.patientquote {position:absolute; width:270px; top:120px; left:440px; font-family:"HelveticaLightItalic"; font-size:18px;}
+.patientquote span {font-size:40px; font-family: "HelveticaBoldExtendedOblique"; }
+.patientquote span.rightquote { width: 45px !important; display: inline-table; }
+
+
+/*-- slide 06 --*/
+.slide-6 #content .patientinfo {position:absolute; top:226px; left:0px; padding-left:68px; font-family:"HelveticaHeavy"; border-top:1px solid #F2AF32;}
+#patienttable { width:100%; }
+#patienttable .lipids {padding-left:22px;}
+#patienttable .head {padding:4px 0 2px 22px; background:#F2AF32; color:#000;}
+#patienttable .whborder {border-bottom:1px solid white;}
+#patienttable span {margin-right:50px;}
+#patienttable td {padding:8px 0 2px 0;}
+.slide-6 #footer {position:absolute; bottom:10px; left:32px; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.slide-6 #headername {font-size:90px; padding:0 0 30px 60px; color:#F2AF32; width:360px; position:absolute; top:160px; border:none;}
+.slide-6 sup { font-size: 50%; }
+
+
+
+/*-- slide 12 --*/
+.slide-12 #content .whiteoverlay {background:#ffffff; opacity: 1; width: 1024px; height: 658px; position:absolute;}
+.slide-12 h1 {position:absolute; top:28px; left:60px; font-style:normal; color:#005288; line-height:90%}
+.slide-12 #footer {position:absolute; bottom:10px; left:32px; color:#000; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+/*.slide-12 #reflection { width: 551px; height: 102px; position: relative; opacity: 0;
+background: url(../images/ka-12-chartreflection.png) no-repeat center top; top: 375px;
+ }*/
+ .loaded #reflection { opacity: 1; }
+.slide-12 #leftchart {-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.34); 
+/*   */
+background:url(../images/2n_VL_CD4_A.png) no-repeat; width:547px; height:369px; position:relative; top:106px; left:60px; font-family:"HelveticaBoldCondensed"; font-size:11px; color:#fff; }
+.slide-12 #leftchart .ln_1 { position:absolute; height: 400px; width: 575px; bottom: -6px; background: url(../images/2n_VL_CD4_A_BIDbars.png) no-repeat bottom left; }
+.slide-12 #leftchart .ln_2 { position:absolute; height: 400px; width: 575px; bottom: -6px; background: url(../images/2n_VL_CD4_A_QDbars.png) no-repeat bottom left; }
+.slide-12 #leftchart .num_1 {position:absolute; left:76px; bottom:38px;}
+.slide-12 #leftchart .num_2 {position:absolute; left:163px; bottom:38px;}
+.slide-12 #leftchart .num_3 {position:absolute; left:276px; bottom:38px;}
+.slide-12 #leftchart .num_4 {position:absolute; left:360px; bottom:38px;}
+.slide-12 #leftchart .num_5 {position:absolute; left:446px; bottom:38px;}
+
+.slide-12 #leftchart div[class^="p_num"] { position:absolute; font-size: 9.5px; z-index: 1000; color: black; font-family: 'HelveticaMedium'; opacity: 0; }
+
+.loaded #leftchart div[class^="p_num"] { opacity: 1; }
+
+.slide-12 #leftchart .p_num_1 { left:93px; bottom:249px; }
+.slide-12 #leftchart .p_num_2 { left:180px; bottom:233px;}
+.slide-12 #leftchart .p_num_3 { left:292px; bottom:247px;}
+.slide-12 #leftchart .p_num_4 { left:376px; bottom:230px;}
+.slide-12 #leftchart .p_num_5 { left:463px; bottom:250px; }
+
+.slide-12 #rightcol {color:#000; position:absolute; top:90px; right:32px; width:346px; font-size:15px; line-height:140%;}
+
+
+/*-- slide 13 --*/
+.slide-13 #content .whiteoverlay {background:#ffffff; opacity: 1; width: 1024px; height: 658px; position:absolute;}
+.slide-13 h1 {position:absolute; top:28px; left:60px; font-style:normal; color:#005288; line-height:90%}
+.slide-13 #footer {position:absolute; bottom:10px; left:32px; color:#000; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.slide-13 #leftchart {-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.34);  background:url(../images/2o_CD4_A.png) no-repeat; width:547px; height:355px; position:relative; top:106px; left:60px; font-family:"HelveticaHeavy"; font-size:13px; color:#fff;}
+.slide-13 #leftchart .ln_1 { position:absolute; height: 355px; width: 575px; bottom: 0px; background: url(../images/2o_CD4_A_QD.png) no-repeat bottom left;  }
+.slide-13 #leftchart .ln_2 { position:absolute; height: 355px; width: 575px; bottom: 0px; background: url(../images/2o_CD4_A_BID.png) no-repeat bottom left;  }
+.slide-13 #leftchart .num_1 {position:absolute; left:200px; top:134px;}
+.slide-13 #leftchart .num_2 {position:absolute; left:358px; top:120px;}
+.slide-13 #rightcol {color:#000; position:absolute; top:90px; right:32px; width:346px; font-size:15px; line-height:140%;}
+
+.slide-13 .p_num { position: absolute; z-index: 100; font-size: 9.5px; color: black; font-family: 'HelveticaMedium'; bottom:233px; left:279px; opacity: 0; }
+.loaded .p_num{ opacity: 1; }
+
+
+/*-- slide 13 - popup chart 1 --*/
+.chart-13-1 .chartTitle { left:110px; top: 60px; }
+.chart-13-1 .yLabel { left:-70px; top:290px; }
+.chart-13-1 .yLabel sup { position: relative; top: 3px; }
+.chart-13-1 .xLabel { left:295px; top:515px; }
+.chart-13-1 .xLabel.x1 { left:520px;}
+.chart-13-1 .chartLegend { left:435px; top:180px; }
+.chart-13-1 .chartLegend p { margin: 0 0 1px 0;}
+.chart-13-1 .chartLegend div p:nth-child(2) { margin: 10px 0 1px 0;}
+.chart-13-1 .barLabel.barLabel1 p { left:545px; top: 205px; }
+.chart-13-1 .barLabel.barLabel2 p { left:320px; top: 225px; }
+
+/*-- slide 14 --*/
+.slide-14 #content .whiteoverlay {background:#ffffff; opacity: 1; width: 1024px; height: 658px; position:absolute;}
+.slide-14 h1 {position:absolute; top:28px; left:60px; font-style:normal; color:#005288; line-height:90%}
+.slide-14 #footer {position:absolute; bottom:3px; left:32px; color:#000; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.slide-14 #leftchart {-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.34);  background:url(../images/2p_AE_A.png) no-repeat; width:547px; height:447px; position:relative; top:106px; left:60px; font-family:"HelveticaHeavy"; font-size:13px; color:#fff;}
+.slide-14 #rightcol {color:#000; position:absolute; top:108px; right:32px; width:346px; font-size:15px; line-height:140%;}
+.slide-14 #main .smallcap {position:absolute; color:#000; font-size:9.5px; left:104px; bottom:40px; width:507px;}
+.slide-14 #main .smallcap > div { text-indent: -9px; }
+
+/*-- slide 14 - popup chart 1 --*/
+body.chart-14-1 .chartTitle { left: 80px; top:43px; color:#000; }
+body.chart-14-1 .chartLegend { left: 40px; top:555px; width: 800px; }
+body.chart-14-1 .chartLegend p { font-family:"HelveticaCondensed"; line-height:100%; margin:0; }
+
+/*-- slide 15 --*/
+.slide-15 #content .whiteoverlay {background:#ffffff; opacity: 1; width: 1024px; height: 658px; position:absolute;}
+.slide-15 h1 {position:absolute; top:28px; left:60px; font-style:normal; color:#005288; line-height:90%}
+.slide-15 #footer {position:absolute; bottom:10px; left:32px; color:#000; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.slide-15 #leftchart {-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.34); background:url(../images/2q_Lipids_A.png) no-repeat; width:548px; height:369px; position:relative; top:106px; left:60px; font-family:"HelveticaHeavy"; font-size:12px; color:#fff;}
+.slide-15 #leftchart .ln_1 { position:absolute; height: 355px; width: 548px; bottom: 0px; background: url(../images/2q_Lipids_A_QD.png) no-repeat bottom left; }
+.slide-15 #leftchart .ln_2 { position:absolute; height: 355px; width: 548px; bottom: 0px; background: url(../images/2q_Lipids_A_BID.png) no-repeat bottom left; }
+.slide-15 #leftchart .ln_3 { position:absolute; height: 355px; width: 548px; bottom: 0px; background: url(../images/2q_Lipids_A_legend.png) no-repeat bottom left; }
+.slide-15 #leftchart .num_1 {position:absolute; left:74px; top:166px;}
+.slide-15 #leftchart .num_2 {position:absolute; left:97px; top:136px;}
+.slide-15 #leftchart .num_3 {position:absolute; left:120px; top:168px;}
+.slide-15 #leftchart .num_4 {position:absolute; left:143px; top:132px;}
+.slide-15 #leftchart .num_5 {position:absolute; left:191px; top:226px;}
+.slide-15 #leftchart .num_6 {position:absolute; left:210px; top:222px;}
+.slide-15 #leftchart .num_7 {position:absolute; left:237px; top:228px;}
+.slide-15 #leftchart .num_8 {position:absolute; left:256px; top:218px;}
+.slide-15 #leftchart .num_9 {position:absolute; left:304px; top:288px;}
+.slide-15 #leftchart .num_10 {position:absolute; left:327px; top:286px;}
+.slide-15 #leftchart .num_11 {position:absolute; left:350px; top:287px;}
+.slide-15 #leftchart .num_12 {position:absolute; left:373px; top:285px;}
+.slide-15 #leftchart .num_13 {position:absolute; left:415px; top:168px;}
+.slide-15 #leftchart .num_14 {position:absolute; left:438px; top:122px;}
+.slide-15 #leftchart .num_15 {position:absolute; left:461px; top:170px;}
+.slide-15 #leftchart .num_16 {position:absolute; left:484px; top:100px;}
+.slide-15 #rightcol {color:#000; position:absolute; top:108px; right:32px; width:346px; font-size:15px; line-height:140%;}
+
+/*-- slide 15 - popup chart 1 --*/
+.chart-15-1 .chartTitle { left:110px; top: 50px; }
+.chart-15-1 .yLabel { left:0px; top:300px; }
+.chart-15-1 .xLabel { left: 163px; text-align: center; top: 515px;}
+.chart-15-1 .xLabel.x1 { left:350px;}
+.chart-15-1 .xLabel.x2 { left:510px;}
+.chart-15-1 .xLabel.x3 { left:652px;}
+.chart-15-1 .chartLegend { left:160px; top:139px; }
+.chart-15-1 .chartLegend div:nth-child(2) { left: 108px; position: absolute; top: 0px; width: 100px; }
+.chart-15-1 .chartLegend div:nth-child(3) { left: 217px; position: absolute; top: 0px; width: 250px; }
+.chart-15-1 .chartLegend p { margin: 0 0 1px 0;}
+.chart-15-1 .chartLegend div p:nth-child(2) { margin: 1px 0 1px 0;}
+.chart-15-1 .barLabel.barLabel1 p { left:137px; top: 275px; }
+.chart-15-1 .barLabel.barLabel2 p { left:170px; top: 228px; }
+.chart-15-1 .barLabel.barLabel3 p { left:203px; top: 275px; }
+.chart-15-1 .barLabel.barLabel4 p { left:236px; top: 225px; }
+.chart-15-1 .barLabel.barLabel5 p { left:307px; top: 360px; }
+.chart-15-1 .barLabel.barLabel6 p { left:335px; top: 357px; }
+.chart-15-1 .barLabel.barLabel7 p { left:372px; top: 362px; }
+.chart-15-1 .barLabel.barLabel8 p { left:401px; top: 350px; }
+.chart-15-1 .barLabel.barLabel9 p { left:472px; top: 450px; }
+.chart-15-1 .barLabel.barLabel10 p { left:505px; top: 450px; }
+.chart-15-1 .barLabel.barLabel11 p { left:538px; top: 450px; }
+.chart-15-1 .barLabel.barLabel12 p { left:571px; top: 450px; }
+.chart-15-1 .barLabel.barLabel13 p { left:631px; top: 278px; }
+.chart-15-1 .barLabel.barLabel14 p { left:665px; top: 210px; }
+.chart-15-1 .barLabel.barLabel15 p { left:697px; top: 278px; }
+.chart-15-1 .barLabel.barLabel16 p { left:731px; top: 175px; }
+
+
+/*-- slide 16 --*/
+.slide-16 #content .whiteoverlay {background:#ffffff; opacity: 1; width: 1024px; height: 658px; position:absolute;}
+.slide-16 h1 {position:absolute; top:28px; left:60px; font-style:normal; color:#005288;}
+.slide-16 #isishadow {position:absolute; top:90px; left:60px; width:800px; height: 475px; padding:10px 40px 10px 40px; background:#fff;  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.34); color:#000;}
+.slide-16 h3 {margin:10px 0 4px 0;}
+.slide-16 p {margin:6px 0;}
+.footer { position:absolute; bottom:20px; right:-85px; color:#000; width:350px; font-size:16px; font-style:italic; line-height:100%;}/*Tushar 2011-01-13 Added*/
+
+.referencesbtn {position:absolute; bottom:6px; right:32px;}
+
+/*-- popup 16 --*/
+
+
+.popup-16-1 li {font-family:"HelveticaBold"; padding-bottom:10px;}
+.popup-16-1 li span {font-family:"HelveticaRoman"; padding-bottom:10px;}
+
+/*-- slide 17 --*/
+.adultguide {position:absolute; bottom:6px; right:174px;}
+.periguide {position:absolute; bottom:6px; right:32px;}
+.headername {font-size:90px; padding:0 0 30px 60px; color:#F2AF32; border-bottom:1px solid #F2AF32; width:360px; position:absolute; top:160px;}
+.infoitem {background:url(../images/ylw_bullet.png) no-repeat left 6px; padding-left:16px; font-family:"HelveticaHeavy"; font-size:21px; line-height:120%; margin-bottom:8px;}
+.leftquote {position:absolute; left:-32px; top:4px; color:#F2AF32; text-shadow: 3px 3px 9px #3f3f3f;}
+.rightquote {position:relative; left:0px; top:14px; color:#F2AF32; text-shadow: 3px 3px 9px #3f3f3f;}
+.patientinfo {position:absolute; top:260px; left:68px; font-family:"HelveticaHeavy"; }
+.slide-17 #footer {position:absolute; bottom:10px; left:32px; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.sam {position:absolute; right:0px; bottom:60px; padding:0 20px 0 0; border-bottom:1px solid #F2AF32; height:510px;}
+.patientquote {position:absolute; width:270px; top:120px; left:440px; font-family:"HelveticaLightItalic"; font-size:18px;}
+.patientquote span {font-size:40px; font-family: "HelveticaBoldExtendedOblique"; }
+
+/*-- slide 18 --*/
+.slide-18 #content .patientinfo {position:absolute; top:226px; left:0px; padding-left:68px; font-family:"HelveticaHeavy"; border-top:1px solid #F2AF32;}
+#patienttable .lipids {padding-left:22px;}
+#patienttable .head {padding:4px 0 2px 22px; background:#F2AF32; color:#000;}
+#patienttable .whborder {border-bottom:1px solid white;}
+#patienttable span {margin-right:50px;}
+#patienttable td {padding:8px 0 2px 0;}
+.slide-18 #footer {position:absolute; bottom:10px; left:32px; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.slide-18 #headername {font-size:90px; padding:0 0 30px 60px; color:#F2AF32; width:360px; position:absolute; top:160px; border:none;}
+.yellowbullet {background:url(../images/ylw_bullet.png) no-repeat left 10px; padding-left:16px; font-family:"HelveticaHeavy"; font-size:16px; line-height:165%}
+
+/*-- slide 19 --*/
+.slide-19 #content .whiteoverlay {background:#ffffff; opacity: .9; width: 1024px; height: 658px; position:absolute;}
+.slide-19 #footer {position:absolute; bottom:10px; left:32px; color:#000; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.slide-19 #sectionhead {padding:8px 0 4px 22px; background:#F2AF32; color:#000; width:460px; font-family:"HelveticaHeavy"; font-size:24px;}
+.slide-19 #leftcol {color:#000; position:absolute; top:160px; width:480px; left:68px; font-size:18px;}
+.slide-19 #leftcol h1 {font-family:"HelveticaHeavy"; font-size:19px; line-height:125%; color:#005288;}
+.slide-19 #leftcol h2 {font-family:"HelveticaHeavy"; font-size:18px; line-height:125%; color:#005288;}
+.slide-19 #rightcol {color:#000; position:absolute; top:150px; right:32px; width:346px; font-size:15px; line-height:140%;}
+.slide-19 #rightcol h2 {font-family:"HelveticaHeavy"; font-size:16px; line-height:125%; color:#005288;}
+.sectionheadborder {padding-left:68px; border-top:1px solid #F2AF32; position:absolute; top:100px;}
+.studybtn {position:absolute; bottom:6px; right:174px;}
+.baselinebtn {position:absolute; bottom:6px; right:32px;}
+
+/*-- slide 20 --*/
+.slide-20 #content .charttabwrap {position:absolute; top:102px; left:61px; -webkit-box-shadow: 0 0 75px 0px #535454;}
+.slide-20 #content .whiteoverlay {background:#ffffff; opacity: 1; width: 1024px; height: 658px; position:absolute;}
+.slide-20 h1 {position:absolute; top:28px; left:60px; font-style:normal; color:#005288; line-height:90%; width:750px;}
+.slide-20 #footer { position:absolute; bottom:10px; left:32px; color:#000; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.slide-20 .charttabwrap { -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.34); width:548px; height:500px; }
+.slide-20 #leftchart { position: absolute; background:url(../images/3f_Efficacy_A.png) no-repeat; width:548px; height:435px; font-family:"HelveticaHeavy"; font-size:13px;}
+.slide-20 #leftchart .ln_1 { position:absolute; background: url('../images/3f_Efficacy_A_KAL.png') no-repeat left top; width: 547px; height: 435px; }
+.slide-20 #leftchart .ln_2 { position:absolute; background: url('../images/3f_Efficacy_A_ART.png') no-repeat left top; width: 547px; height: 435px; }
+.slide-20 #leftchart .num_1 {position:absolute; left:436px; top:104px; color:#005288;}
+.slide-20 #leftchart .num_2 {position:absolute; left:436px; top:141px; color:#C51B70;}
+.slide-20 #leftchart-2 {-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.34);  position: absolute; background:url(../images/3g_Efficacy_A.png) no-repeat; width:547px; height:435px; font-family:"HelveticaHeavy"; font-size:13px;}
+.slide-20 #leftchart-2 .ln_1 {position:absolute; background: url('../images/3g_Efficacy_A_ART.png') no-repeat left top; width: 547px; height: 435px; }
+.slide-20 #leftchart-2 .ln_2 {position:absolute; background: url('../images/3g_Efficacy_A_KAL.png') no-repeat left top; width: 547px; height: 435px; }
+.slide-20 #leftchart-2 .num_1 {position:absolute; left:438px; top:69px; color:#005288;}
+.slide-20 #leftchart-2 .num_2 {position:absolute; left:438px; top:104px; color:#C51B70;}
+.slide-20 #rightcol {color:#000; position:absolute; top:108px; right:32px; width:346px; font-size:15px; line-height:140%;}
+.slide-20 .switch_tabwrap { position: absolute; top:435px; width:548px; }
+
+/*-- slide 20 - chart 1 --*/
+.chart-20-1 .chartTitle { top: 27px; left:120px;}
+.chart-20-1 .yLabel { top:250px; left:10px;}
+.chart-20-1 .xLabel { top:480px; left:395px;}
+.chart-20-1 .chartLegend { top:356px; left:645px;}
+.chart-20-1 .chartLegend p { margin: 0 0 1px 0;}
+.chart-20-1 .chartLegend p.chartLegendFootnote { margin: 0 0 1px -40px;}
+.chart-20-1 .secondaryLabel { top:575px; left:335px;}
+
+/*-- slide 20 - chart 2 --*/
+.chart-20-2 .chartTitle { top: 27px; left:120px;}
+.chart-20-2 .yLabel { top:250px; left:10px;}
+.chart-20-2 .xLabel { top:480px; left:395px;}
+.chart-20-2 .chartLegend { top:356px; left:645px;}
+.chart-20-2 .chartLegend p { margin: 0 0 1px 0;}
+.chart-20-2 .chartLegend p.chartLegendFootnote { margin: 0 0 1px -40px;}
+.chart-20-2 .secondaryLabel { top:575px; left:335px;}
+
+
+/*-- slide 22 --*/
+.slide-22 #content .charttabwrap { position:absolute; top:102px; left:61px; -webkit-box-shadow: 0 0 75px 0px #535454;}
+.slide-22 #content .whiteoverlay {background:#ffffff; opacity: 1; width: 1024px; height: 658px; position:absolute;}
+.slide-22 h1 {position:absolute; top:28px; left:60px; font-style:normal; color:#005288; line-height:90%; width:750px;}
+.slide-22 #footer {position:absolute; bottom:10px; left:32px; color:#000; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.slide-22 #leftchart {-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.34);  background:url(../images/3h_Efficacy_A.png) no-repeat; width:548px; height:421px; font-family:"HelveticaHeavy"; font-size:13px;}
+.slide-22 #leftchart .ln_1 {position:absolute; background: url('../images/3h_Efficacy_A_ART.png') no-repeat left top; width: 547px; height: 421px; }
+.slide-22 #leftchart .ln_2 {position:absolute; background: url('../images/3h_Efficacy_A_KAL.png') no-repeat left top; width: 547px; height: 421px; }
+.slide-22 #leftchart-2 {-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.34); background:url(../images/3i_Efficacy_A.png) no-repeat; width:548px; height:421px; font-family:"HelveticaHeavy"; font-size:13px; }
+.slide-22 #leftchart-2 .ln_1 {position:absolute; background: url('../images/3i_Efficacy_A_ART.png') no-repeat left top; width: 547px; height: 421px; }
+.slide-22 #leftchart-2 .ln_2 {position:absolute; background: url('../images/3i_Efficacy_A_KAL.png') no-repeat left top; width: 547px; height: 421px; }
+.slide-22 #rightcol {color:#000; position:absolute; top:108px; right:32px; width:346px; font-size:15px; line-height:140%;}
+.slide-22 #main .highlightbox {padding:0 10px; background:#fff; border:1px solid #F2AF32; margin-top:16px;}
+.slide-22 #main .smallcap {color:#000; font-size:9.5px; padding-top:136px; padding-right:44px; text-indent: -4px;}
+
+
+/*-- slide 22 - chart 1 --*/
+.chart-22-1 .chartTitle { left:120px; top: 27px; }
+.chart-22-1 .yLabel { left:0px; top:235px; }
+.chart-22-1 .xLabel { left:400px; top:470px; }
+.chart-22-1 .chartLegend { left:585px; top:300px; }
+.chart-22-1 .chartLegend p { margin: 0 0 1px 0;}
+.chart-22-1 .secondaryLabel { left:360px; top:575px; }
+
+/*-- slide 22 - chart 2 --*/
+.chart-22-2 .chartTitle { left:120px; top: 27px; }
+.chart-22-2 .yLabel { left:0px; top:235px; }
+.chart-22-2 .xLabel { left:400px; top:470px; }
+.chart-22-2 .chartLegend { left:585px; top:295px; }
+.chart-22-2 .chartLegend p { margin: 0 0 1px 0;}
+.chart-22-2 .secondaryLabel { left:360px; top:575px; }
+
+
+/*-- slide 24 --*/
+.slide-24 #content .charttabwrap { position:absolute; top:102px; left:61px; -webkit-box-shadow: 0 0 75px 0px #535454; }
+.slide-24 #content .whiteoverlay { background:#ffffff; opacity: 1; width: 1024px; height: 658px; position:absolute;}
+.slide-24 h1 {position:absolute; top:28px; left:60px; font-style:normal; color:#005288; line-height:90%; width:750px;}
+.slide-24 #footer {position:absolute; bottom:10px; left:32px; color:#000; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.slide-24 #leftchart {-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.34); background:url(../images/3j_Lipids_A.png) no-repeat; width:634px; height:385px; font-family:"HelveticaHeavy"; font-size:11px; color:#fff; position:relative;}
+
+.slide-24 .ln_1, .slide-24 .ln_2, .slide-24 .ln_3 
+{ position:absolute; bottom:0px; overflow:hidden; width:634px; height:385px; }
+.slide-24 .ln_1 img, .slide-24 .ln_2 img, .slide-24 .ln_3 img 
+{ position:absolute; bottom:0px; }
+
+.slide-24 #leftchart .num_1 { position:absolute; left:74px; top:98px;}
+.slide-24 #leftchart .num_2 { position:absolute; left:97px; top:98px;}
+.slide-24 #leftchart .num_3 { position:absolute; left:122px; top:82px;}
+.slide-24 #leftchart .num_4 { position:absolute; left:146px; top:114px;}
+.slide-24 #leftchart .num_5 { position:absolute; left:182px; top:202px;}
+.slide-24 #leftchart .num_6 { position:absolute; left:206px; top:202px;}
+.slide-24 #leftchart .num_7 { position:absolute; left:231px; top:188px;}
+.slide-24 #leftchart .num_8 { position:absolute; left:255px; top:196px;}
+.slide-24 #leftchart .num_9 { position:absolute; left:296px; top:268px;}
+.slide-24 #leftchart .num_10 { position:absolute; left:320px; top:268px;}
+.slide-24 #leftchart .num_11 { position:absolute; left:344px; top:268px;}
+.slide-24 #leftchart .num_12 { position:absolute; left:368px; top:268px;}
+.slide-24 #leftchart .num_13 { position:absolute; left:400px; top:146px;}
+.slide-24 #leftchart .num_14 { position:absolute; left:424px; top:146px;}
+.slide-24 #leftchart .num_15 { position:absolute; left:449px; top:140px;}
+.slide-24 #leftchart .num_16 { position:absolute; left:474px; top:164px;}
+.slide-24 #leftchart .num_17 { position:absolute; left:510px; top:153px;}
+.slide-24 #leftchart .num_18 { position:absolute; left:534px; top:134px;}
+.slide-24 #leftchart .num_19 { position:absolute; left:559px; top:112px;}
+.slide-24 #leftchart .num_20 { position:absolute; left:584px; top:190px;}
+.slide-24 #leftchart-2 { -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.34); background:url(../images/3j_Lipids_A.png) no-repeat; width:634px; height:385px; font-family:"HelveticaHeavy"; font-size:11px; color:#fff; position:relative;}
+
+/*
+.slide-24 #leftchart-2 .ln_1 {position:absolute; opacity: 0}
+.loaded #leftchart-2 .ln_1 { opacity: 1; -webkit-transition-delay: 15s; -webkit-transition-property: opacity; -webkit-transition-timing-function: ease-in; -webkit-transition-duration: 1s; }
+.slide-24 #leftchart-2 .ln_2 {position:absolute; opacity: 0}
+.loaded #leftchart-2 .ln_2 { opacity: 1; -webkit-transition-delay: 18s; -webkit-transition-property: opacity; -webkit-transition-timing-function: ease-in; -webkit-transition-duration: 1s; }
+.slide-24 #leftchart-2 .ln_3 {position:absolute; opacity: 0}
+.loaded #leftchart-2 .ln_3 { opacity: 1; -webkit-transition-delay: 20s; -webkit-transition-property: opacity; -webkit-transition-timing-function: ease-in; -webkit-transition-duration: 1s; }
+*/
+
+.slide-24 #leftchart-2 .num_1 {position:absolute; left:73px; top:101px;}
+.slide-24 #leftchart-2 .num_2 {position:absolute; left:98px; top:101px;}
+.slide-24 #leftchart-2 .num_3 {position:absolute; left:122px; top:101px;}
+.slide-24 #leftchart-2 .num_4 {position:absolute; left:146px; top:118px;}
+.slide-24 #leftchart-2 .num_5 {position:absolute; left:182px; top:202px;}
+.slide-24 #leftchart-2 .num_6 {position:absolute; left:206px; top:202px;}
+.slide-24 #leftchart-2 .num_7 {position:absolute; left:231px; top:202px;}
+.slide-24 #leftchart-2 .num_8 {position:absolute; left:255px; top:202px;}
+.slide-24 #leftchart-2 .num_9 {position:absolute; left:296px; top:272px;}
+.slide-24 #leftchart-2 .num_10 {position:absolute; left:320px; top:272px;}
+.slide-24 #leftchart-2 .num_11 {position:absolute; left:344px; top:272px;}
+.slide-24 #leftchart-2 .num_12 {position:absolute; left:368px; top:272px;}
+.slide-24 #leftchart-2 .num_13 {position:absolute; left:400px; top:140px;}
+.slide-24 #leftchart-2 .num_14 {position:absolute; left:424px; top:140px;}
+.slide-24 #leftchart-2 .num_15 {position:absolute; left:449px; top:140px;}
+.slide-24 #leftchart-2 .num_16 {position:absolute; left:474px; top:178px;}
+.slide-24 #leftchart-2 .num_17 {position:absolute; left:510px; top:82px;}
+.slide-24 #leftchart-2 .num_18 {position:absolute; left:534px; top:74px;}
+.slide-24 #leftchart-2 .num_19 {position:absolute; left:559px; top:88px;}
+.slide-24 #leftchart-2 .num_20 {position:absolute; left:582px; top:184px;}
+.slide-24 #rightcol {color:#000; position:absolute; top:92px; right:32px; width:280px; font-size:14px; line-height:140%;}
+.slide-24 h2 {margin-bottom:5px}
+.slide-24 #main .highlightbox {padding:0 10px; background:#fff; border:1px solid #F2AF32; margin-top:16px;}
+.slide-24 #main .smallcap {color:#000; font-size:9.5px; padding-top:136px; padding-right:44px;}
+
+
+/*-- slide 24 - popup chart 1 --*/
+.chart-24-1 .chartTitle { left:80px; top: 50px; }
+.chart-24-1 .yLabel { left:-20px; top:270px; }
+.chart-24-1 .xLabel { left:115px; top:475px; }
+.chart-24-1 .xLabel.x1 { left:290px;}
+.chart-24-1 .xLabel.x2 { left:430px;}
+.chart-24-1 .xLabel.x3 { left:520px;}
+.chart-24-1 .xLabel.x4 { left:685px;}
+.chart-24-1 .chartLegend { left:130px; top:511px; }
+.chart-24-1 .chartLegend div:nth-child(2) { left: 142px; position: absolute; top: 0px; width: 100px; }
+.chart-24-1 .chartLegend div:nth-child(3) { left: 287px; position: absolute; top: 0px; width: 250px; }
+.chart-24-1 .chartLegend p { margin: 0 0 1px 0;}
+.chart-24-1 .chartLegend div p:nth-child(2) { margin: 10px 0 1px 0;}
+.chart-24-1 .barLabel.barLabel1 p { left:103px; top: 175px; }
+.chart-24-1 .barLabel.barLabel2 p { left:135px; top: 175px; }
+.chart-24-1 .barLabel.barLabel3 p { left:167px; top: 147px; }
+.chart-24-1 .barLabel.barLabel4 p { left:198px; top: 195px; }
+.chart-24-1 .barLabel.barLabel5 p { left:244px; top: 315px; }
+.chart-24-1 .barLabel.barLabel6 p { left:276px; top: 315px; }
+.chart-24-1 .barLabel.barLabel7 p { left:307px; top: 297px; }
+.chart-24-1 .barLabel.barLabel8 p { left:339px; top: 310px; }
+.chart-24-1 .barLabel.barLabel9 p { left:390px; top: 415px; }
+.chart-24-1 .barLabel.barLabel10 p { left:421px; top: 415px; }
+.chart-24-1 .barLabel.barLabel11 p { left:453px; top: 415px; }
+.chart-24-1 .barLabel.barLabel12 p { left:485px; top: 415px; }
+.chart-24-1 .barLabel.barLabel13 p { left:526px; top: 240px; }
+.chart-24-1 .barLabel.barLabel14 p { left:558px; top: 240px; }
+.chart-24-1 .barLabel.barLabel15 p { left:589px; top: 235px; }
+.chart-24-1 .barLabel.barLabel16 p { left:621px; top: 270px; }
+.chart-24-1 .barLabel.barLabel17 p { left:668px; top: 250px; }
+.chart-24-1 .barLabel.barLabel18 p { left:700px; top: 220px; }
+.chart-24-1 .barLabel.barLabel19 p { left:731px; top: 192px; }
+.chart-24-1 .barLabel.barLabel20 p { left:763px; top: 300px; }
+
+/*-- slide 24 - popup chart 2 --*/
+.chart-24-2 .chartTitle { left:80px; top: 50px; }
+.chart-24-2 .yLabel { left:-20px; top:270px; }
+.chart-24-2 .xLabel { left:115px; top:475px; }
+.chart-24-2 .xLabel.x1 { left:290px;}
+.chart-24-2 .xLabel.x2 { left:430px;}
+.chart-24-2 .xLabel.x3 { left:520px;}
+.chart-24-2 .xLabel.x4 { left:685px;}
+.chart-24-2 .chartLegend { left:130px; top:514px; }
+.chart-24-2 .chartLegend div:nth-child(2) { left: 142px; position: absolute; top: 0px; width: 100px; }
+.chart-24-2 .chartLegend div:nth-child(3) { left: 287px; position: absolute; top: 0px; width: 250px; }
+.chart-24-2 .chartLegend p { margin: 0 0 1px 0;}
+.chart-24-2 .chartLegend div p:nth-child(2) { margin: 18px 0px 1px; }
+.chart-24-2 .barLabel.barLabel1 p { left:103px; top: 170px; }
+.chart-24-2 .barLabel.barLabel2 p { left:135px; top: 170px; }
+.chart-24-2 .barLabel.barLabel3 p { left:167px; top: 170px; }
+.chart-24-2 .barLabel.barLabel4 p { left:198px; top: 195px; }
+.chart-24-2 .barLabel.barLabel5 p { left:244px; top: 315px; }
+.chart-24-2 .barLabel.barLabel6 p { left:276px; top: 315px; }
+.chart-24-2 .barLabel.barLabel7 p { left:307px; top: 315px; }
+.chart-24-2 .barLabel.barLabel8 p { left:339px; top: 315px; }
+.chart-24-2 .barLabel.barLabel9 p { left:390px; top: 410px; }
+.chart-24-2 .barLabel.barLabel10 p { left:421px; top: 410px; }
+.chart-24-2 .barLabel.barLabel11 p { left:453px; top: 410px; }
+.chart-24-2 .barLabel.barLabel12 p { left:485px; top: 410px; }
+.chart-24-2 .barLabel.barLabel13 p { left:526px; top: 228px; }
+.chart-24-2 .barLabel.barLabel14 p { left:558px; top: 228px; }
+.chart-24-2 .barLabel.barLabel15 p { left:589px; top: 228px; }
+.chart-24-2 .barLabel.barLabel16 p { left:621px; top: 275px; }
+.chart-24-2 .barLabel.barLabel17 p { left:667px; top: 140px; }
+.chart-24-2 .barLabel.barLabel18 p { left:699px; top: 132px; }
+.chart-24-2 .barLabel.barLabel19 p { left:730px; top: 150px; }
+.chart-24-2 .barLabel.barLabel20 p { left:761px; top: 285px; }
+
+
+/*-- slide 26 --*/
+
+.slide-26 #title {position:absolute; top:28px; left:60px; font-style:normal; color:#005288; line-height:90%; width:700px; font-size:14px;}
+.slide-26 #content .whiteoverlay {background:#ffffff; opacity: 1; width: 1024px; height: 658px; position:absolute;}
+.slide-26 h1 {position:absolute; top:28px; left:60px; font-style:normal; color:#005288; line-height:90%; width:610px; font-size:19px;}
+.slide-26 #footer {position:absolute; bottom:10px; left:32px; color:#000; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.slide-26 #leftchart {-webkit-box-shadow: 0 0 75px 0px #535454; background:url(../images/3m_AE_A.png) no-repeat; width:547px; height:392px; position:relative; top:106px; left:60px; font-family:"HelveticaHeavy"; font-size:13px;}
+.slide-26 #rightcol {color:#000; position:absolute; top:108px; right:32px; width:346px; font-size:15px; line-height:140%;}
+.slide-26 #main .smallcap {color:#000; font-size:9.5px; position:absolute; left:68px; top:509px; width:100%}
+.slide-26 #main .smallcap p { margin:0;}
+
+/*-- slide 26 - popup chart 1 --*/
+body.chart-26-1 .chartLegend { left: 40px; top:565px; width: 600px; }
+body.chart-26-1 .chartLegend p { font-family:"HelveticaCondensed"; line-height:100%; margin:0; }
+
+/*-- slide 27 --*/
+.slide-27 #content .charttabwrap {position:absolute; top:82px; left:61px;  -webkit-box-shadow: none}
+.slide-27 #chartwrap { width:548px; -webkit-box-shadow: 0 0 75px 0px #535454; }
+.slide-27 #content .whiteoverlay {background:#ffffff; opacity: 1; width: 1024px; height: 658px; position:absolute;}
+.slide-27 h1 {position:absolute; top:28px; left:60px; font-style:normal; color:#005288; line-height:90%; width:610px;}
+.slide-27 #footer { position:absolute; bottom:3px; left:32px; color:#000; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.slide-27 #leftchart { background:url(../images/3n_Resistance_A.png) no-repeat; width:548px; height:263px; font-family:"HelveticaHeavy"; font-size:13px;}
+.slide-27 #leftchart-2 { background:url(../images/3o_Resistance_A.png) no-repeat; width:548px; height:387px; font-family:"HelveticaHeavy"; font-size:13px; }
+.slide-27 #rightcol {color:#000; position:absolute; top:88px; right:32px; width:346px; font-size:15px; line-height:140%;}
+.slide-27 #main .smallcap.frame-1 { color:#000; font-size:9.5px; margin-top:80px; width:100% }
+.slide-27 #main .smallcap.frame-2 { color:#000; font-size:9.5px;  margin-top:80px; width:100%; z-index: 0; position: relative; }
+.slide-27 .left { display: inline-block; width: 300px; margin-right: 50px; vertical-align: top;  }
+.slide-27 .left > div { text-indent: -6px; }
+.slide-27 .left > div:last-child { text-indent: -8px; }
+.slide-27 .right { display: inline-block; width: 225px; vertical-align: top; position: relative; left: -40px; text-indent: -1px; }
+.slide-27 .smallcap.frame-2 .right { display: inline-block; width: 235px; vertical-align: top; position: relative; left: -40px; text-indent: -8px; }
+/*-- popup 27  --*/
+.popup-27-1 li {padding-bottom:10px;}
+
+/*-- slide 27 - popup chart 1 --*/
+body.chart-27-1 .chartTitle { left: 80px; top:43px; }
+body.chart-27-1 .chartLegend { left: 40px; top:415px; width: 800px; }
+body.chart-27-1 .chartLegend p { font-family:"HelveticaCondensed"; line-height:100%; margin:0; }
+
+/*-- slide 27 - popup chart 1 --*/
+body.chart-27-2 .chartTitle { left: 66px; top:43px; }
+body.chart-27-2 .chartTitle sup { position: relative; top: 2px; }
+body.chart-27-2 .chartLegend { left: 40px; top:535px; width: 800px; }
+body.chart-27-2 .chartLegend p { font-family:"HelveticaCondensed"; line-height:100%; margin:0; }
+
+/*-- slide 28 --*/
+.slide-28 #content .charttabwrap {-webkit-box-shadow: 0 0 75px 0px #535454;position:absolute; top:82px; left:61px; }
+
+.slide-28 #content .whiteoverlay {background:#ffffff; opacity: 1; width: 1024px; height: 658px; position:absolute;}
+.slide-28 h1 {position:absolute; top:28px; left:60px; font-style:normal; color:#005288; line-height:90%; width:610px;}
+.slide-28 #footer {position:absolute; bottom:10px; left:32px; color:#000; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.slide-28 #leftchart {background:url(../images/3o_Resistance_A.png) no-repeat; width:548px; height:387px; font-family:"HelveticaHeavy"; font-size:13px;}
+.slide-28 #rightcol {color:#000; position:absolute; top:88px; right:32px; width:346px; font-size:15px; line-height:140%;}
+.slide-28 #main .smallcap {color:#000; font-size:9.5px; position:absolute; left:68px; top:542px; width:100%}
+
+
+/*-- slide 29 --*/
+#headername {font-size:90px; padding:0 0 30px 60px; color:#F2AF32; border-bottom:1px solid #F2AF32; width:360px; position:absolute; top:160px;}
+.infoitem {background:url(../images/ylw_bullet.png) no-repeat left 6px; padding-left:16px; font-family:"HelveticaHeavy"; font-size:21px; line-height:120%; margin-bottom:8px;}
+.leftquote {position:absolute; left:-32px; top:4px; color:#F2AF32; text-shadow: 3px 3px 9px #3f3f3f;}
+.rightquote {position:relative; left:0px; top:14px; color:#F2AF32; text-shadow: 3px 3px 9px #3f3f3f;}
+.patientinfo {position:absolute; top:260px; left:68px; font-family:"HelveticaHeavy"; }
+.slide-29 #footer {position:absolute; bottom:10px; left:32px; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.james {position:absolute; right:0px; bottom:43px; padding:0 20px 0 0; border-bottom:1px solid #F2AF32; height:543px;}
+.patientquote {position:absolute; width:270px; top:120px; left:440px; font-family:"HelveticaLightItalic"; font-size:18px;}
+.patientquote span {font-size:40px; font-family: "HelveticaBoldExtendedOblique"; }
+
+/*-- slide 30 --*/
+
+.slide-30 #headername {font-size:90px; padding:0 0 30px 60px; color:#F2AF32; width:360px; position:absolute; top:160px; border:none;}
+.infoitem {background:url(../images/ylw_bullet.png) no-repeat left 6px; padding-left:16px; font-family:"HelveticaHeavy"; font-size:21px; line-height:120%; margin-bottom:8px;}
+.leftquote {position:absolute; left:-32px; top:4px; color:#F2AF32; text-shadow: 3px 3px 9px #3f3f3f; width:300px; height:300px;}
+.rightquote {position:absolute; color:#F2AF32; text-shadow: 3px 3px 9px #3f3f3f;}
+.slide-30 #content .patientinfo {position:absolute; top:226px; left:0px; padding-left:68px; font-family:"HelveticaHeavy"; border-top:1px solid #F2AF32;}
+.slide-30 #footer {position:absolute; bottom:10px; left:32px; width:350px; font-size:16px; font-family:"HelveticaCondensed"; line-height:100%;}
+.patientquote {position:absolute; width:270px; top:120px; left:440px; font-family:"HelveticaLightItalic"; font-size:18px; z-index:9999999}
+.patientquote span {font-size:40px; font-family: "HelveticaBoldExtendedOblique"; }
+
+.slide-5 .rightquote { left:24px; top:95px; display:block !important; }
+.slide-17 .rightquote { left:198px; top:50px; display:block !important; }
+.slide-29 .rightquote { left:70px; top:73px; display:block !important; }
+
+/*-- slide carosel --*/
+
+.slide-carosel #content {background:url(../images/ka-07-background.jpg) no-repeat; width:1024px; height:658px; position:relative;}

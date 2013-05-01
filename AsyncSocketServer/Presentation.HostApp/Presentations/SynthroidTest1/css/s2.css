@@ -1,0 +1,169 @@
+﻿ @import url('fonts.css');
+ @import url('animate.css');
+ @import url('global.css');
+
+/* Module s2 css   */
+/*.s2 footer {width:100%; height:89px; position:absolute; bottom:0;}
+.s2 footer span {font:13px/14px 'HelveticaBold'; color:#000; position:absolute; bottom:10px; left:15px; white-space:nowrap;}
+.s2 footer img {position:absolute; right:25px; top:5px;}*/
+
+/* slide 01 */
+.s2.slide-01 {}
+.s2.slide-01 section {}
+
+/* slide 02 */
+.s2.slide-02 #container{ background:url(../images/s2-02-bkg.jpg) no-repeat; height:676px;}
+.s2.slide-02 #container header { padding:4px 40px 0px!important;}
+.s2.slide-02 #container header h1{font:36px/37px 'HelveticaRoman'}
+.s2.slide-02  #container section { position:relative; margin:0;}
+.s2.slide-02  #container section #replayBtn {position:absolute;width:42px;height:47px;left:963px;top:104px;z-index:10;}
+.s2.slide-02  #container section .Title1{position:absolute;top:11px;left:70px;font:29px/37px 'HelveticaMedium';color:#193965;}
+.s2.slide-02  #container section #frames { background:#fff; width:100%;  position:relative; top:88px; height:320px; -webkit-box-shadow:1px 0px 3px #b6b6b6;}
+
+.s2.slide-02  #container section .bottle {position:absolute; top:-42px; right:80px;}
+.s2.slide-02  #container section .percent {font:174px/180px 'HelveticaMedium'; color:#f7971c; letter-spacing:-3px; position:absolute; top:64px; left:66px;}
+.s2.slide-02  #container section .percent sup {font-size:80%; position:relative; top:26px;}
+.s2.slide-02  #container section  small{font:29px/37px 'HelveticaMedium'; color:#193965; position:absolute; top:60px; left:400px;}
+.s2.slide-02  #container section .tablets  { width:212px; height:296px; position:absolute; top:58px; right:260px;}
+.s2.slide-02  #container section  small.two {font:20px/30px 'HelveticaMedium'; position:absolute; top:230px; left:70px; white-space:nowrap;}
+.s2.slide-02  #container section .note {font:12px/15px 'HelveticaRoman'; display:block; position:absolute; top:338px; left:70px;white-space:nowrap; }
+.s2.slide-02  #container section .note:nth-of-type(2) {top:280px; left:762px;}
+
+.reset {opacity:0;}
+.replay {
+	-webkit-animation: scaleone 1s ease-out .1s 1 normal forwards;
+}
+
+@-webkit-keyframes scaleone {
+    0% { opacity: 0;-webkit-transform: scale(0); }
+    100% { opacity: 1; -webkit-transform: scale(1); }
+}
+
+/* slide 03 */
+.s2.slide-03 {}
+.s2.slide-03 section {}
+
+/* slide 04 */
+.s2.slide-04 {}
+.s2.slide-04 section {}
+
+/* slide 05 */
+.s2.slide-05 {}
+.s2.slide-05 section {}
+
+/* slide 06 */
+.s2.slide-06 {}
+.s2.slide-06 section {}
+
+/* slide 07 */
+.s2.slide-07 {}
+.s2.slide-07 section {}
+
+/* slide 08 */
+.s2.slide-08 {}
+.s2.slide-08 {}
+.s2.slide-08 #container{ background:url(../images/lc-11-bg.jpg) no-repeat; height:677px;}
+.s2.slide-08 #container header{/* background:url(../images/lc-11-header02-bg.jpg) no-repeat;*/}
+.s2.slide-08 #container #head1 {width:100%; background:url(../images/lc-11-header01-bg.jpg) no-repeat; position:relative; top:0; height:32px; }
+.s2.slide-08 #container #head2 {height:111px; background:url(../images/lc-11-header02-bg.jpg) no-repeat;}
+
+.s2.slide-08 #container #wrapper{ width:950px; margin:30px auto;}
+.s2.slide-08 #container .tabs{z-index:999 ;width:298px; height:35px; float:right; /*margin:-39px -6px 0 0;*/ position: relative; margin-top:-36px; }
+
+.s2.slide-08 #container .tabs div{width:130px; height:33px; margin-right:2px; background:#4e81af;  text-align:left; float:left; font: 15px/40px "HelveticaBold"; border-radius:6px 6px 0px 0px; padding-left:15px; color:#ffffff; opacity:0.5;}
+.s2.slide-08 #container .tabs div:hover{ background:-#4e81af; color:#fff; /*height: 33px;*/}
+.s2.slide-08 #container .tabs div.active{background:#67b3ff;  color:#fff; opacity:1;}
+
+.s2.slide-08 #container #wrapper .tab-content{ z-index:2;width:945px;float:left; margin-top:10px;}
+.s2.slide-08 #container #wrapper .box{ z-index:2;width:945px;float:left; margin-top:10px; min-height:430px;background:#f8edde;-webkit-box-shadow:inset 0 0 6px #bcbbba;}
+.s2.slide-08 #container #wrapper .tab-content #copy_1{ position:absolute; top:150px; left:50px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_1 .box{ z-index:2;width:945px;float:left; margin-top:-20px;min-height:430px;background:#f8edde;-webkit-box-shadow:inset 0 0 6px #bcbbba;}
+.s2.slide-08 #container #wrapper .tab-content #copy_1 #blue-title{background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(117,186,255,1)), color-stop(37%,rgba(97,176,255,1)), color-stop(43%,rgba(90,172,254,1)), color-stop(46%,rgba(89,171,255,1)), color-stop(48%,rgba(85,170,253,1)), color-stop(56%,rgba(81,166,255,1)), color-stop(78%,rgba(62,159,254,1)), color-stop(100%,rgba(51,153,254,1)));
+    font:23px/25px "HelveticaBold";color:#fff;padding:11px 18px;width:908px;margin:1px 0 0 1px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_1 p{color:#000000;font: 12px/15px "HelveticaRoman";margin:360px 0 0 0;}
+.s2.slide-08 #container #wrapper .tab-content #copy_1 p:nth-of-type(2){color:#000000;font: 12px/15px "HelveticaRoman";margin:-144px 0 0 657px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_1 p span{font: 12px/15px "HelveticaBold";}
+.s2.slide-08 #container #wrapper .tab-content #copy_1 .chart{position:absolute; top:90px; left:90px; width:773px; height:301px; background:url(../images/lc-11-chart-bg.png) no-repeat;}
+.s2.slide-08 #container #wrapper .tab-content #copy_1 .chart img {position:absolute; top:21px; left:-40px;}
+
+.s2.slide-08 #container #wrapper .tab-content #copy_1 .chart #percentage{ font:30.4px 'HelveticaHeavyCondensed';   }
+.s2.slide-08 #container #wrapper .tab-content #copy_1 .chart #percentage #percent1{ position:absolute; top:138px; left:115px; color:#ffffff;z-index:1; } 
+.s2.slide-08 #container #wrapper .tab-content #copy_1 .chart #percentage #percent2{ position:absolute; top:161px; left:292px; color:#ffffff;z-index:1;} 
+.s2.slide-08 #container #wrapper .tab-content #copy_1 .chart #percentage #percent3{ position:absolute; top:179px; left:468px; color:#ffffff;z-index:1;} 
+.s2.slide-08 #container #wrapper .tab-content #copy_1 .chart #percentage #percent4{ position:absolute; top:190px; left:639px; color:#ffffff;z-index:1;} 
+
+
+.s2.slide-08 #container #wrapper .tab-content #copy_1 .chart #chartbar1{background:#f7971d; width:78px;   position: absolute;  height:0px; bottom:54px; left:101px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_1 .chart #chartbar2{background:#f7971d; width:78px;   position: absolute; overflow: hidden; height:0px; bottom:54px; left:280px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_1 .chart #chartbar3{background:#f7971d; width:78px;   position: absolute; overflow: hidden; height:0px; bottom:54px; left:454px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_1 .chart #chartbar4{background:#f7971d; width:78px;   position: absolute; overflow: hidden; height:0px; bottom:54px; left:626px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_1 .subtext {position:absolute;top:388px;left:55px;color:#000000;font: 11px/12px "HelveticaRoman";width: 925px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_1 .subtext span{font: 12px/15px "HelveticaBold";}
+
+
+
+.s2.slide-08 #container footer span {left:20px}
+
+
+.s2.slide-08 #container #wrapper .tab-content #copy_2{ position:absolute; top:150px; left:50px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block1 h1{font:27px/30px "HelveticaBold";color:#f7971c;padding:11px 18px;width:710px;margin:-135px 0 0 505px;z-index:1; position:relative;}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block1 h1 span{font:27px/30px "HelveticaRoman";}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block1 p{color:#003767;font: 26px/35px "HelveticaRoman";margin:-20px 0 0 288px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block1 p span{font: 26px/28px "HelveticaBold";}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block1 .number{color:#f7971c;font: 120px/120px "HelveticaRoman";margin:-95px 0 0 0;}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block1 .chart-percentage{position:absolute; top:111px; left:-59px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block1 .chart-numbers{position:absolute; top:190px; left:-48px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block1 .chart{position:absolute; top:90px; left:90px; width:773px; height:301px;}
+
+.s2.slide-08 #container #wrapper .tab-content #copy_2 button:nth-of-type(2){background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#e9e9e9)); font: 49px/50px "HelveticaRoman"; color:#003767; -webkit-border-radius: 10px; height: 72px;width:151px;padding:17px;border: 0px; top:352px; left:720px; position:absolute;-webkit-box-shadow:inset 0 0 25px #cdcdcd;}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 button:nth-of-type(2).active{background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8a21f), color-stop(100%,#f68b19)); font: 49px/50px "HelveticaRoman"; color:#ffffff; -webkit-border-radius: 10px; height: 72px;width:151px;padding:17px;border: 0px; top:352px; left:720px; position:absolute;-webkit-box-shadow:inset 0 0 25px #773f04;text-shadow: 1px 1px 0px #60605f;}
+
+.s2.slide-08 #container #wrapper .tab-content #copy_2 button{background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#e9e9e9)); font: 49px/50px "HelveticaRoman"; color:#003767; -webkit-border-radius: 10px; height: 72px;width:151px;padding:17px;border: 0px; top:352px; left:40px; position:absolute;-webkit-box-shadow:inset 0 0 25px #cdcdcd;}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 button.active{background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8a21f), color-stop(100%,#f68b19)); font: 49px/50px "HelveticaRoman"; color:#ffffff; -webkit-border-radius: 10px; height: 72px;width:151px;padding:17px;border: 0px; top:352px; left:40px; position:absolute;-webkit-box-shadow:inset 0 0 25px #773f04;text-shadow: 1px 1px 0px #60605f;}
+
+
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block2{display:none;}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block2 h1{font:27px/30px "HelveticaBold";color:#f7971c;padding:11px 18px;width:710px;margin:-135px 0 0 505px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block2 h1 span{font:27px/30px "HelveticaRoman";}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block2 p{color:#003767;font: 26px/35px "HelveticaRoman";margin:-20px 0 0 -50px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block2 p span{font: 26px/28px "HelveticaBold";}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block2 .number{color:#f7971c;font: 120px/120px "HelveticaRoman";margin:-95px 0 0 325px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block2 .chart-percentage{position:absolute; top:111px; left:-59px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block2 .chart-numbers{position:absolute; top:190px; left:-48px;}
+.s2.slide-08 #container #wrapper .tab-content #copy_2 #block2 .chart{position:absolute; top:90px; left:90px; width:773px; height:301px;}
+
+
+/* slide 09 */
+.s2.slide-09 #container{ background:url(../images/s2-09-bkg.jpg) no-repeat; height:676px;}
+.s2.slide-09 #container header { padding:0 30px 0px!important;}
+.s2.slide-09 #container header h1{font:30px/28px 'HelveticaRoman'}
+.s2.slide-09 #container section {position:relative;  padding:20px 27px 0 24px; }
+.s2.slide-09 #container  #tabs { position:absolute; right:2px; top:-38px;}
+.s2.slide-09 #container  #tabs .tab {height:33px; width:145px; background:#67b3ff; -webkit-border-radius: 5px 5px 0px 0px; display:inline-block; float:left; margin-right:2px; text-align:center; opacity:.6; }
+.s2.slide-09 #container  #tabs .tab span{font:15px/34px 'HelveticaBold'; color:#fff; text-shadow:1px 1px 1px #888;}
+.s2.slide-09 #container  #tabs .tab.active {height:33px;  background:#67b3ff; opacity:1;}
+.s2.slide-09 #container section #frames {width:970px; height:458px; position:relative; }
+.s2.slide-09 #container section .frameHeader { margin-top:2px; margin-left:3px; background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#73b9ff), color-stop(73%,#54a9ff), color-stop(100%,#3499ff)); width:433px; height:57px; font:26px/57px 'HelveticaBold'; color:#fff; text-indent:20px;}
+.s2.slide-09 #container section ul {list-style:none;}
+.s2.slide-09 #container section ul li { list-style-image:url(../images/orange-bullet-trasnparent.png);  font:20px/23px 'HelveticaMedium'; color:#003767; margin-bottom:12px; }
+.s2.slide-09 #container section #frames .frame-1 img, .s2.slide-09 #container section #frames .frame-2 img  { position:absolute; top:35px; right:35px;}
+.s2.slide-09 footer {left:10px;}
+/* slide 10 */
+.s2.slide-10 {}
+.s2.slide-10 section {}
+
+/* slide 11 */
+.s2.slide-11 {}
+.s2.slide-11 section {}
+
+/* slide 12 */
+.s2.slide-12 {}
+.s2.slide-12 section {}
+
+/* slide 13 */
+.s2.slide-13 {}
+.s2.slide-13 section {}
+
+/* slide 14 */
+.s2.slide-14 {}
+.s2.slide-14 section {}
