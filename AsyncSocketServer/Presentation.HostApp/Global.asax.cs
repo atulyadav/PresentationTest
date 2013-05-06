@@ -41,6 +41,7 @@ namespace Presentation.HostApp
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
             Debug.WriteLine(Request.Url);
+            log4net.Config.XmlConfigurator.Configure();
         }
     }
 }

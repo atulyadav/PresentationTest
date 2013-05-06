@@ -81,10 +81,13 @@ namespace Presentation.HostApp.Controllers
                     else
                     {
                         presentation = userData.GetPresentation(presentationm.Id);
-                        if (userData.checkOccupiedAsPresenter(presentation.Presenter.Id, presentation.Id, presentationm.StartTime, presentationm.EndTime))
+                        if (presentation.Presenter != null)
                         {
-                            TempData["Message"] = "Cannot update the presentation data as the host is occupied with another presentation at the selected time. Please change the time or choose another host. ";
-                            return RedirectToAction("CreatePresentation", new { id = presentation.Id, flag = 2 });
+                            if (userData.checkOccupiedAsPresenter(presentation.Presenter.Id, presentation.Id, presentationm.StartTime, presentationm.EndTime))
+                            {
+                                TempData["Message"] = "Cannot update the presentation data as the host is occupied with another presentation at the selected time. Please change the time or choose another host. ";
+                                return RedirectToAction("CreatePresentation", new { id = presentation.Id, flag = 2 });
+                            }
                         }
                     }
 
@@ -112,28 +115,35 @@ namespace Presentation.HostApp.Controllers
                             if (chkCreate)
                             {
                                 var viewDirectoryPath = Path.Combine(Server.MapPath("~/Views/Presentations"), presentationm.Name);
-                                if (Directory.Exists(viewDirectoryPath)) { Directory.Delete(viewDirectoryPath, true); }
-                                Directory.CreateDirectory(viewDirectoryPath);
+                                DirectoryInfo dirViewDirectory = new DirectoryInfo(viewDirectoryPath);
+                                if (dirViewDirectory.Exists) { dirViewDirectory.Delete(true); }
+                                dirViewDirectory.Create();
+                                dirViewDirectory = null;
 
                                 var presentationDirectoryPath = Path.Combine(Server.MapPath("~/Presentations"), presentationm.Name);
-                                if (Directory.Exists(presentationDirectoryPath)) { Directory.Delete(presentationDirectoryPath, true); }
-                                Directory.CreateDirectory(presentationDirectoryPath);
+                                DirectoryInfo dirPresentationDirectory = new DirectoryInfo(presentationDirectoryPath);
+                                if (dirPresentationDirectory.Exists) { dirPresentationDirectory.Delete(true); }
+                                dirPresentationDirectory.Create();
+                                dirPresentationDirectory = null;
 
                                 var presentationFilePath = Path.Combine(viewDirectoryPath, "Presentation.cshtml");
 
-                                FileStream presentationFile = new FileStream(presentationFilePath, FileMode.OpenOrCreate, FileAccess.Write);
-                                StreamWriter sw = new StreamWriter(presentationFile);
+                                using (FileStream presentationFile = new FileStream(presentationFilePath, FileMode.OpenOrCreate, FileAccess.Write))
+                                {
+                                    StreamWriter sw = new StreamWriter(presentationFile);
 
-                                FileStream fs = new FileStream(Server.MapPath("~/Content/Templates/Presentation.cshtml"), FileMode.Open, FileAccess.Read);
-                                StreamReader sr = new StreamReader(fs);
+                                    using (FileStream fs = new FileStream(Server.MapPath("~/Content/Templates/Presentation.cshtml"), FileMode.Open, FileAccess.Read))
+                                    {
+                                        StreamReader sr = new StreamReader(fs);
 
-                                string temp = sr.ReadLine();
+                                        string temp = sr.ReadLine();
 
-                                temp = string.Format(temp, presentation.Name, presentation.Name, presentation.Name, presentation.Name);
+                                        temp = string.Format(temp, presentation.Name, presentation.Name, presentation.Name, presentation.Name);
 
-                                sw.WriteLine(temp);
-                                sw.Flush();
-
+                                        sw.WriteLine(temp);
+                                        sw.Flush();
+                                    }
+                                }
                                 TempData["Message"] = "Presentation data was saved successfully.";
 
                                 return RedirectToAction("UploadPresentationFolder", presentation);
@@ -143,10 +153,18 @@ namespace Presentation.HostApp.Controllers
                                 if (presentationName != presentation.Name)
                                 {
                                     var viewDirectoryPath = Path.Combine(Server.MapPath("~/Views/Presentations"), presentationName);
-                                    Directory.Move(viewDirectoryPath, Path.Combine(Server.MapPath("~/Views/Presentations"), presentation.Name));
+                                    {
+                                        var dir1 = new DirectoryInfo(viewDirectoryPath);
+                                        if (dir1.Exists) dir1.MoveTo(Path.Combine(Server.MapPath("~/Views/Presentations"), presentation.Name));
+                                        dir1 = null;
+                                    }
 
                                     var folderPath = Path.Combine(Server.MapPath("~/Presentations"), presentationName);
-                                    Directory.Move(folderPath, Path.Combine(Server.MapPath("~/Presentations"), presentation.Name));
+                                    {
+                                        var dir2 = new DirectoryInfo(folderPath);
+                                        if (dir2.Exists) dir2.MoveTo(Path.Combine(Server.MapPath("~/Presentations"), presentation.Name));
+                                        dir2 = null;
+                                    }
                                 }
 
                                 ViewBag.Layout = "~/Views/Shared/_EditPresentationNav.cshtml";
@@ -176,7 +194,7 @@ namespace Presentation.HostApp.Controllers
             return RedirectToAction("Index");
         }
 
-        [Authorize]
+        [Authorize, ValidateInput(false)]
 
         public ActionResult UploadPresentationFolder(PresentationApp.Domain.Presentation.Presentation presentation)
         {
@@ -187,7 +205,7 @@ namespace Presentation.HostApp.Controllers
             return View();
         }
 
-        [Authorize]
+        [Authorize, ValidateInput(false)]
         [HttpPost]
         public ActionResult UploadPresentationFolder(string presentationId, string presentationName, HttpPostedFileBase zipfile)
         {
@@ -200,30 +218,37 @@ namespace Presentation.HostApp.Controllers
 
                 IList<string> list = new List<string>();
                 //TODO: check the contents/structure of the uploaded zip folder
-
-                var extractPath = Path.Combine(Server.MapPath("~/Presentations"), presentationName);
-                if (Directory.Exists(extractPath))
+                if (zipfile == null || zipfile.ContentLength == 0)
                 {
-                    Directory.Delete(extractPath, true);
+                    TempData["Message"] = "Sorry. The folder was not uploaded as it is empty.";
                 }
-                Directory.CreateDirectory(extractPath);
-                ZipFile zip = ZipFile.Read(zipfile.InputStream);
-
-                zip.ExtractAll(extractPath);
-
-                foreach (ZipEntry e in zip)
+                else
                 {
-                    if (e.FileName.EndsWith(".html") || e.FileName.EndsWith(".htm"))
+                    var extractPath = Path.Combine(Server.MapPath("~/Presentations"), presentationName);
+                    if (Directory.Exists(extractPath))
                     {
-                        list.Add(e.FileName.Substring(e.FileName.LastIndexOf('/') + 1));
+                        Directory.Delete(extractPath, true);
                     }
-                }
 
-                presentation.PresentationFileSequence = String.Join(",", list.ToArray());
+                    Directory.CreateDirectory(extractPath);
+                    ZipFile zip = ZipFile.Read(zipfile.InputStream);
 
-                if (usrData.UpdatePresentation(presentation))
-                {
-                    TempData["Message"] = "Presentation was uploaded successfully.";
+                    zip.ExtractAll(extractPath);
+
+                    foreach (ZipEntry e in zip)
+                    {
+                        if (e.FileName.EndsWith(".html") || e.FileName.EndsWith(".htm"))
+                        {
+                            list.Add(e.FileName.Substring(e.FileName.LastIndexOf('/') + 1));
+                        }
+                    }
+
+                    presentation.PresentationFileSequence = String.Join(",", list.ToArray());
+
+                    if (usrData.UpdatePresentation(presentation))
+                    {
+                        TempData["Message"] = "Presentation was uploaded successfully.";
+                    }
                 }
 
                 ViewBag.PresentationId = presentationId;
@@ -314,11 +339,11 @@ namespace Presentation.HostApp.Controllers
                 usrData.DeleteUsersForPresentation(userChkList.PresentationId);
                 presentation.Presenter = usrData.GetPresenter(userChkList.PresenterId);
                 string domain = Request.Url.Authority;
-                string presenterUrl = "http://" + domain + "/Account/Login?guid=" + presentation.PresenterKey;
+                string presenterUrl = "http://" + domain + "/Account/Login?id=" + presentation.PresenterKey;
 
                 if (usrData.UpdatePresentation(presentation))
                 {
-                    SendEmail(presentation.Presenter.EmailId, presenterUrl, presentation.Description);
+                    SendEmail(presentation.Presenter.Name, presentation.Presenter.EmailId, presenterUrl, presentation.Description);
                     foreach (var item in userChkList.userCheckList)
                     {
                         if (item.Checked == true)
@@ -332,8 +357,8 @@ namespace Presentation.HostApp.Controllers
                             usrPresentation.Users = usr;
                             usrData.UpdateUserPresentation(usrPresentation);
 
-                            string UserUrl = "http://" + domain + "/Account/Login?guid=" + usrPresentation.PresentationKey;
-                            SendEmail(usr.EmailId, UserUrl, presentation.Description);
+                            string UserUrl = "http://" + domain + "/Account/Login?id=" + usrPresentation.PresentationKey;
+                            SendEmail(usr.Name, usr.EmailId, UserUrl, presentation.Description);
                         }
                     }
 
@@ -360,35 +385,48 @@ namespace Presentation.HostApp.Controllers
         [Authorize]
         public ActionResult DeletePresentation(int id)
         {
+            LoggerHelper.LogRequestRecieved(MethodBase.GetCurrentMethod().Name);
             UserData.createSession();
             UserData userData = new UserData();
             PresentationApp.Domain.Presentation.Presentation presentation = userData.GetPresentation(id);
             ViewBag.PresentationName = presentation.Name;
             ViewBag.id = id;
             ViewBag.Flag = 2;
-            return View(presentation);
+            return PartialView(presentation);
         }
 
         [Authorize]
         [HttpPost]
         public ActionResult DeletePresentation(PresentationApp.Domain.Presentation.Presentation presentation)
         {
-            UserData.createSession();
-            UserData userData = new UserData();
-            PresentationApp.Domain.Presentation.Presentation temp = userData.GetPresentation(presentation.Id);
-            var pathOriginalFolder = Path.Combine(Server.MapPath("~/Presentations"), temp.Name);
-            var pathOriginalView = Path.Combine(Server.MapPath("~/Views/Presentations"), temp.Name);
-            temp.Status = false;
-            temp.Name = temp.Name + "_deleted";
-            if (userData.UpdatePresentation(temp))
+            LoggerHelper.LogRequestRecieved(MethodBase.GetCurrentMethod().Name);
+            try
             {
-                if (Directory.Exists(pathOriginalFolder)) { Directory.Move(pathOriginalFolder, Path.Combine(Server.MapPath("~/Presentations"), temp.Name)); }
-                if (Directory.Exists(pathOriginalView)) { Directory.Move(pathOriginalView, Path.Combine(Server.MapPath("~/Views/Presentations"), temp.Name)); }
+                UserData.createSession();
+                UserData userData = new UserData();
+                PresentationApp.Domain.Presentation.Presentation temp = userData.GetPresentation(presentation.Id);
+                var pathOriginalFolder = Path.Combine(Server.MapPath("~/Presentations"), temp.Name);
+                var pathOriginalView = Path.Combine(Server.MapPath("~/Views/Presentations"), temp.Name);
+                temp.Status = false;
+                temp.Name = temp.Name + "_deleted";
+                if (userData.UpdatePresentation(temp))
+                {
+                    if (Directory.Exists(pathOriginalFolder)) { Directory.Move(pathOriginalFolder, Path.Combine(Server.MapPath("~/Presentations"), temp.Name)); }
+                    if (Directory.Exists(pathOriginalView)) { Directory.Move(pathOriginalView, Path.Combine(Server.MapPath("~/Views/Presentations"), temp.Name)); }
+                    TempData["Message"] = "Presentation was successfully deleted";
+                }
+                else
+                {
+                    TempData["Message"] = "Presentation was not deleted. Please try again later.";
+                }
                 return RedirectToAction("Index");
             }
-
-            ViewBag.Message = "Presentation was not deleted. Please try again later.";
-            return View();
+            catch (Exception e)
+            {
+                LoggerHelper.LogException(MethodBase.GetCurrentMethod().Name, e, JsonConvert.SerializeObject(presentation));
+                TempData["Message"] = "Presentation was not deleted. Please try again later.";
+                return RedirectToAction("Index");
+            }
         }
 
         public ActionResult ReorderFiles(int id, string presentationName)
@@ -458,6 +496,7 @@ namespace Presentation.HostApp.Controllers
                 fileseq = presentation.PresentationFileSequence;
                 filesList = fileseq.Split(',').ToList();
             }
+            FileInfo[] files;
 
             if (zipFile != null && zipFile.ContentLength > 0)
             {
@@ -468,11 +507,20 @@ namespace Presentation.HostApp.Controllers
 
                 Directory.CreateDirectory(pathTemp);
 
-                ZipFile zip = ZipFile.Read(zipFile.InputStream);
-                zip.ExtractAll(pathTemp);
+                if (zipFile.ContentType.Contains("zip"))
+                {
+                    ZipFile zip = ZipFile.Read(zipFile.InputStream);
+                    zip.ExtractAll(pathTemp);
 
-                DirectoryInfo dir = new DirectoryInfo(pathTemp);
-                FileInfo[] files = getFilesFromDirectory(dir);
+                    DirectoryInfo dir = new DirectoryInfo(pathTemp);
+                    files = getFilesFromDirectory(dir);
+                }
+                else
+                {
+                    files = new FileInfo[1];
+                    zipFile.SaveAs(Path.Combine(pathTemp, zipFile.FileName));
+                    files[0] = new FileInfo(Path.Combine(pathTemp, zipFile.FileName));
+                }
 
                 foreach (FileInfo file in files)
                 {
@@ -493,32 +541,36 @@ namespace Presentation.HostApp.Controllers
                         f.Delete();
                     }
 
-                    var fname_deleted = f.Name.Substring(0, f.Name.LastIndexOf('.')) + "_deleted" + f.Extension;
-                    FileInfo f_deleted = new FileInfo(Path.Combine(pathSpecificFolder, fname_deleted));
-                    if (f_deleted.Exists)
+                    var fname_deleted = "";
+                    if (f.Name.LastIndexOf('.') > 0)
                     {
-                        f_deleted.Delete();
-                    }
+                        fname_deleted = f.Name.Substring(0, f.Name.LastIndexOf('.')) + "_deleted" + f.Name.Substring(f.Name.LastIndexOf('.') + 1);
 
-                    if (Directory.Exists(Path.Combine(pathPresentationFolder, fileExtension)))
-                    {
-                        pathSpecificFolder = Path.Combine(pathPresentationFolder, fileExtension);
-                    }
+                        FileInfo f_deleted = new FileInfo(Path.Combine(pathSpecificFolder, fname_deleted));
+                        if (f_deleted.Exists)
+                        {
+                            f_deleted.Delete();
+                        }
 
-                    f = new FileInfo(Path.Combine(pathSpecificFolder, file.Name));
-                    if (f.Exists)
-                    {
-                        fileExists = 1;
-                        f.Delete();
-                    }
+                        if (Directory.Exists(Path.Combine(pathPresentationFolder, fileExtension)))
+                        {
+                            pathSpecificFolder = Path.Combine(pathPresentationFolder, fileExtension);
+                        }
 
-                    fname_deleted = f.Name.Substring(0, f.Name.LastIndexOf('.')) + "_deleted" + f.Extension;
-                    f_deleted = new FileInfo(Path.Combine(pathSpecificFolder, fname_deleted));
-                    if (f_deleted.Exists)
-                    {
-                        f_deleted.Delete();
-                    }
+                        f = new FileInfo(Path.Combine(pathSpecificFolder, file.Name));
+                        if (f.Exists)
+                        {
+                            fileExists = 1;
+                            f.Delete();
+                        }
 
+                        fname_deleted = f.Name.Substring(0, f.Name.LastIndexOf('.')) + "_deleted" + f.Extension;
+                        f_deleted = new FileInfo(Path.Combine(pathSpecificFolder, fname_deleted));
+                        if (f_deleted.Exists)
+                        {
+                            f_deleted.Delete();
+                        }
+                    }
                     file.MoveTo(Path.Combine(pathSpecificFolder, file.Name));
 
                     if (fileExtension == "html" && fileExists != 1)
@@ -527,6 +579,8 @@ namespace Presentation.HostApp.Controllers
                         cntHtml = cntHtml + 1;
                     }
                 }
+
+                TempData["Message"] = "Files uploaded successfully.";
 
                 if (cntHtml > 0)
                 {
@@ -540,6 +594,10 @@ namespace Presentation.HostApp.Controllers
                     ViewBag.PostBackTo = "AddFiles";
                     return View();
                 }
+            }
+            else
+            {
+                TempData["Message"] = "Sorry. The folder/file was not uploaded as it is empty.";
             }
 
             return RedirectToAction("AddFiles", new { id = presentation.Id, presentationName = presentation.Name });
@@ -573,7 +631,7 @@ namespace Presentation.HostApp.Controllers
             if (!Directory.Exists(path1))
             {
                 TempData["Message"] = "Cannot delete files. The presentation folder doesnt exist.";
-                return RedirectToAction("CreatePresentation", new { id = id, flag = 2 });
+                return RedirectToAction("AddFiles", new { id = id, presentationName = presentationName });
             }
 
             filesList = Directory.GetFiles(path1).ToList();
@@ -592,7 +650,7 @@ namespace Presentation.HostApp.Controllers
             if (final.Count == 0)
             {
                 TempData["Message"] = "The presentation folder is empty.";
-                return RedirectToAction("CreatePresentation", new { id = id, flag = 2 });
+                return RedirectToAction("AddFiles", new { id = id, presentationName = presentationName });
             }
 
             IList<DeleteFilesListItem> list = new List<DeleteFilesListItem>();
@@ -704,34 +762,36 @@ namespace Presentation.HostApp.Controllers
             return Json(new { redirectTo = Url.Action("DeleteFiles", new { id = presentationId, presentationName = presentationName }) });
         }
 
-        public void SendEmail(string address, string url, string description)
+        public void SendEmail(string name, string address, string url, string description)
         {
             UserData.createSession();
             LoggerHelper.LogRequestRecieved(MethodBase.GetCurrentMethod().Name);
 
             string email = ConfigurationManager.AppSettings["smtpEmailFrom"];
             var msg = new MailMessage();
-            var smtpClient = new SmtpClient(ConfigurationManager.AppSettings["smtpServer"]);
-            msg.From = new MailAddress(email);
-            msg.To.Add(new MailAddress(address));
-            msg.Subject = ConfigurationManager.AppSettings["smtpEmailSubject"];
+            using (var smtpClient = new SmtpClient(ConfigurationManager.AppSettings["smtpServer"]))
+            {
+                msg.From = new MailAddress(email);
+                msg.To.Add(new MailAddress(address));
+                msg.Subject = ConfigurationManager.AppSettings["smtpEmailSubject"];
 
-            FileStream fs = new FileStream(Server.MapPath("~/Content/Templates/EmailTemplate.htm"), FileMode.Open, FileAccess.Read);
-            StreamReader sr = new StreamReader(fs);
+                FileStream fs = new FileStream(Server.MapPath("~/Content/Templates/EmailTemplate.htm"), FileMode.Open, FileAccess.Read);
+                StreamReader sr = new StreamReader(fs);
 
-            string temp = sr.ReadLine();
+                string temp = sr.ReadLine();
 
-            description = HttpUtility.HtmlDecode(description);
+                description = HttpUtility.HtmlDecode(description);
 
-            temp = string.Format(temp, url, description);
+                temp = string.Format(temp, name, url, description);
 
-            msg.Body = temp;
-            msg.IsBodyHtml = true;
+                msg.Body = temp;
+                msg.IsBodyHtml = true;
 
-            smtpClient.EnableSsl = false;
-            smtpClient.UseDefaultCredentials = false;
+                smtpClient.EnableSsl = false;
+                smtpClient.UseDefaultCredentials = false;
 
-            smtpClient.Send(msg);
+                smtpClient.Send(msg);
+            }
         }
 
         public JsonResult CheckPresentationExists(string Name, string data)

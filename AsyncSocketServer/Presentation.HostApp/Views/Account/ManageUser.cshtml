@@ -19,7 +19,7 @@
                         url: data.redirectTo,
                         type: 'GET',
                         dataType: 'html',
-                        success: doDeleteSuccess
+                        success: doSuccess
                     });
                 }
 
@@ -31,65 +31,49 @@
 
     }
 
-    function doDeleteSuccess(result) {
-        $('div#editUserDiv').css("visibility", "hidden");
-        $('div#createUserDiv').css("visibility", "hidden");
-        $('div#deleteUserDiv').css("visibility", "visible");
-        $('div#deleteUserDiv').html(result);
-
-    }
-
-    //-----
-
     function editUserFunction(ur) {
         $.ajax({
             url: ur,
             type: 'GET',
             dataType: 'html', // <-- to expect an html response
-            success: doEditSuccess
+            success: doSuccess
         });
     }
 
-    function doEditSuccess(result) {
-        $('div#editUserDiv').css("visibility", "visible");
-        $('div#deleteUserDiv').css("visibility", "hidden");
-        $('div#createUserDiv').css("visibility", "hidden");
-        $('div#editUserDiv').html(result);
+    function doSuccess(result) {
+        $('div#modalDiv').css("visibility", "visible");
+        $('div#div1').css("visibility", "visible");
+        $('div#popupDiv').css("visibility", "visible");
+        $('div#popupDiv').html(result);
 
-    }
-
-    //-----
-
-    function createUserFunction(ur) {
-        $.ajax({
-            url: ur,
-            type: 'GET',
-            dataType: 'html', // <-- to expect an html response
-            success: doCreateSuccess
-        });
-    }
-
-    function doCreateSuccess(result) {
-        $('div#deleteUserDiv').css("visibility", "hidden");
-        $('div#editUserDiv').css("visibility", "hidden");
-        $('div#createUserDiv').css("visibility", "visible");
-        $('div#createUserDiv').html(result);
     }
 
 </script>
 <style type="text/css">
     .stylepopup
     {
-        position: absolute;
-        top: 50%;
-        left: 50%;
+        width: 550px;
+        border: 5px solid #DDDDDD;
+        background-color: #ECECEC;
+        visibility: hidden;
         padding: 20px;
         padding-left: 50px;
         padding-right: 50px;
-        margin-top: -9em; /*set to a negative number 1/2 of your height*/
-        margin-left: -15em; /*set to a negative number 1/2 of your width*/
-        border: 1px solid #ccc;
-        background-color: #f3f3f3;
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+    }
+
+    .styleModal
+    {
+        opacity: 0.4;
+        left: 0px;
+        position: absolute;
+        background: black;
+        top: 0px;
+        width: 100%;
+        height: 100%;
         visibility: hidden;
     }
 
@@ -144,22 +128,23 @@
                 @Html.DisplayFor(modelItem => item.IsAdmin)
             </td>
             <td id="links" onclick="deleteUserFunction(@item.Id)" style="text-align:center">
-                <a href="#">Delete</a>
+                <a href="#">
+                    <img src="../../Content/Images/delete20x20.png" /></a>
             </td>
         </tr>
 
     }
 </table>
-<div id="deleteUserDiv" class="stylepopup">
+<div id="modalDiv" class="styleModal">
 </div>
-<div id="editUserDiv" class="stylepopup">
-</div>
-<div id="createUserDiv" class="stylepopup">
+<div id="div1" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;
+    visibility: hidden">
+    <div id="popupDiv" class="stylepopup">
+    </div>
 </div>
 <p class="control-group" style="color: Red">
     @if (@TempData["Message"] != null)
     {
         <script type="text/javascript">            alert('@TempData["Message"]');</script>
-
     }
 </p>

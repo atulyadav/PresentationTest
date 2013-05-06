@@ -49,6 +49,7 @@ namespace PresentationApp.Domain
                       m.FluentMappings.AddFromAssemblyOf<PresentationApp.Domain.Presentation.Presentation>();
                       m.FluentMappings.AddFromAssemblyOf<PresentationApp.Domain.Account.Users>();
                   })
+                  .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(false, true))
                   .BuildSessionFactory();
         }
 

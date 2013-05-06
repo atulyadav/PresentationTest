@@ -315,6 +315,7 @@
     <Content Include="Content\css\mouseSwipe.css" />
     <Content Include="Content\css\presentationApp.css" />
     <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Images\delete20x20.png" />
     <Content Include="Content\Images\down.jpg" />
     <Content Include="Content\Images\gap.jpg" />
     <Content Include="Content\css\style.css" />
@@ -1169,7 +1170,7 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
+          <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>49799</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>

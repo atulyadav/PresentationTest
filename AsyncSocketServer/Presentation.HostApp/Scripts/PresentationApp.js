@@ -215,6 +215,8 @@ function ReflectChange(data) {
             break;
         case "ReAnimate": ReAnimate();
             break;
+        case "TabIndex": ChangeTabIndex(JSONObject);
+            break;
 
         default: alert("Wrong Command name !!");
     }
@@ -608,6 +610,29 @@ function ReAnimate() {
     //restartAnimation();
     animateOnDivLoad();
 }
+function SendTabIndex(num) {
+    try {
+        var JSONObject = { CommandName: "TabIndex", Parameters: [{ IndexNumber: num}] };
+        SendChanges(JSON.stringify(JSONObject));
+    } catch (ex) { alert(ex); }
+}
+function ChangeTabIndex(JSONObject) {
+    var num = JSONObject.Parameters[0].IndexNumber;
+    savetabt(num);
+    gotoFrame(num);
+    // BOC GGOSAVI
+    if (bExternalDevice) {
+        var frameno = num;
+        //var param  = "gotoFrameExternal,"+frameno;
+        makecall('ExternalAnimationIntParam', Array("gotoFrameExternal", "" + frameno));
+    }
+
+    dot.addEventListener('webkitTransitionEnd', function () {
+        /* Keep the dots from doing shady stuff */
+        dot.style.webkitTransition = 'none';
+    }, false)
+}
+
 //DETECT DEVICE - USER-AGENT
 function Detectdevice() {
     var uagent = navigator.userAgent.toLowerCase();

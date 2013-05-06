@@ -3,12 +3,55 @@
     ViewBag.Title = "Manage Presentations";
 }
 @model IEnumerable<PresentationApp.Domain.Presentation.Presentation>
-           
+<script type="text/javascript">
+    function deletePresentationFunction(ur) {
+        $.ajax({
+            url: ur,
+            type: 'GET',
+            dataType: 'html', // <-- to expect an html response
+            success: doSuccess
+        });
+    }
+
+    function doSuccess(result) {
+        $('div#modalDiv').css("visibility", "visible");
+        $('div#div1').css("visibility", "visible");
+        $('div#popupDiv').css("visibility", "visible");
+        $('div#popupDiv').html(result);
+
+    }
+</script>
 <style type="text/css">
+    .stylepopup
+    {
+        width: 550px;
+        border: 5px solid #DDDDDD;
+        background-color: #ECECEC;
+        visibility: hidden;
+        padding: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+    }
+
+    .styleModal
+    {
+        opacity: 0.4;
+        left: 0px;
+        position: absolute;
+        background: black;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+    }
     .cursorStyle
     {
-        cursor:hand;
-        cursor:pointer;
+        cursor: hand;
+        cursor: pointer;
     }
 </style>
 <h4>
@@ -35,21 +78,23 @@
     </tr>
     @foreach (var item in Model)
     {
-        <tr  class="cursorStyle">
+        <tr class="cursorStyle">
             <td onclick="document.location = '/Presentation/CreatePresentation?id=@item.Id&flag=2';">
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td onclick="document.location = '/Presentation/CreatePresentation?id=@item.Id&flag=2';">
                 @Html.DisplayFor(modelItem => item.StartTime)
-            </td >
+            </td>
             <td onclick="document.location = '/Presentation/CreatePresentation?id=@item.Id&flag=2';">
                 @Html.DisplayFor(modelItem => item.EndTime)
-            </td >
+            </td>
             <td onclick="document.location = '/Presentation/CreatePresentation?id=@item.Id&flag=2';">
                 @Html.DisplayFor(modelItem => item.Presenter.Name)
             </td>
-            <td style="text-align:center" onclick="document.location = '/Presentation/DeletePresentation/@item.Id';">
-                <a href="/Presentation/DeletePresentation/@item.Id">Delete </a>
+            <td style="text-align:center" onclick="deletePresentationFunction('/Presentation/DeletePresentation/@item.Id')">
+                <a href="#">
+                    <img src="../../Content/Images/delete20x20.png" />
+                </a>
             </td>
         </tr>
     }
@@ -57,7 +102,14 @@
 <p class="control-group" style="color: Red">
     @if (@TempData["Message"] != null)
     {
-        <script type="text/javascript">alert('@TempData["Message"]');</script>
+        <script type="text/javascript">            alert('@TempData["Message"]');</script>
 
     }
 </p>
+<div id="modalDiv" class="styleModal">
+</div>
+<div id="div1" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;
+    visibility: hidden">
+    <div id="popupDiv" class="stylepopup">
+    </div>
+</div>

@@ -66,7 +66,7 @@ namespace Presentation.HostApp.Controllers
                         {
                             LoginReply loginReply = userData.CheckPresenterOrUser(loginRequest.PresentationKey, user.Id);
 
-                            if (loginReply.Status == 6)
+                            if (loginReply.Status == 0)
                             {
                                 ViewBag.Message = "Invalid Presentation Key. This presentation may be no longer alloted to you. Please check with the admin.";
                             }
@@ -237,11 +237,14 @@ namespace Presentation.HostApp.Controllers
                 if (userm.flag == 2)
                 {
                     user = userData.GetUsers(userm.Id);
+                    if (userm.Password != null && userm.Password != "")
+                    {
+                        user.Password = userm.Password;
+                    }
                 }
 
                 user.Id = userm.Id;
                 user.Name = userm.Name;
-                user.Password = userm.Password;
                 user.PhoneNumber = userm.PhoneNumber;
                 user.EmailId = userm.EmailId;
                 user.IsAdmin = userm.IsAdmin;
@@ -250,6 +253,7 @@ namespace Presentation.HostApp.Controllers
 
                 if (userm.flag == 1)
                 {
+                    user.Password = userm.Password;
                     user.IsActive = true;
                     user.CreatedDate = DateTime.Now;
                     user.UpdatedDate = null;

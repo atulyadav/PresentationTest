@@ -7,8 +7,8 @@ namespace PresentationApp.Domain.Account.Mappings
         public UserPresentationMap()
         {
             Id(x => x.Id);
-            References(x => x.Presentation);
-            References(x => x.Users);
+            References(x => x.Presentation).Column("PresentationId");
+            References(x => x.Users).Column("UsersId");
             Map(x => x.PresentationKey);
             Map(x => x.IsUserConnected);
         }

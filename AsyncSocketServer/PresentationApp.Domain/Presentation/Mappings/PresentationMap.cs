@@ -8,9 +8,9 @@ namespace PresentationApp.Domain.Presentation.Mappings
         {
             Id(x => x.Id).GeneratedBy.Increment();
             Map(x => x.Name);
-            References(x => x.PresentationStates);
+            References(x => x.PresentationStates).Column("PresentationStatesId");
             Map(x => x.StartTime);
-            References(x => x.Presenter);
+            References(x => x.Presenter).Column("PresenterId");
             Map(x => x.PresenterKey);
             Map(x => x.PresentationFileSequence);
             HasMany(x => x.UserPresentations)

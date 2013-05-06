@@ -3,23 +3,38 @@
 }
 <script type="text/javascript">
     $(function () {
+
         removeSelectedPresenterFromUsers();
 
         $("#PresenterId").change(function () {
-            removeSelectedPresenterFromUsers()
+            removeSelectedPresenterFromUsers();
         });
+
     });
 
     function removeSelectedPresenterFromUsers() {
-        var val = $('#PresenterId option:selected').text();
-        var id = '#' + val;
-        $('.checkboxDiv').css("display", "block");
-        $(id).css("display", "none");
-        $(".chkBox" + val).removeAttr('checked');
+        var val = $('#PresenterId option:selected').val();
+        if (val != "" && val != null) {
+            var id = '#' + val;
+            $('.checkboxDiv').css("display", "block");
+            $(id).css("display", "none");
+            $(".chkBox" + val).removeAttr('checked');
+        }
+        else {
+            $('.checkboxDiv').css("display", "block");
+        }
+    }
+
+    function validateForm() {
+        if ($('#PresenterId option:selected').text() == "") {
+            $('#PresenterIdValidation').text('Please select a presenter');
+            return false;
+        }
+        return true;
     }
 </script>
 @model PresentationApp.DataAccess.Models.Presentation.UserCheckList
-@using (Html.BeginForm("AddPresentationUsers", "Presentation", FormMethod.Post))
+@using (Html.BeginForm("AddPresentationUsers", "Presentation", FormMethod.Post, new { id = "AddPresenterAndUserForm", onsubmit = "return validateForm()" }))
 {
     <div>
         @Html.HiddenFor(model => model.PresentationId)
@@ -28,11 +43,12 @@
         <h4>
             Select users for Presentation : @Html.DisplayFor(model => model.PresentationName)</h4>
         @Html.DropDownListFor(model => model.PresenterId, new SelectList(Model.PresenterList, "Id", "Name"))
+        &nbsp;<span style="color: Red" id="PresenterIdValidation"></span>
         @for (int i = 0; i < Model.userCheckList.Count; i++)
         {
-            <div id="@Model.userCheckList[i].Name" class="checkboxDiv">
+            <div id="@Model.userCheckList[i].Id" class="checkboxDiv">
                 @Html.HiddenFor(x => x.userCheckList[i].Id)
-                @Html.CheckBoxFor(x => x.userCheckList[i].Checked, new { @class = "chkBox" + @Model.userCheckList[i].Name })&nbsp;&nbsp;
+                @Html.CheckBoxFor(x => x.userCheckList[i].Checked, new { @class = "chkBox" + @Model.userCheckList[i].Id })&nbsp;&nbsp;
                 @Html.HiddenFor(x => x.userCheckList[i].Name)
                 @Html.DisplayFor(x => x.userCheckList[i].Name)
             </div>

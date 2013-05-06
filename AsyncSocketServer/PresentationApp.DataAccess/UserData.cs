@@ -250,6 +250,17 @@ namespace PresentationApp.DataAccess
             return presentation;
         }
 
+        public Presentation GetPresentation(Guid guid)
+        {
+            LoggerHelper.LogRequestRecieved(MethodBase.GetCurrentMethod().Name);
+
+            Presentation presentation = Persister.Query<Presentation>()
+                .Where(x => x.PresenterKey == guid && x.Status == true)
+                .SingleOrDefault<Presentation>();
+
+            return presentation;
+        }
+
         public IList<Presentation> GetPresentationList(long presenterId)
         {
             LoggerHelper.LogRequestRecieved(MethodBase.GetCurrentMethod().Name);
@@ -317,6 +328,11 @@ namespace PresentationApp.DataAccess
                     presenters.RemoveAt(i);
                     i--;
                 }
+                else if (checkOccupiedAsUser(presenters[i].Id, presentation.Id, presentation.StartTime, presentation.EndTime))
+                {
+                    presenters.RemoveAt(i);
+                    i--;
+                }
             }
 
             presenters.Remove(presentation.Presenter);
@@ -332,7 +348,7 @@ namespace PresentationApp.DataAccess
         public bool checkOccupiedAsPresenter(long userId)
         {
             IList<Presentation> presentationList = Persister.Session.CreateCriteria<Presentation>().List<Presentation>()
-                    .Where(x => x.Status == true && x.Presenter.Id == userId).ToList();
+                    .Where(x => x.Status == true && x.Presenter != null && x.Presenter.Id == userId).ToList();
 
             return (presentationList.Count() > 0);
         }
@@ -343,6 +359,14 @@ namespace PresentationApp.DataAccess
                     .Where(x => x.Presenter != null && x.Status == true && x.Id != presentationId && x.Presenter.Id == userId && ((startTime >= x.StartTime && startTime <= x.EndTime) || (endTime > x.StartTime && endTime <= x.EndTime))).ToList();
 
             return (presentationsList.Count() > 0);
+        }
+
+        public bool checkOccupiedAsUser(long userId, long presentationId, DateTime startTime, DateTime endTime)
+        {
+            IList<UserPresentation> userPresentationList = Persister.Session.CreateCriteria<UserPresentation>().List<UserPresentation>()
+                .Where(x => x.Users.Id == userId && x.Presentation.Id != presentationId && ((startTime >= x.Presentation.StartTime && startTime <= x.Presentation.EndTime) || (endTime > x.Presentation.StartTime && endTime <= x.Presentation.EndTime))).ToList();
+
+            return (userPresentationList.Count() > 0);
         }
 
         public IList<Users> GetUsersList()
@@ -456,7 +480,7 @@ namespace PresentationApp.DataAccess
 
             using (var transaction = Persister.Session.BeginTransaction())
             {
-                Persister.Session.CreateSQLQuery("delete UserPresentation where Presentation_Id =:PresentationId")
+                Persister.Session.CreateSQLQuery("delete UserPresentation where PresentationId =:PresentationId")
                     .SetInt64("PresentationId", presentationId)
                     .ExecuteUpdate();
 
@@ -480,13 +504,13 @@ namespace PresentationApp.DataAccess
             Presentation presentation;
 
             UserPresentation userPresentation = Persister.Session.CreateCriteria<UserPresentation>().List<UserPresentation>()
-                                                    .Where(x => x.PresentationKey == presentationKey && x.Users.Id == userId && x.Presentation.Status == true).SingleOrDefault();
+                                                    .Where(x => x.PresentationKey == presentationKey && x.Users.Id == userId).SingleOrDefault();
 
             if (userPresentation != null)
             {
                 userOrPresenter = 1;
                 presentationId = userPresentation.Presentation.Id;
-                presentation = Persister.Session.CreateCriteria<Presentation>().List<Presentation>().Where(x => x.Id == presentationId).SingleOrDefault();
+                presentation = userPresentation.Presentation;
             }
             else
             {
@@ -512,10 +536,6 @@ namespace PresentationApp.DataAccess
                 loginReply.PresentationId = presentation.Id;
                 loginReply.PresentationName = presentation.Name;
                 loginReply.Description = presentation.Description;
-            }
-            else
-            {
-                userOrPresenter = 6;
             }
 
             loginReply.Status = userOrPresenter;
@@ -570,17 +590,6 @@ namespace PresentationApp.DataAccess
                 UpdateUserPresentation(userPresentation);
             }
             return false;
-        }
-
-        public Presentation GetPresentation(Guid guid)
-        {
-            LoggerHelper.LogRequestRecieved(MethodBase.GetCurrentMethod().Name);
-
-            Presentation presentation = Persister.Query<Presentation>()
-                .Where(x => x.PresenterKey == guid && x.Status == true)
-                .SingleOrDefault<Presentation>();
-
-            return presentation;
         }
 
         public UserPresentation GetUsersPresentation(Guid guid)
