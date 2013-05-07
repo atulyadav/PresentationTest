@@ -31,7 +31,7 @@ function WebSocketConnection() {
     //var cookiesValue = getCookie("Guid");
     //obj = splitCookie(cookiesValue);
     var guid = getCookie("Guid");
-    var host = "ws://172.16.7.57:9090/" + guid;
+    var host = "ws://192.168.1.156:9090/" + guid;
     connection = new WebSocket(host);
     connection.onopen = function (evt) { onOpen(evt) };
     connection.onclose = function (evt) { onClose(evt) };
@@ -627,10 +627,10 @@ function ChangeTabIndex(JSONObject) {
         makecall('ExternalAnimationIntParam', Array("gotoFrameExternal", "" + frameno));
     }
 
-    dot.addEventListener('webkitTransitionEnd', function () {
-        /* Keep the dots from doing shady stuff */
-        dot.style.webkitTransition = 'none';
-    }, false)
+    //    dot.addEventListener('webkitTransitionEnd', function () {
+    //        /* Keep the dots from doing shady stuff */
+    //        dot.style.webkitTransition = 'none';
+    //    }, false)
 }
 
 //DETECT DEVICE - USER-AGENT

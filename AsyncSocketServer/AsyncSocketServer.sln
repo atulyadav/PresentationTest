@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HostWebApplication", "HostWebApplication", "{FA7C897E-CC4D-443C-9566-A5B01A5F3A2C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientWebApplication", "ClientWebApplication", "{BB5B317A-D68A-4285-AAB7-39DB6A035219}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.ClientApp", "Presentation.ClientApp\Presentation.ClientApp.csproj", "{788A4A2C-6D7E-448F-80D4-FE50D79A4625}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.HostApp", "Presentation.HostApp\Presentation.HostApp.csproj", "{F7EFE78F-CAE5-45A3-93FB-EC30E46539A3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationApp.Domain", "PresentationApp.Domain\PresentationApp.Domain.csproj", "{5E4BD3D6-FCD7-4A2B-8544-9624FF564870}"
@@ -41,6 +45,18 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{788A4A2C-6D7E-448F-80D4-FE50D79A4625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{788A4A2C-6D7E-448F-80D4-FE50D79A4625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{788A4A2C-6D7E-448F-80D4-FE50D79A4625}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{788A4A2C-6D7E-448F-80D4-FE50D79A4625}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{788A4A2C-6D7E-448F-80D4-FE50D79A4625}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{788A4A2C-6D7E-448F-80D4-FE50D79A4625}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{788A4A2C-6D7E-448F-80D4-FE50D79A4625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{788A4A2C-6D7E-448F-80D4-FE50D79A4625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{788A4A2C-6D7E-448F-80D4-FE50D79A4625}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{788A4A2C-6D7E-448F-80D4-FE50D79A4625}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{788A4A2C-6D7E-448F-80D4-FE50D79A4625}.Release|x64.ActiveCfg = Release|Any CPU
+		{788A4A2C-6D7E-448F-80D4-FE50D79A4625}.Release|x86.ActiveCfg = Release|Any CPU
 		{F7EFE78F-CAE5-45A3-93FB-EC30E46539A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F7EFE78F-CAE5-45A3-93FB-EC30E46539A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7EFE78F-CAE5-45A3-93FB-EC30E46539A3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -135,6 +151,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F7EFE78F-CAE5-45A3-93FB-EC30E46539A3} = {FA7C897E-CC4D-443C-9566-A5B01A5F3A2C}
+		{788A4A2C-6D7E-448F-80D4-FE50D79A4625} = {BB5B317A-D68A-4285-AAB7-39DB6A035219}
 		{45486CDE-86A3-4769-952F-E0821BF79493} = {8C9C334C-588E-41A1-85FC-9DC035821D27}
 		{24B00C6C-88BE-4F83-B2E1-8CC8F145BFB9} = {32470B4C-0665-44B9-9A55-AF9C671FDAA5}
 		{A8BCA98B-12E7-4E13-99FE-09DDCA10BB26} = {32470B4C-0665-44B9-9A55-AF9C671FDAA5}

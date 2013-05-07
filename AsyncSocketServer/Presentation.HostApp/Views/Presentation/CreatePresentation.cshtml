@@ -60,7 +60,7 @@
             pickDate: false,
             language: 'en'
         }).on('changeDate', function (ev) {
-            
+
         });
 
     });
@@ -87,6 +87,13 @@
 <br />
 <form action="/Presentation/CreatePresentation" method="post" id="createPresentationForm">
 <div>
+    @if (@ViewBag.Flag == 1)
+    {
+        <div>
+            <img src="../../Content/Images/one.png" />
+            <br /><br />
+        </div>
+    }
     <table>
         <tr>
             <td>

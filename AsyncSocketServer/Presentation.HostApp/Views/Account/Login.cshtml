@@ -40,16 +40,17 @@
                 @Html.PasswordFor(model => model.Password, new { @required = "true" })
             </div>
             @Html.ValidationMessageFor(model => model.Password)
+            
+<p class="control-group" style="color: Red">
+                @if (@ViewBag.Message != null)
+                {
+                    @ViewBag.Message
+                }
+            </p>
            <span>
                 <button id="loginBtn"  >Login</button>
            </span>
 
-        <p class="control-group" style="color: Red">
-            @if (@ViewBag.Message != null)
-            {
-                @ViewBag.Message
-            }
-        </p>
         </section>
         </p>
     }

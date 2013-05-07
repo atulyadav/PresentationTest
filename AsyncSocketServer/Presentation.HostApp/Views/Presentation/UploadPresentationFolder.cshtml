@@ -30,6 +30,14 @@
     <p>
         Please avoid using "_deleted" in the filename.</p>
     <br />
+
+    @if (@ViewBag.Flag == 1)
+    {
+        <div>
+            <img src="../../Content/Images/two.png" />
+            <br /><br />
+        </div>
+    }
     <input type="hidden" value="@ViewBag.PresentationId" name="presentationId" id="presentationId" />
     <input type="hidden" value="@ViewBag.PresentationName" name="presentationName" id="presentationName" />
     <div class="fileupload fileupload-new" data-provides="fileupload">
