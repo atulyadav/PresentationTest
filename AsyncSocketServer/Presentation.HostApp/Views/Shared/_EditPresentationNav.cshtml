@@ -1,12 +1,14 @@
 ﻿@{
     Layout = "~/Views/Shared/_LinkLayout.cshtml";
 }
-<a href="/Presentation/CreatePresentation?id=@ViewBag.id&flag=2&PostBackTo=CreatePresentation">Edit Details</a>
-&nbsp;&nbsp;|&nbsp;&nbsp; <a href="/Presentation/AddPresentationUsers?id=@ViewBag.id&flag=2&presentationName=@ViewBag.PresentationName">
-    Modify Users and presenter</a>&nbsp;&nbsp; |&nbsp;&nbsp; <a href="/Presentation/AddFiles?id=@ViewBag.id&presentationName=@ViewBag.PresentationName&PostBackTo=AddFiles">
-        Add File</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="/Presentation/DeleteFiles?id=@ViewBag.id&presentationName=@ViewBag.PresentationName&PostBackTo=DeleteFiles">
-            Delete Files</a>&nbsp;&nbsp; |&nbsp;&nbsp; <a href="/Presentation/ReorderFiles?id=@ViewBag.id&flag=2&presentationName=@ViewBag.PresentationName&PostBackTo=ReorderFiles">
-                Re-order Files</a> &nbsp;&nbsp; |&nbsp;&nbsp; <a href="/Presentation/Index"> Back </a>
+<a href="/Presentation/CreatePresentation?id=@ViewBag.id&flag=2&PostBackTo=CreatePresentation">
+    Edit Details</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="/Presentation/AddPresentationUsers?id=@ViewBag.id&flag=2&presentationName=@ViewBag.PresentationName">
+        Modify Users and presenter</a>&nbsp;&nbsp; |&nbsp;&nbsp; <a href="/Presentation/AddFiles?id=@ViewBag.id&presentationName=@ViewBag.PresentationName&PostBackTo=AddFiles">
+            Add File</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="/Presentation/DeleteFiles?id=@ViewBag.id&presentationName=@ViewBag.PresentationName&PostBackTo=DeleteFiles">
+                Delete Files</a>&nbsp;&nbsp; |&nbsp;&nbsp; <a href="/Presentation/ReorderFiles?id=@ViewBag.id&flag=2&presentationName=@ViewBag.PresentationName&PostBackTo=ReorderFiles">
+                    Re-order Files</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="/Presentation/ModifyFile?id=@ViewBag.id&presentationName=@ViewBag.PresentationName&PostBackTo=ModifyFile">Modify
+                        Links File </a>&nbsp;&nbsp; | &nbsp;&nbsp; <a href="/Presentation/Index">Back
+</a>
 <br />
 <br />
 @RenderBody()

@@ -1042,6 +1042,7 @@
     <Content Include="Views\Presentation\ReorderFiles.cshtml" />
     <Content Include="Views\Account\PresentationDescription.cshtml" />
     <Content Include="Views\Presentation\_ReorderFiles.cshtml" />
+    <Content Include="Views\Presentation\ModifyFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PresentationApp.DataAccess\PresentationApp.DataAccess.csproj">

@@ -136,7 +136,7 @@ namespace Presentation.HostApp.Controllers
                                     {
                                         StreamReader sr = new StreamReader(fs);
 
-                                        string temp = sr.ReadLine();
+                                        string temp = sr.ReadToEnd();
 
                                         temp = string.Format(temp, presentation.Name, presentation.Name, presentation.Name, presentation.Name);
 
@@ -760,6 +760,35 @@ namespace Presentation.HostApp.Controllers
             }
 
             return Json(new { redirectTo = Url.Action("DeleteFiles", new { id = presentationId, presentationName = presentationName }) });
+        }
+
+        public ActionResult ModifyFile(long id, string presentationName)
+        {
+            ViewBag.PresentationId = id;
+            ViewBag.PresentationName = presentationName;
+            ViewBag.id = id;
+            ViewBag.Flag = 2;
+
+            using (FileStream presentationFile = new FileStream(Path.Combine(Server.MapPath("~/Views/Presentations"), presentationName, "Presentation.cshtml"), FileMode.Open, FileAccess.Read))
+            {
+                StreamReader sr = new StreamReader(presentationFile);
+
+                ViewBag.Contents = sr.ReadToEnd();
+            }
+            return View();
+        }
+
+        [HttpPost, ValidateInput(false)]
+        public ActionResult ModifyFile(long presentationId, string presentationName, string file)
+        {
+            using (FileStream presentationFile = new FileStream(Path.Combine(Server.MapPath("~/Views/Presentations"), presentationName, "Presentation.cshtml"), FileMode.Truncate, FileAccess.Write))
+            {
+                StreamWriter sw = new StreamWriter(presentationFile);
+
+                sw.Write(file);
+                sw.Flush();
+            }
+            return RedirectToAction("ModifyFile", "Presentation", new { id = presentationId, presentationName = presentationName });
         }
 
         public void SendEmail(string name, string address, string url, string description)
