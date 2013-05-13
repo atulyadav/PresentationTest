@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using PresentationApp.Domain.Account;
@@ -28,5 +29,7 @@ namespace PresentationApp.DataAccess.Models.Presentation
         public virtual bool Status { get; set; }
 
         public virtual string Description { get; set; }
+
+        public virtual string Timezone { get; set; }
     }
 }

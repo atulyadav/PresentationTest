@@ -29,9 +29,9 @@
             <label class="control-label" for="UserName">
                 User Name</label>
             <div>
-                @Html.TextBoxFor(model => model.UserName, new { @required = "true" })
+                @Html.TextBoxFor(model => model.Email, new { @required = "true" })
             </div>
-            @Html.ValidationMessageFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.Email)
 
             <label class="control-label" for="Password">
                 Password

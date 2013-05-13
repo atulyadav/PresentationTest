@@ -19,6 +19,7 @@ namespace PresentationApp.Domain.Account.Mappings
             Map(x => x.PhoneNumber);
             Map(x => x.UserName);
             Map(x => x.IsAdmin);
+            Map(x => x.IsBlocked);
         }
     }
 }

@@ -24,20 +24,22 @@
 </style>
 <div>
     <form action="/Presentation/UploadPresentationFolder" method="post" enctype="multipart/form-data">
+    @if (@ViewBag.Flag == 1)
+    {
+        <div >
+       
+            <img src="../../Content/Images/two.png"  />
+            <br /><br />
+        </div>
+    }
     <h4>
         Upload Folder for presentation: @ViewBag.PresentationName
     </h4>
     <p>
-        Please avoid using "_deleted" in the filename.</p>
+        The filenames having '_deleted' will be considered as deleted and will not be used in the presentation.</p>
     <br />
 
-    @if (@ViewBag.Flag == 1)
-    {
-        <div>
-            <img src="../../Content/Images/two.png" />
-            <br /><br />
-        </div>
-    }
+    
     <input type="hidden" value="@ViewBag.PresentationId" name="presentationId" id="presentationId" />
     <input type="hidden" value="@ViewBag.PresentationName" name="presentationName" id="presentationName" />
     <div class="fileupload fileupload-new" data-provides="fileupload">
@@ -47,7 +49,7 @@
             <input type="submit" value="Upload" class="btn" id="uploadBtn" />
         </span>
     </div>
-    </form>
+    </form><br /><br />
     <form action="/Presentation/SubmitList" method="post">
     @if (@ViewBag.List != null)
     {

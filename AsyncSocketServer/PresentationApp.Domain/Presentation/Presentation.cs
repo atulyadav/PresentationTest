@@ -27,5 +27,7 @@ namespace PresentationApp.Domain.Presentation
         public virtual string Description { get; set; }
 
         public virtual bool IsHostConnected { get; set; }
+
+        public virtual string Timezone { get; set; }
     }
 }

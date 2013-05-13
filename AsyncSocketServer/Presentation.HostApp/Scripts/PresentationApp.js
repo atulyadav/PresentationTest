@@ -118,15 +118,6 @@ function getCookie(NameOfCookie) {
     return null;
 }
 
-////FUNCTION TO SPLIT THE COOKIE
-//function splitCookie(cookiesValue) {
-//    var obj1 = new Object();
-//    var userInfo = cookiesValue.split('&');
-//    obj1.guid = userInfo[0].split('=')[1];
-//    obj1.isHost = userInfo[1].split('=')[1];
-//    return obj1;
-//}
-
 //GET THE USER STATUS
 function CheckClientStatus() {
     try {
@@ -213,9 +204,11 @@ function ReflectChange(data) {
             break;
         case "RedirectToHome": RedirectToHome();
             break;
-        case "ReAnimate": ReAnimate();
+        case "ReAnimate": ReAnimate(JSONObject);
             break;
         case "TabIndex": ChangeTabIndex(JSONObject);
+            break;
+        case "ClickElement": ClickElement(JSONObject);
             break;
 
         default: alert("Wrong Command name !!");
@@ -600,39 +593,59 @@ function SendRedirectToHome() {
 
 //RESTART THE ANIMATION
 function SendReAnimate(e) {
+    var _hasClass;
+    if (e.classList.contains("restart_pap")) {
+        _hasClass = true;
+    }
+    else {
+        _hasClass = false;
+        animateOnDivLoad(); //animate on load of div(onload of page)
+    }
     try {
-        var JSONObject = { CommandName: "ReAnimate" };
+        var JSONObject = { CommandName: "ReAnimate", Parameters: [{ HasClass: _hasClass}] };
         SendChanges(JSON.stringify(JSONObject));
     } catch (ex) { alert(ex); }
-    ReAnimate();
+    //ReAnimate(JSONObject);
 }
-function ReAnimate() {
-    //restartAnimation();
-    animateOnDivLoad();
+function ReAnimate(JSONObject) {
+    var _hasClass = JSONObject.Parameters[0].HasClass;
+    if (_hasClass) {
+        var reButton = document.getElementsByClassName("restart_pap")[0]; //can handle only one restart button on page
+        reButton.click();
+    }
+    else {
+        animateOnDivLoad(); //animate on load of div(onload of page)
+    }
 }
-function SendTabIndex(num) {
+
+//CHANGE TAB
+
+function SendFunc_Param(funcName, tabIndex) {
     try {
-        var JSONObject = { CommandName: "TabIndex", Parameters: [{ IndexNumber: num}] };
+        var JSONObject = { CommandName: "TabIndex", Parameters: [{ FunctionName: funcName, IndexNumber: tabIndex}] };
         SendChanges(JSON.stringify(JSONObject));
     } catch (ex) { alert(ex); }
 }
 function ChangeTabIndex(JSONObject) {
     var num = JSONObject.Parameters[0].IndexNumber;
-    savetabt(num);
-    gotoFrame(num);
-    // BOC GGOSAVI
-    if (bExternalDevice) {
-        var frameno = num;
-        //var param  = "gotoFrameExternal,"+frameno;
-        makecall('ExternalAnimationIntParam', Array("gotoFrameExternal", "" + frameno));
-    }
-
-    //    dot.addEventListener('webkitTransitionEnd', function () {
-    //        /* Keep the dots from doing shady stuff */
-    //        dot.style.webkitTransition = 'none';
-    //    }, false)
+    var funName = JSONObject.Parameters[0].FunctionName;
+    //savetabt(num);
+    //gotoFrame(num);
+    window[funName](num);
 }
 
+//CLICK ANY ELEMENT HAVING UNIQUE ID
+function SendClickElement(e) {
+    try {
+        var JSONObject = { CommandName: "ClickElement", Parameters: [{ ElementId: e.id}] };
+        SendChanges(JSON.stringify(JSONObject));
+    } catch (ex) { alert(ex); }
+}
+function ClickElement(JSONObject) {
+    var elementId = JSONObject.Parameters[0].ElementId;
+    var element = document.getElementById(elementId);
+    element.click();
+}
 //DETECT DEVICE - USER-AGENT
 function Detectdevice() {
     var uagent = navigator.userAgent.toLowerCase();

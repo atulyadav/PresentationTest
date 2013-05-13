@@ -20,6 +20,7 @@ namespace PresentationApp.Domain.Presentation.Mappings
             Map(x => x.Status);
             Map(x => x.Description);
             Map(x => x.IsHostConnected);
+            Map(x => x.Timezone);
         }
     }
 }

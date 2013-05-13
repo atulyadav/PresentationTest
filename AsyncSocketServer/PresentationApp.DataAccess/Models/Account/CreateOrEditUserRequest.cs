@@ -20,6 +20,8 @@ namespace PresentationApp.DataAccess.Models.Account
 
         public virtual bool IsAdmin { get; set; }
 
+        public virtual bool IsBlocked { get; set; }
+
         public int flag { get; set; }
     }
 }

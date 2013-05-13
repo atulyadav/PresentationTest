@@ -1,35 +1,56 @@
-﻿<script type="text/javascript">
+﻿<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<style type="text/css">
+    #files, #filesExcluded
+    {
+        list-style: none;
+    }
+    
+    #files li, #filesExcluded li
+    {
+        text-align: center;
+        width: 80px;
+        display: inline-block;
+        padding: 10px;
+        margin: 5px;
+        cursor: hand;
+        cursor: pointer;
+    }
+</style>
 
-    var currentTR = null;
-    //list reorder
-    function moveUpItem() {
-        $(currentTR).each(function () {
-            $(this).insertBefore($(this).prev());
-        });
+<script type="text/javascript">
+
+    function remove(x) {
+        $('#filesExcluded').append($('#files li[title=\'' + x + '\']'));
+        $('#files li[title=\'' + x + '\']').remove();
+        $('#filesExcluded li[title=\'' + x + '\'] a').attr('onclick', 'add(\'' + x + '\')');
+        $('#filesExcluded li[title=\'' + x + '\'] a').html('<img src="@Url.Content("~/Content/Images/plus.png")" />');
     }
 
-    function moveDownItem() {
-        $(currentTR).each(function () {
-            $(this).insertAfter($(this).next());
-        });
-    }
-
-    function highlight(x) {
-        $("tr").css('background-color', 'White');
-        $(x).css('background-color', '#C0C0C0');
-        currentTR = x;
+    function add(x) {
+        $('#files').append($('#filesExcluded li[title=\'' + x + '\']'));
+        $('#filesExcluded li[title=\'' + x + '\']').remove();
+        $('#files li[title=\'' + x + '\'] a').attr('onclick', 'remove(\'' + x + '\')');
+        $('#files li[title=\'' + x + '\'] a').html('<img src="@Url.Content("~/Content/Images/minus.png")" />');
     }
 
     $(document).ready(function () {
 
-        var h = $('#table1').height();
-        $('#gap').height((h - 32) + 'px');
+        $("#files").sortable();
+        $("#files").disableSelection();
 
-        $('#gap').width('16px');
+        $("#filesExcluded").sortable();
+        $("#filesExcluded").disableSelection();
+
+        $("#files, #filesExcluded").sortable({
+            connectWith: ".connectedSortable"
+        }).disableSelection();
 
         $("#submitList").click(function () {
             var optionTexts = [];
-            $("#table1 tr td").each(function () { optionTexts.push($.trim($(this).text())) });
+            $("#files li").each(function () { optionTexts.push($.trim($(this).attr('title'))) });
+            alert(optionTexts.join(','));
             var data = "presentationId=" + $('#presentationId').val() + "&PresentationFileSequence=" + optionTexts.join(',') + "&flag=" + $('#flag').val() + "&PostBackTo=" + $('#PostBackTo').val();
 
             $.ajax({
@@ -47,6 +68,7 @@
                 }
             });
         });
+
     });
 
 </script>
@@ -57,34 +79,45 @@
 <form method="post">
 @if (@ViewBag.List != null)
 {
-    <div class="td1">
+    <div>
+        <br />
         <input type="hidden" value="@ViewBag.PresentationId" name="presentationId" id="presentationId" />
         <input type="hidden" value="@ViewBag.Flag" name="flag" id="flag" />
         <input type="hidden" value="@ViewBag.PostBackTo" name="PostBackTo" id="PostBackTo" />
-        @*@Html.ListBox("list", new SelectList(@ViewBag.List), new { id = "list", size = "5" })*@
-        <table>
-            <tr>
-                <td>
-                    <table id="table1" class="table table-hover table-bordered" style="width: auto; margin: 2px">
-                        @for (var i = 0; i < @ViewBag.List.Count; i++)
-                        {
-                            <tr onclick="highlight(this)" id="@i">
-                                <td>@ViewBag.List[i]
-                                </td>
-                            </tr>
-                        }
-                    </table>
-                </td>
-                <td id="imgTd">
-                    <img id="mup" src= "@Url.Content("~/Content/Images/up.jpg")" onclick="moveUpItem()"/><br />
-                    <img id="gap" src= "@Url.Content("~/Content/Images/gap.jpg")" /><br />
-                    <img id="mdown" src="@Url.Content("~/Content/Images/down.jpg")" onclick="moveDownItem()"/>
-                </td>
-            </tr>
-        </table>
-
+        <div style="outline: #E6E6E6 solid 2px; padding: 10px">
+            <i>Files Included</i>
+            <hr />
+            <ul id="files" class="connectedSortable">
+                @for (var i = 0; i < @ViewBag.List.Count; i++)
+                {
+                    <li class="ui-state-default" title="@ViewBag.List[i]">@ViewBag.List[i].Substring(0, 5)...
+                        <a href="#" onclick="remove('@ViewBag.List[i]')" class="links">
+                            <img src="../../Content/Images/minus.png" /></a> </li>
+                }
+            </ul>
+        </div>
+        <br />
+        <br />
+        <div style="outline: #E6E6E6 solid 2px; padding: 10px">
+            <i>Files Excluded</i>
+            <hr />
+            <ul id="filesExcluded" class="connectedSortable">
+                @for (var i = 0; i < @ViewBag.ListExcluded.Count; i++)
+                {
+                    <li class="ui-state-default" title="@ViewBag.ListExcluded[i]">@ViewBag.ListExcluded[i].Substring(0, 5)...
+                        <a href="#" onclick="add('@ViewBag.ListExcluded[i]')" class="links">
+                            <img src="../../Content/Images/plus.png" /></a> </li>
+             
+                }
+            </ul>
+        </div>
     </div>
+
     <br />
-    <input type="button" value="Modify Sequence" class="btn" id="submitList" /> 
+    <input type="button" value="Save" class="btn" id="submitList" />
+                if (@ViewBag.Flag == 1)
+                {
+    <input type="button" value="Skip to Next" class="btn" onclick="javascript:window.location.replace('/Presentation/AddPresentationUsers?id=@ViewBag.PresentationId&presentationName=@ViewBag.PresentationName&flag=1');"/>
+                }
 }
 </form>

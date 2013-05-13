@@ -138,12 +138,12 @@ namespace PresentationApp.DataAccess
 
         //-----------------------------------------------------------
 
-        public Users GetAdmin(string username, string password)
+        public Users GetAdmin(string emailId, string password)
         {
             LoggerHelper.LogRequestRecieved(MethodBase.GetCurrentMethod().Name);
 
             Users presenter = Persister.Query<Users>()
-                .Where(x => x.UserName == username && x.Password == password && x.IsAdmin == true && x.IsActive == true)
+                .Where(x => x.EmailId == emailId && x.Password == password && x.IsAdmin == true && x.IsActive == true)
                 .SingleOrDefault<Users>();
 
             stackTrace = new StackTrace();
@@ -198,12 +198,12 @@ namespace PresentationApp.DataAccess
             return user;
         }
 
-        public Users GetUsers(string username, string password)
+        public Users GetUsers(string emailId, string password)
         {
             LoggerHelper.LogRequestRecieved(MethodBase.GetCurrentMethod().Name);
 
             Users user = Persister.Query<Users>()
-                .Where(x => x.UserName == username && x.Password == password && x.IsActive == true)
+                .Where(x => x.EmailId == emailId && x.Password == password && x.IsActive == true)
                 .SingleOrDefault<Users>();
 
             stackTrace = new StackTrace();
@@ -219,6 +219,21 @@ namespace PresentationApp.DataAccess
 
             Users user = Persister.Query<Users>()
                 .Where(x => x.UserName == username)
+                .SingleOrDefault<Users>();
+
+            stackTrace = new StackTrace();
+            methodBase = stackTrace.GetFrame(1).GetMethod();
+            LoggerHelper.LogResponseToClient(methodBase.Name);
+
+            return user;
+        }
+
+        public Users GetUsers(string emailId, int z)
+        {
+            LoggerHelper.LogRequestRecieved(MethodBase.GetCurrentMethod().Name);
+
+            Users user = Persister.Query<Users>()
+                .Where(x => x.EmailId == emailId)
                 .SingleOrDefault<Users>();
 
             stackTrace = new StackTrace();

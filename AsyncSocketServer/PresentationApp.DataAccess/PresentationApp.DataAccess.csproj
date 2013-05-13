@@ -74,6 +74,7 @@
     <Compile Include="Models\Account\CreateOrEditUserRequest.cs" />
     <Compile Include="Models\Account\LoginReply.cs" />
     <Compile Include="Models\Presentation\DeleteFilesListItem.cs" />
+    <Compile Include="Models\Presentation\DeleteFilesRequest.cs" />
     <Compile Include="Models\Presentation\PresentationListItem.cs" />
     <Compile Include="Models\Presentation\UserCheckList.cs" />
     <Compile Include="Models\Presentation\UserCheckListItem.cs" />

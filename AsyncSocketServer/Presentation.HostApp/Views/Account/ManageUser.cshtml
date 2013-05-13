@@ -86,7 +86,8 @@
 <h4>
     Manage User</h4>
 <p>
-    <a href="#" onclick="editUserFunction('/Account/CreateUser?&flag=1')">Create New User</a>
+    <a href="#" onclick="editUserFunction('/Account/CreateUser?&flag=1')" class="label label-info">
+        Create New User</a>
 </p>
 <br />
 <table class="table table-hover table-bordered">
@@ -105,6 +106,9 @@
         </th>
         <th>
             Is Admin?
+        </th>
+        <th>
+            Is Blocked?
         </th>
         <th style="width: 70px; text-align: center;">
         </th>
@@ -126,6 +130,9 @@
             </td>
             <td onclick="editUserFunction('/Account/CreateUser?id=@item.Id&flag=2')">
                 @Html.DisplayFor(modelItem => item.IsAdmin)
+            </td>
+            <td onclick="editUserFunction('/Account/CreateUser?id=@item.Id&flag=2')">
+                @Html.DisplayFor(modelItem => item.IsBlocked)
             </td>
             <td id="links" onclick="deleteUserFunction(@item.Id)" style="text-align:center">
                 <a href="#">

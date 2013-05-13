@@ -17,10 +17,10 @@
         $("#createUserForm").validate({
             rules: {
                 'Name': { required: true },
-                'UserName': { required: true, remote: '@Url.Action("CheckUsernameExists", "Account", new { @flag = @Model.flag })' },
+                'UserName': { required: true, remote: '@Url.Action("CheckUsernameExists", "Account", new { @data = @Model.UserName + @Model.flag })' },
                 'Password': { checkPassword: true },
                 'PhoneNumber': { required: true, number: true, minlength: 10 },
-                'EmailId': { required: true, email: true },
+                'EmailId': { required: true, email: true, remote: '@Url.Action("CheckEmailExists", "Account", new { @data = @Model.EmailId + @Model.flag })' },
                 'RetypePassword': { required: true, equalTo: '#Password' }
             },
             messages: {
@@ -28,7 +28,7 @@
                 'UserName': { required: "Please enter the User Name", remote: "The username already exists" },
                 'Password': { checkPassword: "Please enter Password" },
                 'PhoneNumber': { required: "Please enter Phone Number", number: "Please enter a valid number.", minlength: "A minimum of 10 digits required." },
-                'EmailId': { required: "Please enter Email ID", email: "Please enter a valid email address" },
+                'EmailId': { required: "Please enter Email ID", email: "Please enter a valid email address" , remote: "The Email ID already exists"},
                 'RetypePassword': { required: "Please retype the password", equalTo: 'The retyped password doesnt match' }
             },
             errorPlacement: function (error, element) {
@@ -96,8 +96,8 @@
         </td>
         <td>
             <div class="controls">
-                <a href="#" id="ChangePasswordLink">Change Password</a> <a href="#" id="HideChangePasswordLink">
-                    Hide Change Password</a>
+                <a href="#" id="ChangePasswordLink">Reset Password</a> <a href="#" id="HideChangePasswordLink">
+                    Hide Reset Password</a>
             </div>
         </td>
     </tr>
@@ -148,7 +148,8 @@
     <tr>
         <td colspan="2">
             <br />
-            Is Admin? : &nbsp;&nbsp; @Html.CheckBoxFor(model => model.IsAdmin)
+            @Html.CheckBoxFor(model => model.IsAdmin)&nbsp;&nbsp;Is Admin?&nbsp;&nbsp;&nbsp;&nbsp;@Html.CheckBoxFor(model => model.IsBlocked)&nbsp;&nbsp;Is
+            Blocked?
         </td>
     </tr>
 </table>

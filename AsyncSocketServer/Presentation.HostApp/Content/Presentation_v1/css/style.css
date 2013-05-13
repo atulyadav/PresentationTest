@@ -1,4 +1,3 @@
-
 /* reset css*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -9,8 +8,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
     margin: 0;
@@ -21,12 +20,13 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
 body {
-    line-height: 1;
+    line-height: 1; background-color: #000;
+	/*background:url("../images/login-bg.jpg") repeat scroll 0 0 transparent;*/
 }
 ol, ul {
     list-style: none;
@@ -45,7 +45,7 @@ table {
 }
 
 /*index css*/
-#container{float:left; width:1024px; height:768px; overflow: hidden;}
+#container{margin:0 auto; width:100%; height:768px; overflow: hidden;}
 #header{float:left; width:1024px; background:url(../images/header-bg.jpg) repeat; height:38px; color:#fff;}
 #header .name{font:17px/17px 'HelveticaMediumCondensed', Arial; float: left; margin: 11px 0 0 474px;}
 #content{float:left;}
@@ -85,14 +85,14 @@ footer#slidein #chat{margin:0px 8px 0px 0px;}
 }
 
 /*chrome only*/
-@media screen and (-webkit-min-device-pixel-ratio:0) {    
-	#chat_area{margin:-165px 0 0 6px;}    
-footer#slidein #chat{margin:0px -6px 0px 0px;} 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	#chat_area{margin:-165px 0 0 6px;}
+footer#slidein #chat{margin:0px -6px 0px 0px;}
 footer#slidein{ margin:-45px -190px 0 0;}
 }
 
 /*login */
-.login{background:url(../images/login-bg.jpg) no-repeat;}
+/*.login{background:url(../images/login-bg.jpg) no-repeat;} */
 .login section{background: rgb(255,255,255); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,240,240,1) 25%, rgba(227,227,227,1) 77%, rgba(225,225,225,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(25%,rgba(240,240,240,1)), color-stop(77%,rgba(227,227,227,1)), color-stop(100%,rgba(225,225,225,1))); /* Chrome,Safari4+ */
@@ -100,7 +100,8 @@ background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(240,240,240
 background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 25%,rgba(227,227,227,1) 77%,rgba(225,225,225,1) 100%); /* Opera 11.10+ */
 background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 25%,rgba(227,227,227,1) 77%,rgba(225,225,225,1) 100%); /* IE10+ */
 background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(240,240,240,1) 25%,rgba(227,227,227,1) 77%,rgba(225,225,225,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e1e1',GradientType=0 ); /* IE6-9 */ float: left; margin: 227px 0px 0px 264px; width: 435px; height: 343px; -webkit-border-radius: 7px; -moz-border-radius: 7px; -o-border-radius: 7px; -ms-border-radius: 7px;  border-radius: 7px;border: 1px solid #097eb8;}
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e1e1',GradientType=0 ); /* IE6-9 */ 
+ margin: 227px auto; width: 435px; height: 343px; -webkit-border-radius: 7px; -moz-border-radius: 7px; -o-border-radius: 7px; -ms-border-radius: 7px;  border-radius: 7px;border: 1px solid #097eb8;}
 .login section img{float: left;margin: -9px 0px 0px 114px;}
 .login div{background:url(../images/login-img2.png) no-repeat; border:0px; float: left; margin: 14px 0px 0px 40px; width: 361px; height: 69px;}
 .login input{border: 0px;margin: 3px 0px 0px 5px;width: 349px;height: 31px;}

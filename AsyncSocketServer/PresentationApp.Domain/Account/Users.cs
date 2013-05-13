@@ -22,6 +22,8 @@ namespace PresentationApp.Domain.Account
 
         public virtual bool IsAdmin { get; set; }
 
+        public virtual bool IsBlocked { get; set; }
+
         public Users()
         {
             UserPresentations = new List<UserPresentation>();

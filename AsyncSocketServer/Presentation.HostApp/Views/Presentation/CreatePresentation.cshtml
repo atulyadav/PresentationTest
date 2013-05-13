@@ -81,19 +81,20 @@
 
     }
 </p>
+@if (@ViewBag.Flag == 1)
+{
+    <div>
+        <img src="../../Content/Images/one.png" />
+        <br />
+        <br />
+    </div>
+}
 <h4>
     Enter presentation details below:
 </h4>
 <br />
 <form action="/Presentation/CreatePresentation" method="post" id="createPresentationForm">
 <div>
-    @if (@ViewBag.Flag == 1)
-    {
-        <div>
-            <img src="../../Content/Images/one.png" />
-            <br /><br />
-        </div>
-    }
     <table>
         <tr>
             <td>
@@ -132,6 +133,14 @@
                         class="icon-calendar"></i></span><span id="EndTimeValidation" style="color: red">
                     </span>
                 </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Time Zone
+            </td>
+            <td>
+                @Html.DropDownListFor(model => model.Timezone, new SelectList(Model.TZInfo, "DisplayName", "DisplayName"), new{ @style="width:auto"})
             </td>
         </tr>
         <tr>

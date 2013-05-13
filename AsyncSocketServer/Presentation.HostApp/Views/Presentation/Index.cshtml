@@ -71,6 +71,9 @@
             End Time
         </th>
         <th>
+            Timezone
+        </th>
+        <th>
             Presenter
         </th>
         <th style="width: 70px; text-align: center">
@@ -87,6 +90,9 @@
             </td>
             <td onclick="document.location = '/Presentation/CreatePresentation?id=@item.Id&flag=2';">
                 @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            <td onclick="document.location = '/Presentation/CreatePresentation?id=@item.Id&flag=2';">
+                @Html.DisplayFor(modelItem => item.Timezone)
             </td>
             <td onclick="document.location = '/Presentation/CreatePresentation?id=@item.Id&flag=2';">
                 @Html.DisplayFor(modelItem => item.Presenter.Name)

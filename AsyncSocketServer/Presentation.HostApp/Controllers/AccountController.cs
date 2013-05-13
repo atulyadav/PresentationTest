@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using Newtonsoft.Json;
@@ -47,12 +48,22 @@ namespace Presentation.HostApp.Controllers
 
                     if (loginRequest.PresentationKey == null || loginRequest.PresentationKey == Guid.Empty)
                     {
-                        Users admin = userData.GetAdmin(loginRequest.UserName, loginRequest.Password);
+                        Users admin = userData.GetAdmin(loginRequest.Email, loginRequest.Password);
 
                         if (admin != null)
                         {
-                            FormsAuthentication.SetAuthCookie(admin.Id.ToString(), false);
-                            return RedirectToAction("ManageUser");
+                            if (admin.IsBlocked == true)
+                            {
+                                ViewBag.Message = "Sorry! This account has been blocked";
+                            }
+                            else
+                            {
+                                FormsAuthentication.SetAuthCookie(admin.Id.ToString(), false);
+                                HttpCookie c = new HttpCookie("logged-in-usr", admin.Name);
+                                c.Expires = DateTime.Now.AddDays(5);
+                                Response.Cookies.Add(c);
+                                return RedirectToAction("ManageUser");
+                            }
                         }
                         else
                         {
@@ -61,24 +72,31 @@ namespace Presentation.HostApp.Controllers
                     }
                     else
                     {
-                        Users user = userData.GetUsers(loginRequest.UserName, loginRequest.Password);
+                        Users user = userData.GetUsers(loginRequest.Email, loginRequest.Password);
                         if (user != null)
                         {
-                            LoginReply loginReply = userData.CheckPresenterOrUser(loginRequest.PresentationKey, user.Id);
+                            if (user.IsBlocked == true)
+                            {
+                                ViewBag.Message = "Sorry! This account has been blocked";
+                            }
+                            else
+                            {
+                                LoginReply loginReply = userData.CheckPresenterOrUser(loginRequest.PresentationKey, user.Id);
 
-                            if (loginReply.Status == 0)
-                            {
-                                ViewBag.Message = "Invalid Presentation Key. This presentation may be no longer alloted to you. Please check with the admin.";
-                            }
-                            else if (loginReply.Status == 5)
-                            {
-                                ViewBag.Message = "This presentation might have been deleted. Please ask your admin to allot you a different URL.";
-                            }
-                            else if (loginReply.Status == 1 || loginReply.Status == 2 || loginReply.Status == 3 || loginReply.Status == 4)
-                            {
-                                FormsAuthentication.SetAuthCookie(user.Id.ToString(), false);
-                                //return RedirectToAction("presentation", "presentations", new { stat = status, guid = loginRequest.PresentationKey });
-                                return View("PresentationDescription", loginReply);
+                                if (loginReply.Status == 0)
+                                {
+                                    ViewBag.Message = "Invalid Presentation Key. This presentation may be no longer alloted to you. Please check with the admin.";
+                                }
+                                else if (loginReply.Status == 5)
+                                {
+                                    ViewBag.Message = "This presentation might have been deleted. Please ask your admin to allot you a different URL.";
+                                }
+                                else if (loginReply.Status == 1 || loginReply.Status == 2 || loginReply.Status == 3 || loginReply.Status == 4)
+                                {
+                                    FormsAuthentication.SetAuthCookie(user.Id.ToString(), false);
+                                    //return RedirectToAction("presentation", "presentations", new { stat = status, guid = loginRequest.PresentationKey });
+                                    return View("PresentationDescription", loginReply);
+                                }
                             }
                         }
                         else
@@ -217,6 +235,7 @@ namespace Presentation.HostApp.Controllers
                 userm.EmailId = user.EmailId;
                 userm.IsAdmin = user.IsAdmin;
                 userm.UserName = user.UserName;
+                userm.IsBlocked = user.IsBlocked;
             }
 
             return PartialView("CreateUser", userm);
@@ -250,6 +269,7 @@ namespace Presentation.HostApp.Controllers
                 user.IsAdmin = userm.IsAdmin;
                 user.UserName = userm.UserName;
                 user.UpdatedDate = DateTime.Now;
+                user.IsBlocked = userm.IsBlocked;
 
                 if (userm.flag == 1)
                 {
@@ -335,9 +355,21 @@ namespace Presentation.HostApp.Controllers
         {
             UserData.createSession();
             UserData usrData = new UserData();
-            if (usrData.checkOccupiedAsPresenter(id))
+
+            string msg = "";
+
+            if (CheckUserLoggedIn(id))
             {
-                return Json(new { redirectTo = Url.Action("ManageUser"), Message = "The user is a host to some presentation. Cannot delete this user." });
+                msg = "You are currently logged in. You cannot delete your own account.";
+            }
+            else if (usrData.checkOccupiedAsPresenter(id))
+            {
+                msg = "The user is a host to some presentation. Cannot delete this user.";
+            }
+
+            if (msg != "")
+            {
+                return Json(new { redirectTo = Url.Action("ManageUser"), Message = msg });
             }
             else
             {
@@ -345,18 +377,57 @@ namespace Presentation.HostApp.Controllers
             }
         }
 
-        public JsonResult CheckUsernameExists(string UserName, int flag)
+        public bool CheckUserLoggedIn(long id)
         {
+            if (Request.Cookies[".ASPXAUTH"] != null)
+            {
+                HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+                FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+
+                return (Convert.ToDouble(ticket.Name) == id);
+            }
+
+            return false;
+        }
+
+        public JsonResult CheckUsernameExists(string UserName, string data)
+        {
+            string oldName = data.Substring(0, data.Length - 1);
+            int flag = Convert.ToInt32(data.Substring(data.Length - 1, 1));
+
             UserData.createSession();
             JsonResult result = new JsonResult();
             result.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
             result.Data = true;
 
-            if (flag == 1)
+            if (flag == 1 || (flag == 2 && oldName != UserName))
             {
                 UserData userData = new UserData();
 
                 if (userData.GetUsers(UserName) != null)
+                {
+                    result.Data = false;
+                }
+            }
+
+            return result;
+        }
+
+        public JsonResult CheckEmailExists(string EmailId, string data)
+        {
+            string oldEmail = data.Substring(0, data.Length - 1);
+            int flag = Convert.ToInt32(data.Substring(data.Length - 1, 1));
+
+            UserData.createSession();
+            JsonResult result = new JsonResult();
+            result.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+            result.Data = true;
+
+            if (flag == 1 || (flag == 2 && oldEmail != EmailId))
+            {
+                UserData userData = new UserData();
+
+                if (userData.GetUsers(EmailId, 0) != null)
                 {
                     result.Data = false;
                 }

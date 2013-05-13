@@ -40,16 +40,19 @@
         @Html.HiddenFor(model => model.PresentationId)
         @Html.HiddenFor(model => model.PresentationName)
         @Html.HiddenFor(model => model.flag)
-        <h4>
-            Select users for Presentation : @Html.DisplayFor(model => model.PresentationName)</h4>
 
-                @if (@ViewBag.Flag == 1)
+        @if (@ViewBag.Flag == 1)
     {
         <div>
+         
             <img src="../../Content/Images/three.png" />
             <br /><br />
         </div>
     }
+        <h4>
+            Select users for Presentation : @Html.DisplayFor(model => model.PresentationName)</h4>
+
+                
 
         @Html.DropDownListFor(model => model.PresenterId, new SelectList(Model.PresenterList, "Id", "Name"))
         &nbsp;<span style="color: Red" id="PresenterIdValidation"></span>

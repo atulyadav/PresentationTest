@@ -4,7 +4,7 @@ namespace PresentationApp.DataAccess.Models.Account
 {
     public class LoginRequest
     {
-        public virtual string UserName { get; set; }
+        public virtual string Email { get; set; }
 
         public virtual string Password { get; set; }
 

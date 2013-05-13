@@ -2,10 +2,7 @@
     Layout = "~/Views/Shared/_EditPresentationNav.cshtml";
     ViewBag.Title = "DeleteFiles";
 }
-
-
-
-@model IEnumerable<PresentationApp.DataAccess.Models.Presentation.DeleteFilesListItem>
+@model PresentationApp.DataAccess.Models.Presentation.DeleteFilesRequest
 <script type="text/javascript">
     function deleteFileFunction(id, pn, fl) {
         if (confirm('Are you sure you want to delete this file?')) {
@@ -21,7 +18,6 @@
             });
         }
 
-
     }
 
 </script>
@@ -36,35 +32,102 @@
         <input type="hidden" value="@ViewBag.PresentationId" name="presentationId" id="presentationId" />
         <input type="hidden" value="2" name="flag" id="flag" />
         <br />
-        Please select the files which you want to delete.
-        <br />
         <br />
         <div style="width: auto">
             @*@Html.ListBox("list", new SelectList(@ViewBag.List, "FileLocation", "FileName"), new { id = "list", size = "5" })*@
-            <table class="table table-hover table-bordered" style="width: auto">
-                @foreach (var item in @Model)
-                {
-                    <tr>
-                        <td>@item.FileName
-
-                        </td>
-                        <td>
-                            @*<a href="/Presentation/DeleteFile?presentationId=@ViewBag.PresentationId&presentationName=@ViewBag.PresentationName&fileLocation=@item.FileLocation" >Delete</a>*@
-                            <a href="#"  onclick="deleteFileFunction(@ViewBag.PresentationId,'@ViewBag.PresentationName','@item.FileLocation')">Delete</a>
-                        </td>
-                    </tr>
-                }
-            </table>
+            <div class="tabbable">
+                <!-- Only required for left/right tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab1" data-toggle="tab">HTML</a></li>
+                    <li><a href="#tab2" data-toggle="tab">CSS</a></li>
+                    <li><a href="#tab3" data-toggle="tab">JS</a></li>
+                    <li><a href="#tab4" data-toggle="tab">Images</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+                        <p>
+                            <table class="table table-hover table-bordered" style="width: auto">
+                                @foreach (var item in @Model.HTMLList)
+                                {
+                                    <tr>
+                                        <td>@item.FileName
+                                        </td>
+                                        <td>
+                                            @*<a href="/Presentation/DeleteFile?presentationId=@ViewBag.PresentationId&presentationName=@ViewBag.PresentationName&fileLocation=@item.FileLocation" >Delete</a>*@
+                                            <a href="#"  onclick="deleteFileFunction(@ViewBag.PresentationId,'@ViewBag.PresentationName','@item.FileLocation')">
+                                                Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                        <p>
+                            <table class="table table-hover table-bordered" style="width: auto">
+                                @foreach (var item in @Model.CSSList)
+                                {
+                                    <tr>
+                                        <td>@item.FileName
+                                        </td>
+                                        <td>
+                                            @*<a href="/Presentation/DeleteFile?presentationId=@ViewBag.PresentationId&presentationName=@ViewBag.PresentationName&fileLocation=@item.FileLocation" >Delete</a>*@
+                                            <a href="#"  onclick="deleteFileFunction(@ViewBag.PresentationId,'@ViewBag.PresentationName','@item.FileLocation')">
+                                                Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="tab3">
+                        <p>
+                            <table class="table table-hover table-bordered" style="width: auto">
+                                @foreach (var item in @Model.JSList)
+                                {
+                                    <tr>
+                                        <td>@item.FileName
+                                        </td>
+                                        <td>
+                                            @*<a href="/Presentation/DeleteFile?presentationId=@ViewBag.PresentationId&presentationName=@ViewBag.PresentationName&fileLocation=@item.FileLocation" >Delete</a>*@
+                                            <a href="#"  onclick="deleteFileFunction(@ViewBag.PresentationId,'@ViewBag.PresentationName','@item.FileLocation')">
+                                                Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="tab4">
+                        <p>
+                            <table class="table table-hover table-bordered" style="width: auto">
+                                @foreach (var item in @Model.ImagesList)
+                                {
+                                    <tr>
+                                        <td>@item.FileName
+                                        </td>
+                                        <td>
+                                            @*<a href="/Presentation/DeleteFile?presentationId=@ViewBag.PresentationId&presentationName=@ViewBag.PresentationName&fileLocation=@item.FileLocation" >Delete</a>*@
+                                            <a href="#"  onclick="deleteFileFunction(@ViewBag.PresentationId,'@ViewBag.PresentationName','@item.FileLocation')">
+                                                Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
 @* <input type="submit" value="Submit" class="btn" id="submitList" onclick="return confirm('Are you sure you want to delete the selected files?');" /> *@
 }
 </form>
-
 <p class="control-group" style="color: Red">
-    @if(@TempData["Message"] != null) {
-    <script type="text/javascript">        alert('@TempData["Message"]');</script>
-        
+    @if (@TempData["Message"] != null)
+    {
+        <script type="text/javascript">            alert('@TempData["Message"]');</script>
+
     }
 </p>
